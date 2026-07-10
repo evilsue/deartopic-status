@@ -36,6 +36,7 @@
   }
   .wrap{max-width:1060px; margin:0 auto; padding:30px 22px 64px}
   .num{font-variant-numeric:tabular-nums lining-nums}
+  .aux{color:var(--faint); font-weight:600; font-size:11.5px}  /* 보조지표(문항) */
 
   header.top{display:flex; flex-wrap:wrap; gap:16px 28px; align-items:flex-end;
     justify-content:space-between; padding-bottom:20px; border-bottom:1px solid var(--line)}
@@ -52,18 +53,18 @@
   .kpi{background:var(--card); border:1px solid var(--line); border-radius:14px;
     padding:16px 16px 14px; box-shadow:var(--shadow); position:relative; overflow:hidden}
   .kpi::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px}
-  .kpi.fb::before{background:var(--fb)} .kpi.tr::before{background:var(--tr)} .kpi.all::before{background:var(--muted)}
+  .kpi.fb::before{background:var(--fb)} .kpi.tr::before{background:var(--tr)} .kpi.eta::before{background:var(--warn)}
   .kpi .label{font-size:12px; color:var(--muted); font-weight:600; display:flex; gap:7px; align-items:center; flex-wrap:wrap}
   .track{font-size:10px; font-weight:700; letter-spacing:.05em; padding:1px 6px; border-radius:5px; text-transform:uppercase}
   .t-fb{background:var(--fb-soft); color:var(--fb)} .t-tr{background:var(--tr-soft); color:var(--tr)}
-  .t-all{background:var(--card2); color:var(--faint); border:1px solid var(--line)}
+  .t-eta{background:var(--warn-soft); color:var(--warn)}
   .kpi .big{font-size:30px; font-weight:800; letter-spacing:-.02em; margin:8px 0 2px; line-height:1}
   .kpi .big small{font-size:15px; color:var(--muted); font-weight:600}
-  .kpi .sub{font-size:12px; color:var(--muted)}
+  .kpi .unit{font-size:13px; color:var(--muted); font-weight:600}
+  .kpi .sub{font-size:12px; color:var(--muted); margin-top:2px}
   .bar{height:7px; border-radius:99px; background:var(--line2); overflow:hidden; margin-top:11px}
   .bar > i{display:block; height:100%; border-radius:99px; width:0; transition:width .6s ease}
-  .bar.fb > i{background:var(--fb)} .bar.tr > i{background:var(--tr)} .bar.all > i{background:var(--muted)}
-  .denomnote{font-size:11.5px; color:var(--faint); margin:10px 2px 0}
+  .bar.fb > i{background:var(--fb)} .bar.tr > i{background:var(--tr)} .bar.eta > i{background:var(--warn)}
 
   section{margin-top:30px}
   .sechead{display:flex; align-items:baseline; gap:12px; margin-bottom:13px}
@@ -72,41 +73,51 @@
   .sechead .rule{flex:1; height:1px; background:var(--line)}
   .grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
   .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:17px; box-shadow:var(--shadow)}
-  .card h3{font-size:14px; font-weight:800; margin-bottom:3px; display:flex; align-items:center; gap:8px}
+  .card h3{font-size:14px; font-weight:800; margin-bottom:3px; display:flex; align-items:center; gap:8px; justify-content:space-between}
+  .card h3 .hl{display:flex; align-items:center; gap:8px}
+  .card h3 .rt{font-size:12px; font-weight:700; color:var(--muted)}
   .card .cnote{font-size:12px; color:var(--muted); margin-bottom:12px}
   .dot{width:9px; height:9px; border-radius:3px; display:inline-block}
   .dot.fb{background:var(--fb)} .dot.tr{background:var(--tr)}
 
-  .stat{display:flex; justify-content:space-between; align-items:baseline; padding:9px 0; border-top:1px solid var(--line2); font-size:13px}
-  .stat:first-of-type{border-top:0}
-  .stat .kk{color:var(--muted)}
-  .stat .v{font-weight:800; font-size:15px}
-  .stat .v small{font-weight:600; color:var(--muted); font-size:12px}
-
-  .pill{display:inline-flex; align-items:center; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px}
+  .pill{display:inline-flex; align-items:center; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; white-space:nowrap}
   .p-good{background:var(--good-soft); color:var(--good)}
   .p-warn{background:var(--warn-soft); color:var(--warn)}
   .p-crit{background:var(--crit-soft); color:var(--crit)}
   .p-idle{background:var(--card2); color:var(--faint); border:1px solid var(--line)}
 
-  .langs{display:flex; flex-wrap:wrap; gap:7px; margin-top:4px}
-  .lang{display:flex; gap:6px; font-size:12px; font-weight:600; background:var(--tr-soft); color:var(--tr); padding:4px 10px; border-radius:8px}
-  .lang b{font-weight:800}
-
   .twrap{overflow-x:auto}
-  table{border-collapse:collapse; width:100%; font-size:12.5px; min-width:0}
+  table{border-collapse:collapse; width:100%; font-size:12.5px}
   th,td{padding:7px 9px; text-align:right; white-space:nowrap}
   th:first-child,td:first-child{text-align:left}
   thead th{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--faint); font-weight:700; border-bottom:1px solid var(--line)}
   tbody td{border-bottom:1px solid var(--line2)}
   tbody tr:last-child td{border-bottom:0}
-  tbody tr.idle td{color:var(--faint)}
   tbody tr.sum td{font-weight:800}
   .cov{display:inline-flex; align-items:center; gap:7px; justify-content:flex-end}
-  .minibar{width:50px; height:6px; border-radius:99px; background:var(--line2); overflow:hidden; flex:none}
+  .minibar{width:46px; height:6px; border-radius:99px; background:var(--line2); overflow:hidden; flex:none}
   .minibar > i{display:block; height:100%; border-radius:99px}
   .frac{font-weight:700}
-  .full{color:var(--good); font-weight:700} .part{color:var(--fb); font-weight:700} .zero{color:var(--faint)}
+
+  /* 작업량 예측 */
+  .refgrid{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:4px}
+  .refcell{background:var(--card2); border:1px solid var(--line); border-radius:10px; padding:11px 12px}
+  .refcell .rv{font-size:18px; font-weight:800; letter-spacing:-.01em}
+  .refcell .rl{font-size:11px; color:var(--muted); margin-top:2px}
+  .refcell .ra{font-size:10.5px; color:var(--faint); margin-top:1px}
+
+  .predict{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px}
+  .calc label{display:block; font-size:12px; color:var(--muted); font-weight:600; margin-bottom:5px}
+  .calc .field{display:flex; align-items:center; gap:10px; margin-bottom:13px}
+  .calc input[type=number]{width:92px; font:inherit; font-weight:700; font-variant-numeric:tabular-nums;
+    padding:7px 9px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink)}
+  .calc input:focus-visible{outline:2px solid var(--fb); outline-offset:1px}
+  .calc .u{font-size:12px; color:var(--muted)}
+  .est{display:flex; justify-content:space-between; align-items:baseline; padding:9px 0; border-top:1px solid var(--line2); font-size:13px}
+  .est:first-of-type{border-top:0}
+  .est .kk{color:var(--muted)} .est .kk small{color:var(--faint)}
+  .est .d{font-weight:800; font-size:16px} .est .d small{font-size:12px; color:var(--muted); font-weight:600}
+  .backlog .est .d{color:var(--tr)}
 
   .flow{display:flex; flex-wrap:wrap; gap:8px; align-items:stretch}
   .step{flex:1; min-width:120px; background:var(--card2); border:1px solid var(--line); border-radius:11px; padding:11px 12px}
@@ -120,7 +131,8 @@
   #err{color:var(--crit); margin-top:6px}
 
   @media (max-width:800px){
-    .kpis{grid-template-columns:1fr} .grid2{grid-template-columns:1fr}
+    .kpis{grid-template-columns:1fr} .grid2{grid-template-columns:1fr} .predict{grid-template-columns:1fr}
+    .refgrid{grid-template-columns:repeat(2,1fr)}
     header.top{align-items:flex-start} .chips{justify-content:flex-start}
   }
 </style>
@@ -137,68 +149,79 @@
     <div class="chips" id="chips"></div>
   </header>
 
+  <!-- 주지표 = 작업단위(회차/세트). 문항은 보조. -->
   <div class="kpis">
     <div class="kpi fb">
-      <div class="label">확정 <b style="color:var(--fb)">ko 피드백</b> 커버 <span class="track t-fb">생성</span></div>
+      <div class="label">기출 <b style="color:var(--fb)">회차</b> 진척 <span class="track t-fb">작업단위</span></div>
       <div class="big num" id="k1">–</div><div class="sub" id="k1s"></div>
       <div class="bar fb"><i id="k1b"></i></div>
     </div>
     <div class="kpi tr">
-      <div class="label">확정 <b style="color:var(--tr)">번역</b> 완료 <span class="track t-tr">6언어</span></div>
+      <div class="label">연습 <b style="color:var(--tr)">세트</b> 번역 <span class="track t-tr">작업단위</span></div>
       <div class="big num" id="k2">–</div><div class="sub" id="k2s"></div>
       <div class="bar tr"><i id="k2b"></i></div>
     </div>
-    <div class="kpi all">
-      <div class="label">전체 로드맵 번역 <span class="track t-all" id="k3t">DB</span></div>
+    <div class="kpi eta">
+      <div class="label">확정 번역 <b style="color:var(--warn)">잔여 작업</b> <span class="track t-eta">예측</span></div>
       <div class="big num" id="k3">–</div><div class="sub" id="k3s"></div>
-      <div class="bar all"><i id="k3b"></i></div>
+      <div class="bar eta"><i id="k3b"></i></div>
     </div>
   </div>
-  <p class="denomnote" id="denomnote"></p>
+  <p class="aux" id="denomnote" style="margin:10px 2px 0"></p>
 
+  <!-- 작업단위 현황 -->
   <section>
-    <div class="sechead"><h2>기출 (Exam)</h2><span class="k" id="examk"></span><span class="rule"></span></div>
+    <div class="sechead"><h2>작업단위 현황</h2><span class="k">회차·세트별 파이프라인 단계 · 문항=보조지표</span><span class="rule"></span></div>
     <div class="grid2">
       <div class="card">
-        <h3><span class="dot fb"></span> 진척 요약</h3>
-        <p class="cnote">확정 회차는 ko 생성 + 6언어 번역까지 완결. 미확정 회차는 콘텐츠 확정 대기.</p>
-        <div class="stat"><span class="kk">확정분 번역 완료</span><span class="v num" id="e_conf"></span></div>
-        <div class="stat"><span class="kk">전체 대비</span><span class="v num" id="e_total"></span></div>
-        <div class="stat"><span class="kk">미확정 회차 대기</span><span class="v num" id="e_wait"></span></div>
-        <div style="margin-top:13px">
-          <div style="font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:6px" id="e_langlabel"></div>
-          <div class="langs" id="e_langs"></div>
-        </div>
-      </div>
-      <div class="card">
-        <h3>회차별 확정·커버</h3>
-        <p class="cnote">confirm = DB 확정 여부 · ko = 재생성 피드백 커버.</p>
+        <h3><span class="hl"><span class="dot fb"></span> 기출 회차</span><span class="rt" id="ex_rt"></span></h3>
+        <p class="cnote">단계: 콘텐츠 대기 → ko 생성 → 번역 완료. 미확정 회차는 콘텐츠 확정 대기.</p>
         <div class="twrap"><table id="etbl"><thead></thead><tbody></tbody></table></div>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="sechead"><h2>연습 (Practice)</h2><span class="k" id="prack"></span><span class="rule"></span></div>
-    <div class="grid2">
       <div class="card">
-        <h3><span class="dot fb"></span> 대조·커버 팩트</h3>
-        <p class="cnote">복합키(text+선택지, 99% 유일)로 mock ko ↔ DB 정밀 매핑.</p>
-        <div class="stat"><span class="kk">mock ko 총량</span><span class="v num" id="p_mock"></span></div>
-        <div class="stat"><span class="kk">DB 매칭</span><span class="v num" id="p_match"></span></div>
-        <div class="stat"><span class="kk">확정 커버</span><span class="v num" id="p_cov"></span></div>
-        <div class="stat"><span class="kk">확정 미커버 (ko 생성 필요)</span><span class="v num" id="p_unc"></span></div>
-        <div class="stat"><span class="kk">mock ko 고아</span><span class="v num" id="p_orph"></span></div>
-        <div class="stat"><span class="kk">번역 진척</span><span class="v num" id="p_tr"></span></div>
-      </div>
-      <div class="card">
-        <h3>회차별 ko 커버 <span style="font-size:11px;font-weight:600;color:var(--faint)" id="p_roundq"></span></h3>
-        <p class="cnote">실전모의·진단고사 × 레벨. 나머지는 회차 미연결 드래프트.</p>
+        <h3><span class="hl"><span class="dot tr"></span> 연습 세트</span><span class="rt" id="pr_rt"></span></h3>
+        <p class="cnote">레벨별 세트가 작업단위. 전 세트 ko 커버 후 번역 착수 대기.</p>
         <div class="twrap"><table id="ptbl"><thead></thead><tbody></tbody></table></div>
       </div>
     </div>
   </section>
 
+  <!-- 작업분량 예측 -->
+  <section>
+    <div class="sechead"><h2>작업분량 · 소요 예측</h2><span class="k">회차당 실측 → 잔여 환산 → 처리량 시나리오</span><span class="rule"></span></div>
+    <div class="card">
+      <h3><span class="hl">회차당 작업량 <span class="aux" style="font-weight:600">(기출 1회차 실측 기준)</span></span></h3>
+      <div class="refgrid" id="refgrid" style="margin-top:12px"></div>
+      <p class="aux" style="margin-top:8px">문항당 환산 = 세그먼트 <b id="r_spq"></b> · 번역어절 <b id="r_wpq"></b>/언어. 잔여량은 이 실측치로 환산.</p>
+
+      <div class="predict">
+        <div class="calc card" style="box-shadow:none; background:var(--card2)">
+          <h3 style="margin-bottom:12px">처리량 가정 <span class="aux" style="font-weight:600">(직접 조정)</span></h3>
+          <div class="field">
+            <label style="margin:0">번역</label>
+            <input type="number" id="rateTr" value="150" min="1" step="10" aria-label="번역 처리량 문항/일">
+            <span class="u">문항 / 일</span>
+          </div>
+          <div class="field">
+            <label style="margin:0">ko 생성</label>
+            <input type="number" id="rateKo" value="250" min="1" step="10" aria-label="ko 생성 처리량 문항/일">
+            <span class="u">문항 / 일</span>
+          </div>
+          <p class="aux" style="line-height:1.5">기본값은 예시입니다. 실제 처리 속도(검수 포함)를 넣으면 소요일이 즉시 갱신됩니다. 1회차 ≈ 170문항.</p>
+        </div>
+
+        <div class="backlog">
+          <h3 style="margin-bottom:8px">잔여 작업 · 예상 소요</h3>
+          <div class="est"><span class="kk">연습 확정 번역 <small id="e1q"></small></span><span class="d" id="e1">–</span></div>
+          <div class="est"><span class="kk">└ 착수 가능(ko 보유) <small id="e2q"></small></span><span class="d" id="e2">–</span></div>
+          <div class="est"><span class="kk">연습 ko 선행 생성 <small id="e3q"></small></span><span class="d" id="e3">–</span></div>
+          <div class="est"><span class="kk">기출 콘텐츠 대기 <small id="e4q"></small></span><span class="d" id="e4"><span class="pill p-idle">착수 불가</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 파이프라인 -->
   <section>
     <div class="sechead"><h2>파이프라인</h2><span class="k">DB → 생성 → 번역 → TMS → 발행</span><span class="rule"></span></div>
     <div class="card">
@@ -217,94 +240,116 @@
   </section>
 
   <footer>
-    자동 산출 <code>progress.py</code> · 분모 = DB 덤프(확정/전체) · <b>집계 수치만 공개</b>(내용·프롬프트·내부경로 비공개)<br>
-    DB feedback_json은 전수 재생성 대상 → 진척은 로컬 재생성 기준
+    자동 산출 <code>progress.py</code> · 주지표 = <b>작업단위(회차·세트)</b> · 문항 = 보조지표 · <b>집계 수치만 공개</b><br>
+    회차당 작업량은 로컬 실측(세그먼트·어절) · 소요일은 입력 처리량 기준 추정(검수·재작업 변동)
     <div id="err"></div>
   </footer>
 </div>
 
 <script src="data.js"></script>
 <script>
+var D=null;
 function pct(a,b){ return b? Math.round(1000*a/b)/10 : 0; }
 function fmt(n){ return (n||0).toLocaleString(); }
-function cell(v,q){ var c=v===0?'zero':(v>=q?'full':'part'); return '<td class="'+c+'">'+(v===0?'–':fmt(v))+'</td>'; }
+function k(n){ return n>=1000? (Math.round(n/100)/10)+'k' : ''+n; }
+function ceil(a,b){ return b>0? Math.ceil(a/b) : 0; }
+var STAGE={ wait:{t:'콘텐츠 대기',c:'p-idle'}, ko:{t:'번역 대기',c:'p-warn'}, trans:{t:'번역 완료',c:'p-good'} };
+function chip(s){ var x=STAGE[s]||STAGE.wait; return '<span class="pill '+x.c+'">'+x.t+'</span>'; }
 function covcell(v,q,color){ var w=q?Math.round(100*v/q):0;
   return '<td><div class="cov"><span class="frac num">'+fmt(v)+'</span><span class="minibar"><i style="width:'+w+'%;background:'+color+'"></i></span></div></td>'; }
 
 function render(d){
   if(!d){ document.getElementById('err').textContent='데이터 로드 실패'; return; }
-  var e=d.exam, p=d.practice, conf=d.denom.confirmed, tot=d.denom.total;
+  D=d;
+  var e=d.exam, p=d.practice, U=d.units, W=d.workload, conf=d.denom.confirmed, tot=d.denom.total;
 
   document.getElementById('meta').textContent='최종 갱신 '+(d.updated||'—')
-    +' · 분모: 확정 '+fmt(conf)+' / 전체 '+fmt(tot)+' · '+(d.baseline||'');
+    +' · 작업단위: 기출 '+U.exam.total+'회차 · 연습 '+U.practice.total+'세트 · 분모(문항) 확정 '+fmt(conf)+'/'+fmt(tot);
   document.getElementById('chips').innerHTML=
-    '<span class="chip eng">엔진 '+(d.engine||'—')+'</span>'
-    +'<span class="chip date">'+(d.baseline||'').split(' ')[0]+'</span>';
+    '<span class="chip eng">엔진 '+(d.engine||'—')+'</span><span class="chip date">'+(d.baseline||'').split(' ')[0]+'</span>';
 
-  // ---- KPI (파생: 확정 커버/번역, 전체 번역) ----
-  var exKo=e.done_confirmed.ko, exTr=e.done_confirmed.en;      // 기출: ko=번역 동일
-  var pTr=p.conf_translated||0;                                // 연습 번역(현재 0)
-  var koCov=exKo+p.conf_covered, trDone=exTr+pTr;
-  document.getElementById('k1').innerHTML=fmt(koCov)+' <small>/ '+fmt(conf)+'</small>';
-  document.getElementById('k1s').innerHTML='확정 분모 · <b>'+pct(koCov,conf)+'%</b> (기출 '+fmt(exKo)+' + 연습 '+fmt(p.conf_covered)+')';
-  document.getElementById('k1b').style.width=pct(koCov,conf)+'%';
-  document.getElementById('k2').innerHTML=fmt(trDone)+' <small>/ '+fmt(conf)+'</small>';
-  document.getElementById('k2s').innerHTML='확정 분모 · <b>'+pct(trDone,conf)+'%</b> (기출 완료 · 연습 대기)';
-  document.getElementById('k2b').style.width=pct(trDone,conf)+'%';
-  document.getElementById('k3').innerHTML=fmt(e.done_total.en)+' <small>/ '+fmt(tot)+'</small>';
-  document.getElementById('k3s').innerHTML='confirm 무관 전량 · <b>'+pct(e.done_total.en,tot)+'%</b>';
-  document.getElementById('k3b').style.width=pct(e.done_total.en,tot)+'%';
-  document.getElementById('k3t').textContent='DB '+fmt(tot);
-  document.getElementById('denomnote').innerHTML='분모 = DB 덤프 <b>confirm-aware</b>: 확정 '+fmt(conf)
-    +'(기출 '+fmt(e.confirmed_q)+' + 연습 '+fmt(p.confirmed_q)+') / 전체 '+fmt(tot)
-    +'. 분자 = 로컬 재생성분(DB feedback_json은 전수 재생성 대상이라 미집계).';
+  // ── KPI (작업단위 주지표) ──
+  document.getElementById('k1').innerHTML=U.exam.done+' <small>/ '+U.exam.total+' 회차</small>';
+  document.getElementById('k1s').innerHTML='번역완료 '+U.exam.done+'회차 · 콘텐츠 대기 '+U.exam.wait+'회차 <span class="aux">('+fmt(e.done_confirmed.en)+'문항)</span>';
+  document.getElementById('k1b').style.width=pct(U.exam.done,U.exam.total)+'%';
 
-  // ---- 기출 ----
-  document.getElementById('examk').textContent='확정 '+fmt(e.confirmed_q)+' / 전체 '+fmt(e.total_q)+' · '+e.rounds.length+'회차';
-  document.getElementById('e_conf').innerHTML=fmt(exTr)+' <small>/ '+fmt(e.confirmed_q)+' · '+pct(exTr,e.confirmed_q)+'%</small> <span class="pill p-good">완료</span>';
-  document.getElementById('e_total').innerHTML=fmt(e.done_total.en)+' <small>/ '+fmt(e.total_q)+' · '+pct(e.done_total.en,e.total_q)+'%</small>';
-  var waitQ=e.total_q-e.confirmed_q;
-  document.getElementById('e_wait').innerHTML=fmt(waitQ)+' <small>문항</small> <span class="pill p-warn">확정 대기</span>';
-  document.getElementById('e_langlabel').textContent='확정 '+fmt(exTr)+'문항 × 언어별 완료';
-  document.getElementById('e_langs').innerHTML=d.lang_codes.map(function(c){
-    return '<span class="lang"><b>'+c+'</b> '+fmt(e.done_confirmed[c]!==undefined?e.done_confirmed[c]:exTr)+'</span>'; }).join('');
-  // 기출 회차표 (미확정은 묶어서)
-  var head='<tr><th>회차</th><th>확정</th><th>문항</th><th>ko 커버</th></tr>';
-  document.querySelector('#etbl thead').innerHTML=head;
-  var body='', unc=[];
+  document.getElementById('k2').innerHTML=U.practice.trans+' <small>/ '+U.practice.total+' 세트</small>';
+  document.getElementById('k2s').innerHTML='전 세트 ko 커버 · 번역 착수 대기 <span class="aux">(ko '+fmt(p.conf_covered)+'/'+fmt(p.confirmed_q)+'문항)</span>';
+  document.getElementById('k2b').style.width=pct(U.practice.trans,U.practice.total)+'%';
+
+  var trReady=p.conf_covered;                    // 착수 가능(ko 보유) 확정 번역
+  document.getElementById('k3').innerHTML=k(Math.round(trReady*W.seg_per_q))+' <span class="unit">세그먼트</span>';
+  document.getElementById('k3s').innerHTML='착수 가능 '+fmt(trReady)+'문항 ≈ '+(trReady/W.per_round_q).toFixed(1)+'회차분 · '+k(Math.round(trReady*W.words_per_q_lang*W.langs))+'어절(6언어)';
+  document.getElementById('k3b').style.width='100%';
+
+  document.getElementById('denomnote').innerHTML='주지표=작업단위. 보조지표(문항) 분모 = DB 덤프 confirm-aware 확정 '+fmt(conf)
+    +'(기출 '+fmt(e.confirmed_q)+' + 연습 '+fmt(p.confirmed_q)+') / 전체 '+fmt(tot)+'.';
+
+  // ── 기출 회차표 ──
+  document.getElementById('ex_rt').textContent='완료 '+U.exam.done+' · 대기 '+U.exam.wait+' / '+U.exam.total+'회차';
+  document.querySelector('#etbl thead').innerHTML='<tr><th>회차</th><th>단계</th><th>ko 커버</th><th class="aux">문항</th></tr>';
+  var eb='', wait=[];
   e.rounds.forEach(function(r){
-    if(r.confirm==='Y'){
-      body+='<tr><td>'+r.round+'</td><td><span class="pill p-good">Y</span></td><td class="num">'+r.q+'</td>'
-        +covcell(r.ko,r.q,'var(--fb)')+'</tr>';
-    } else { unc.push(r); }
+    if(r.stage==='wait'){ wait.push(r); return; }
+    eb+='<tr><td>'+r.round+'</td><td>'+chip(r.stage)+'</td>'+covcell(r.ko,r.q,'var(--fb)')+'<td class="aux num">'+r.q+'</td></tr>';
   });
-  if(unc.length){
-    var uq=unc.reduce(function(s,r){return s+r.q;},0);
-    var names=unc.map(function(r){return r.round;}).join('·');
-    body+='<tr class="idle"><td>'+names+'</td><td><span class="pill p-idle">N</span></td><td class="num">'+fmt(uq)+'</td><td><span class="pill p-idle">미착수</span></td></tr>';
+  if(wait.length){
+    var wq=wait.reduce(function(s,r){return s+r.q;},0);
+    eb+='<tr><td>'+wait.map(function(r){return r.round;}).join('·')+'</td><td>'+chip('wait')
+      +'</td><td class="aux" style="text-align:right">'+wait.length+'회차</td><td class="aux num">'+fmt(wq)+'</td></tr>';
   }
-  document.querySelector('#etbl tbody').innerHTML=body;
+  document.querySelector('#etbl tbody').innerHTML=eb;
 
-  // ---- 연습 ----
-  document.getElementById('prack').textContent='확정 '+fmt(p.confirmed_q)+' / 전체 '+fmt(p.total_q)+' · 복합키 정밀대조';
-  document.getElementById('p_mock').innerHTML=fmt(p.mock_ko)+' <span class="pill p-good">번역 준비완료</span>';
-  document.getElementById('p_match').innerHTML=fmt(p.ko_matched)+' <small>/ '+fmt(p.mock_ko)+'</small>';
-  document.getElementById('p_cov').innerHTML=fmt(p.conf_covered)+' <small>/ '+fmt(p.confirmed_q)+' · '+pct(p.conf_covered,p.confirmed_q)+'%</small> <span class="pill p-warn">부분</span>';
-  document.getElementById('p_unc').innerHTML=fmt(p.conf_uncovered)+' <span class="pill p-warn">TODO</span>';
-  document.getElementById('p_orph').innerHTML=fmt(p.ko_orphan)+' <span class="pill p-idle">정리 대상</span>';
-  document.getElementById('p_tr').innerHTML=fmt(pTr)+' <small>/ '+fmt(p.confirmed_q)+'</small> <span class="pill p-crit">미착수</span>';
-  document.getElementById('p_roundq').textContent='(연결 '+fmt(p.round_q)+'문항)';
-  document.querySelector('#ptbl thead').innerHTML='<tr><th>세트</th><th>레벨</th><th>문항</th><th>ko 커버</th></tr>';
-  var pbody=(p.rounds||[]).map(function(r){
+  // ── 연습 세트표 ──
+  document.getElementById('pr_rt').textContent='번역 '+U.practice.trans+' / '+U.practice.total+'세트';
+  document.querySelector('#ptbl thead').innerHTML='<tr><th>세트</th><th>레벨</th><th>단계</th><th>ko 커버</th><th class="aux">문항</th></tr>';
+  var pb=(p.rounds||[]).map(function(r){
     var lv=r.level.replace('TOPIK ','');
-    var short=r.title.replace(/\s*\(2026\)\s*/,'').replace('실전 모의고사','실전모의').replace(/제(\d)회/,'$1회');
+    var short=r.title.replace(/\s*\(2026\)\s*/,'').replace('실전 모의고사','실전모의').replace('진단고사','진단').replace(/제(\d)회/,'$1회');
     var low=r.q&&(r.ko/r.q)<0.6;
-    return '<tr><td>'+short+'</td><td>'+lv+'</td><td class="num">'+r.q+'</td>'
-      +covcell(r.ko,r.q, low?'var(--crit)':'var(--good)')+'</tr>';
+    return '<tr><td>'+short+'</td><td>'+lv+'</td><td>'+chip(r.stage)+'</td>'
+      +covcell(r.ko,r.q, low?'var(--crit)':'var(--tr)')+'<td class="aux num">'+r.q+'</td></tr>';
   }).join('');
-  pbody+='<tr class="sum"><td>합계</td><td></td><td class="num">'+fmt(p.round_q)+'</td>'+covcell(p.round_ko,p.round_q,'var(--fb)')+'</tr>';
-  document.querySelector('#ptbl tbody').innerHTML=pbody;
+  pb+='<tr class="sum"><td>합계</td><td></td><td>'+chip('ko')+'</td>'+covcell(p.round_ko,p.round_q,'var(--tr)')+'<td class="aux num">'+fmt(p.round_q)+'</td></tr>';
+  document.querySelector('#ptbl tbody').innerHTML=pb;
+
+  // ── 회차당 작업량 레퍼런스 ──
+  var ref=[
+    {v:W.per_round_q, l:'문항', a:'보조지표'},
+    {v:fmt(W.ko_segments), l:'ko 세그먼트', a:'소스'},
+    {v:fmt(W.trans_segments), l:'번역 세그먼트', a:W.langs+'언어'},
+    {v:k(W.words_total), l:'번역 어절', a:W.langs+'언어 합'},
+    {v:'~$'+W.ko_cost_usd, l:'ko 생성비', a:'Batch API'}
+  ];
+  document.getElementById('refgrid').innerHTML=ref.map(function(x){
+    return '<div class="refcell"><div class="rv num">'+x.v+'</div><div class="rl">'+x.l+'</div><div class="ra">'+x.a+'</div></div>';
+  }).join('');
+  document.getElementById('r_spq').textContent=W.seg_per_q;
+  document.getElementById('r_wpq').textContent=W.words_per_q_lang;
+
+  recalc();
 }
+
+function recalc(){
+  if(!D) return;
+  var p=D.practice, e=D.exam, W=D.workload;
+  var rTr=Math.max(1,+document.getElementById('rateTr').value||1);
+  var rKo=Math.max(1,+document.getElementById('rateKo').value||1);
+  var confAll=p.confirmed_q, ready=p.conf_covered, koNeed=p.conf_uncovered;
+  var examBlockedQ=e.total_q-e.confirmed_q, examBlockedU=D.units.exam.wait;
+
+  function dcell(q,rate){ var days=ceil(q,rate); return days+'<small> 일</small>'; }
+  document.getElementById('e1q').textContent='('+fmt(confAll)+'문항 · '+(confAll/W.per_round_q).toFixed(1)+'회차분)';
+  document.getElementById('e1').innerHTML=dcell(confAll,rTr);
+  document.getElementById('e2q').textContent='('+fmt(ready)+'문항)';
+  document.getElementById('e2').innerHTML=dcell(ready,rTr);
+  document.getElementById('e3q').textContent='('+fmt(koNeed)+'문항)';
+  document.getElementById('e3').innerHTML=dcell(koNeed,rKo);
+  document.getElementById('e4q').textContent='('+examBlockedU+'회차 · '+fmt(examBlockedQ)+'문항)';
+}
+
+document.getElementById('rateTr').addEventListener('input',recalc);
+document.getElementById('rateKo').addEventListener('input',recalc);
 fetch('progress.json?t='+Date.now(),{cache:'no-store'})
   .then(function(r){return r.json();}).then(render)
   .catch(function(){ render(window.PROGRESS); });

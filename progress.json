@@ -49,7 +49,8 @@
           "zh-TW": 0,
           "vi": 0,
           "es": 0
-        }
+        },
+        "stage": "wait"
       },
       {
         "round": "36",
@@ -63,7 +64,8 @@
           "zh-TW": 0,
           "vi": 0,
           "es": 0
-        }
+        },
+        "stage": "wait"
       },
       {
         "round": "37",
@@ -77,7 +79,8 @@
           "zh-TW": 0,
           "vi": 0,
           "es": 0
-        }
+        },
+        "stage": "wait"
       },
       {
         "round": "41",
@@ -91,7 +94,8 @@
           "zh-TW": 0,
           "vi": 0,
           "es": 0
-        }
+        },
+        "stage": "wait"
       },
       {
         "round": "47",
@@ -105,7 +109,8 @@
           "zh-TW": 0,
           "vi": 0,
           "es": 0
-        }
+        },
+        "stage": "wait"
       },
       {
         "round": "52",
@@ -119,7 +124,8 @@
           "zh-TW": 0,
           "vi": 0,
           "es": 0
-        }
+        },
+        "stage": "wait"
       },
       {
         "round": "60",
@@ -133,7 +139,8 @@
           "zh-TW": 0,
           "vi": 0,
           "es": 0
-        }
+        },
+        "stage": "wait"
       },
       {
         "round": "64",
@@ -147,7 +154,8 @@
           "zh-TW": 0,
           "vi": 0,
           "es": 0
-        }
+        },
+        "stage": "wait"
       },
       {
         "round": "83",
@@ -161,7 +169,8 @@
           "zh-TW": 168,
           "vi": 168,
           "es": 168
-        }
+        },
+        "stage": "trans"
       },
       {
         "round": "91",
@@ -175,7 +184,8 @@
           "zh-TW": 168,
           "vi": 168,
           "es": 168
-        }
+        },
+        "stage": "trans"
       },
       {
         "round": "96",
@@ -189,7 +199,8 @@
           "zh-TW": 168,
           "vi": 168,
           "es": 168
-        }
+        },
+        "stage": "trans"
       },
       {
         "round": "102",
@@ -203,7 +214,8 @@
           "zh-TW": 170,
           "vi": 170,
           "es": 170
-        }
+        },
+        "stage": "trans"
       }
     ]
   },
@@ -222,75 +234,114 @@
         "level": "TOPIK I",
         "q": 70,
         "confirm": "Y",
-        "ko": 65
+        "ko": 65,
+        "stage": "ko"
       },
       {
         "title": "실전 모의고사 제1회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 50
+        "ko": 50,
+        "stage": "ko"
       },
       {
         "title": "실전 모의고사 제2회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 94
+        "ko": 94,
+        "stage": "ko"
       },
       {
         "title": "실전 모의고사 제2회(2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "Y",
-        "ko": 65
+        "ko": 65,
+        "stage": "ko"
       },
       {
         "title": "실전 모의고사 제3회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "Y",
-        "ko": 65
+        "ko": 65,
+        "stage": "ko"
       },
       {
         "title": "실전 모의고사 제3회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 94
+        "ko": 94,
+        "stage": "ko"
       },
       {
         "title": "실전 모의고사 제4회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "Y",
-        "ko": 66
+        "ko": 66,
+        "stage": "ko"
       },
       {
         "title": "실전 모의고사 제4회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 94
+        "ko": 94,
+        "stage": "ko"
       },
       {
         "title": "진단고사 제1회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "Y",
-        "ko": 65
+        "ko": 65,
+        "stage": "ko"
       },
       {
         "title": "진단고사 제1회(2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 94
+        "ko": 94,
+        "stage": "ko"
       }
     ],
     "round_q": 850,
     "round_ko": 752,
     "unlinked_q": 1670,
     "note": "ko 고아 251(DB에서 사라진 문항) · 회차 미연결 유효문항 1670(드래프트)"
+  },
+  "workload": {
+    "per_round_q": 170,
+    "ko_segments": 1416,
+    "words_per_lang": 12700,
+    "langs": 6,
+    "ko_cost_usd": 1.0,
+    "trans_segments": 8496,
+    "words_total": 76200,
+    "seg_per_q": 8.33,
+    "words_per_q_lang": 74.7
+  },
+  "units": {
+    "exam": {
+      "total": 12,
+      "wait": 8,
+      "ko": 0,
+      "trans": 4,
+      "done": 4,
+      "remaining": 8
+    },
+    "practice": {
+      "total": 10,
+      "wait": 0,
+      "ko": 10,
+      "trans": 0,
+      "done": 0,
+      "remaining": 10
+    }
   }
 }
