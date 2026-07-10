@@ -216,6 +216,6 @@ window.PROGRESS = {
     "ko_orphan": 251,
     "conf_covered": 833,
     "conf_uncovered": 107,
-    "note": "복합키(text+선택지) 대조 · ko 고아 251(DB에서 사라진 문항) · 확정 미커버 107"
+    "note": "ko 고아 251(DB에서 사라진 문항) · 확정 미커버 107(ko 생성 필요)"
   }
 };
