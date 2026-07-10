@@ -63,6 +63,7 @@
     </div>
     <div class="hint" style="margin-top:12px;color:var(--warn)" id="pnote"></div>
   </div>
+  <div class="card scroll" style="margin-top:14px"><table id="ptbl"><thead></thead><tbody></tbody></table></div>
 
   <footer>
     자동 산출: <code>progress.py</code> · 분모=DB 덤프(확정/전체) · 집계 수치만 공개(내용·프롬프트 비공개)<br>
@@ -105,6 +106,16 @@ function render(d){
   document.getElementById('pt').innerHTML=p.total_q.toLocaleString()+' <small>/ mock ko '+p.mock_ko.toLocaleString()+'</small>';
   document.getElementById('pth').textContent='mock ko 매칭 '+p.ko_matched.toLocaleString()+' · 고아 '+p.ko_orphan+'(DB에서 사라짐)';
   document.getElementById('pnote').textContent='복합키(text+선택지) 99% 유일 정밀대조 · '+p.note;
+
+  // 연습 회차별 표
+  document.querySelector('#ptbl thead').innerHTML='<tr><th class="l">연습 회차</th><th>레벨</th><th>확정</th><th>문항</th><th>ko</th><th>번역</th></tr>';
+  var prows=(p.rounds||[]).map(function(r){
+    var b=r.confirm==='Y'?'<span class="badge bY">확정</span>':'<span class="badge bN">'+(r.confirm==='부분'?'부분':'미확정')+'</span>';
+    return '<tr><td class="l">'+r.title+'</td><td>'+r.level+'</td><td>'+b+'</td><td class="q">'+r.q+'</td>'+cell(r.ko,r.q)+cell(0,r.q)+'</tr>';
+  }).join('');
+  prows+='<tr style="border-top:2px solid var(--line)"><td class="l" colspan="3"><b>회차 합계</b></td><td class="q">'+p.round_q+'</td>'+cell(p.round_ko,p.round_q)+cell(0,p.round_q)+'</tr>';
+  prows+='<tr><td class="l" colspan="3" style="color:var(--sub)">회차 미연결(드래프트·미확정)</td><td class="q">'+p.unlinked_q.toLocaleString()+'</td><td class="zero">–</td><td class="zero">–</td></tr>';
+  document.querySelector('#ptbl tbody').innerHTML=prows;
 }
 fetch('progress.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(render).catch(function(){ render(window.PROGRESS); });
 </script>

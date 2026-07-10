@@ -216,6 +216,81 @@ window.PROGRESS = {
     "ko_orphan": 251,
     "conf_covered": 833,
     "conf_uncovered": 107,
-    "note": "ko 고아 251(DB에서 사라진 문항) · 확정 미커버 107(ko 생성 필요)"
+    "rounds": [
+      {
+        "title": "실전 모의고사 제1회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "Y",
+        "ko": 65
+      },
+      {
+        "title": "실전 모의고사 제1회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "Y",
+        "ko": 50
+      },
+      {
+        "title": "실전 모의고사 제2회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "Y",
+        "ko": 94
+      },
+      {
+        "title": "실전 모의고사 제2회(2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "Y",
+        "ko": 65
+      },
+      {
+        "title": "실전 모의고사 제3회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "Y",
+        "ko": 65
+      },
+      {
+        "title": "실전 모의고사 제3회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "Y",
+        "ko": 94
+      },
+      {
+        "title": "실전 모의고사 제4회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "Y",
+        "ko": 66
+      },
+      {
+        "title": "실전 모의고사 제4회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "Y",
+        "ko": 94
+      },
+      {
+        "title": "진단고사 제1회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "Y",
+        "ko": 65
+      },
+      {
+        "title": "진단고사 제1회(2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "Y",
+        "ko": 94
+      }
+    ],
+    "round_q": 850,
+    "round_ko": 752,
+    "unlinked_q": 1670,
+    "note": "ko 고아 251(DB에서 사라진 문항) · 회차 미연결 유효문항 1670(드래프트)"
   }
 };
