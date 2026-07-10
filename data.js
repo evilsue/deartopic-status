@@ -1,40 +1,165 @@
 window.PROGRESS = {
   "updated": "2026-07-10",
   "engine": "v7.3",
-  "overall": {
-    "done": 674,
-    "total": 3103
-  },
-  "round": {
-    "done": 674,
-    "total": 674,
-    "label": "실기출 (round 83·91·96·102)"
-  },
-  "mock": {
-    "done": 0,
-    "total": 2429,
-    "label": "연습기출 (mock v6.20)",
-    "by_level": [
-      {
-        "level": "TOPIK I",
-        "domain": "듣기",
-        "count": 450
-      },
-      {
-        "level": "TOPIK I",
-        "domain": "읽기",
-        "count": 573
-      },
-      {
-        "level": "TOPIK II",
-        "domain": "듣기",
-        "count": 799
-      },
-      {
-        "level": "TOPIK II",
-        "domain": "읽기",
-        "count": 607
+  "goal_note": "전체 문항 × (ko + 6언어)",
+  "total_questions": 3103,
+  "languages": [
+    {
+      "code": "ko",
+      "done": 3103,
+      "total": 3103
+    },
+    {
+      "code": "en",
+      "done": 674,
+      "total": 3103
+    },
+    {
+      "code": "ja",
+      "done": 674,
+      "total": 3103
+    },
+    {
+      "code": "zh-CN",
+      "done": 674,
+      "total": 3103
+    },
+    {
+      "code": "zh-TW",
+      "done": 674,
+      "total": 3103
+    },
+    {
+      "code": "vi",
+      "done": 674,
+      "total": 3103
+    },
+    {
+      "code": "es",
+      "done": 674,
+      "total": 3103
+    }
+  ],
+  "segments": [
+    {
+      "corpus": "실기출",
+      "level": "TOPIK I",
+      "domain": "듣기",
+      "q": 120,
+      "ko": 120,
+      "langs": {
+        "en": 120,
+        "ja": 120,
+        "zh-CN": 120,
+        "zh-TW": 120,
+        "vi": 120,
+        "es": 120
       }
-    ]
-  }
+    },
+    {
+      "corpus": "실기출",
+      "level": "TOPIK I",
+      "domain": "읽기",
+      "q": 160,
+      "ko": 160,
+      "langs": {
+        "en": 160,
+        "ja": 160,
+        "zh-CN": 160,
+        "zh-TW": 160,
+        "vi": 160,
+        "es": 160
+      }
+    },
+    {
+      "corpus": "실기출",
+      "level": "TOPIK II",
+      "domain": "듣기",
+      "q": 200,
+      "ko": 200,
+      "langs": {
+        "en": 200,
+        "ja": 200,
+        "zh-CN": 200,
+        "zh-TW": 200,
+        "vi": 200,
+        "es": 200
+      }
+    },
+    {
+      "corpus": "실기출",
+      "level": "TOPIK II",
+      "domain": "읽기",
+      "q": 194,
+      "ko": 194,
+      "langs": {
+        "en": 194,
+        "ja": 194,
+        "zh-CN": 194,
+        "zh-TW": 194,
+        "vi": 194,
+        "es": 194
+      }
+    },
+    {
+      "corpus": "연습기출",
+      "level": "TOPIK I",
+      "domain": "듣기",
+      "q": 450,
+      "ko": 450,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      }
+    },
+    {
+      "corpus": "연습기출",
+      "level": "TOPIK II",
+      "domain": "읽기",
+      "q": 607,
+      "ko": 607,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      }
+    },
+    {
+      "corpus": "연습기출",
+      "level": "TOPIK II",
+      "domain": "듣기",
+      "q": 799,
+      "ko": 799,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      }
+    },
+    {
+      "corpus": "연습기출",
+      "level": "TOPIK I",
+      "domain": "읽기",
+      "q": 573,
+      "ko": 573,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      }
+    }
+  ]
 };
