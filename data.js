@@ -1,112 +1,54 @@
 window.PROGRESS = {
   "updated": "2026-07-10",
   "engine": "v7.3",
-  "goal_note": "전체 문항 × (ko + 6언어)",
-  "total_questions": 3103,
+  "baseline": "DB_0710 (2026-07-10 덤프)",
+  "goal_note": "전체 4,560문항(DB) × (ko + 6언어)",
+  "total_questions": 4560,
+  "exam_total": 2040,
+  "practice_total": 2520,
   "languages": [
     {
       "code": "ko",
       "done": 3103,
-      "total": 3103
+      "total": 4560
     },
     {
       "code": "en",
       "done": 674,
-      "total": 3103
+      "total": 4560
     },
     {
       "code": "ja",
       "done": 674,
-      "total": 3103
+      "total": 4560
     },
     {
       "code": "zh-CN",
       "done": 674,
-      "total": 3103
+      "total": 4560
     },
     {
       "code": "zh-TW",
       "done": 674,
-      "total": 3103
+      "total": 4560
     },
     {
       "code": "vi",
       "done": 674,
-      "total": 3103
+      "total": 4560
     },
     {
       "code": "es",
       "done": 674,
-      "total": 3103
+      "total": 4560
     }
   ],
   "segments": [
     {
-      "corpus": "실기출",
-      "level": "TOPIK I",
-      "domain": "듣기",
-      "q": 120,
-      "ko": 120,
-      "langs": {
-        "en": 120,
-        "ja": 120,
-        "zh-CN": 120,
-        "zh-TW": 120,
-        "vi": 120,
-        "es": 120
-      }
-    },
-    {
-      "corpus": "실기출",
-      "level": "TOPIK I",
-      "domain": "읽기",
-      "q": 160,
-      "ko": 160,
-      "langs": {
-        "en": 160,
-        "ja": 160,
-        "zh-CN": 160,
-        "zh-TW": 160,
-        "vi": 160,
-        "es": 160
-      }
-    },
-    {
-      "corpus": "실기출",
-      "level": "TOPIK II",
-      "domain": "듣기",
-      "q": 200,
-      "ko": 200,
-      "langs": {
-        "en": 200,
-        "ja": 200,
-        "zh-CN": 200,
-        "zh-TW": 200,
-        "vi": 200,
-        "es": 200
-      }
-    },
-    {
-      "corpus": "실기출",
-      "level": "TOPIK II",
-      "domain": "읽기",
-      "q": 194,
-      "ko": 194,
-      "langs": {
-        "en": 194,
-        "ja": 194,
-        "zh-CN": 194,
-        "zh-TW": 194,
-        "vi": 194,
-        "es": 194
-      }
-    },
-    {
-      "corpus": "연습기출",
-      "level": "TOPIK I",
-      "domain": "듣기",
-      "q": 450,
-      "ko": 450,
+      "corpus": "기출",
+      "label": "35회차",
+      "q": 170,
+      "ko": 0,
       "langs": {
         "en": 0,
         "ja": 0,
@@ -117,11 +59,10 @@ window.PROGRESS = {
       }
     },
     {
-      "corpus": "연습기출",
-      "level": "TOPIK II",
-      "domain": "읽기",
-      "q": 607,
-      "ko": 607,
+      "corpus": "기출",
+      "label": "36회차",
+      "q": 170,
+      "ko": 0,
       "langs": {
         "en": 0,
         "ja": 0,
@@ -132,11 +73,10 @@ window.PROGRESS = {
       }
     },
     {
-      "corpus": "연습기출",
-      "level": "TOPIK II",
-      "domain": "듣기",
-      "q": 799,
-      "ko": 799,
+      "corpus": "기출",
+      "label": "37회차",
+      "q": 170,
+      "ko": 0,
       "langs": {
         "en": 0,
         "ja": 0,
@@ -147,11 +87,10 @@ window.PROGRESS = {
       }
     },
     {
-      "corpus": "연습기출",
-      "level": "TOPIK I",
-      "domain": "읽기",
-      "q": 573,
-      "ko": 573,
+      "corpus": "기출",
+      "label": "41회차",
+      "q": 170,
+      "ko": 0,
       "langs": {
         "en": 0,
         "ja": 0,
@@ -160,6 +99,133 @@ window.PROGRESS = {
         "vi": 0,
         "es": 0
       }
+    },
+    {
+      "corpus": "기출",
+      "label": "47회차",
+      "q": 170,
+      "ko": 0,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      }
+    },
+    {
+      "corpus": "기출",
+      "label": "52회차",
+      "q": 170,
+      "ko": 0,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      }
+    },
+    {
+      "corpus": "기출",
+      "label": "60회차",
+      "q": 170,
+      "ko": 0,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      }
+    },
+    {
+      "corpus": "기출",
+      "label": "64회차",
+      "q": 170,
+      "ko": 0,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      }
+    },
+    {
+      "corpus": "기출",
+      "label": "83회차",
+      "q": 170,
+      "ko": 168,
+      "langs": {
+        "en": 168,
+        "ja": 168,
+        "zh-CN": 168,
+        "zh-TW": 168,
+        "vi": 168,
+        "es": 168
+      }
+    },
+    {
+      "corpus": "기출",
+      "label": "91회차",
+      "q": 170,
+      "ko": 168,
+      "langs": {
+        "en": 168,
+        "ja": 168,
+        "zh-CN": 168,
+        "zh-TW": 168,
+        "vi": 168,
+        "es": 168
+      }
+    },
+    {
+      "corpus": "기출",
+      "label": "96회차",
+      "q": 170,
+      "ko": 168,
+      "langs": {
+        "en": 168,
+        "ja": 168,
+        "zh-CN": 168,
+        "zh-TW": 168,
+        "vi": 168,
+        "es": 168
+      }
+    },
+    {
+      "corpus": "기출",
+      "label": "102회차",
+      "q": 170,
+      "ko": 170,
+      "langs": {
+        "en": 170,
+        "ja": 170,
+        "zh-CN": 170,
+        "zh-TW": 170,
+        "vi": 170,
+        "es": 170
+      }
+    },
+    {
+      "corpus": "연습",
+      "label": "연습/모의(전체)",
+      "q": 2520,
+      "ko": 2429,
+      "langs": {
+        "en": 0,
+        "ja": 0,
+        "zh-CN": 0,
+        "zh-TW": 0,
+        "vi": 0,
+        "es": 0
+      },
+      "note": "DB practice와 세트매핑 재확인 필요"
     }
   ]
 };

@@ -58,7 +58,8 @@
   <div class="card scroll"><table id="segtbl"><thead></thead><tbody></tbody></table></div>
 
   <footer>
-    자동 산출: <code>progress.py</code> · 커밋마다 갱신 · 집계 수치만 공개(내용·프롬프트 비공개)
+    자동 산출: <code>progress.py</code> · 분모=DB 덤프 baseline · 집계 수치만 공개(내용·프롬프트 비공개)<br>
+    <span style="color:var(--accent)">*</span> 연습 세트↔DB practice 매핑 재확인 필요 · DB feedback_json은 전수 재생성 대상(로컬 기준)
     <div id="err" style="color:#e0555f;margin-top:6px"></div>
   </footer>
 </div>
@@ -67,8 +68,8 @@
 function render(d){
   if(!d){ document.getElementById('err').textContent='데이터 로드 실패'; return; }
   const pct=(a,b)=> b? Math.round(1000*a/b)/10 : 0;
-  document.getElementById('meta').textContent='최종 갱신 '+(d.updated||'—')+' · engine '+(d.engine||'—')+' · 기준: 파일 스캔';
-  document.getElementById('goal').textContent='목표 = 전체 문항 '+d.total_questions.toLocaleString()+' × (ko + 6언어 번역)';
+  document.getElementById('meta').textContent='최종 갱신 '+(d.updated||'—')+' · engine '+(d.engine||'—')+' · 분모: '+(d.baseline||'DB');
+  document.getElementById('goal').textContent=(d.goal_note||('목표 = 전체 '+d.total_questions.toLocaleString()));
 
   // 언어별 바
   document.getElementById('langs').innerHTML = d.languages.map(L=>{
@@ -82,18 +83,18 @@ function render(d){
 
   // 세트별 표
   const langCodes = d.languages.filter(l=>l.code!=='ko').map(l=>l.code);
-  const thead='<tr><th class="l">코퍼스</th><th class="l">레벨</th><th class="l">영역</th><th>문항</th><th>ko</th>'
+  const thead='<tr><th class="l">코퍼스</th><th class="l">구분</th><th>문항</th><th>ko</th>'
     + langCodes.map(c=>'<th>'+c+'</th>').join('') + '</tr>';
   document.querySelector('#segtbl thead').innerHTML=thead;
   const cell=(v,q)=>{ const cls = v===0?'zero':(v>=q?'full':'part'); return '<td class="'+cls+'">'+(v===0?'–':v.toLocaleString())+'</td>'; };
   let rows='', totQ=0, totKo=0; const totL={}; langCodes.forEach(c=>totL[c]=0);
   d.segments.forEach(s=>{
     totQ+=s.q; totKo+=s.ko; langCodes.forEach(c=>totL[c]+=s.langs[c]||0);
-    rows+='<tr class="sub"><td class="l">'+s.corpus+'</td><td class="l">'+s.level+'</td><td class="l">'+s.domain+'</td>'
+    rows+='<tr class="sub"><td class="l">'+s.corpus+'</td><td class="l">'+s.label+(s.note?' <span title="'+s.note+'" style="color:var(--accent)">*</span>':'')+'</td>'
       +'<td class="q">'+s.q.toLocaleString()+'</td>'+cell(s.ko,s.q)
       + langCodes.map(c=>cell(s.langs[c]||0,s.q)).join('') + '</tr>';
   });
-  rows+='<tr style="border-top:2px solid var(--line)"><td class="l" colspan="3"><b>합계</b></td>'
+  rows+='<tr style="border-top:2px solid var(--line)"><td class="l" colspan="2"><b>합계</b></td>'
     +'<td class="q">'+totQ.toLocaleString()+'</td>'+cell(totKo,totQ)
     + langCodes.map(c=>cell(totL[c],totQ)).join('')+'</tr>';
   document.querySelector('#segtbl tbody').innerHTML=rows;
