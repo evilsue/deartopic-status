@@ -3,121 +3,311 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DearTOPIK 다국어 피드백 진척</title>
+<title>DearTOPIK 다국어화 진척 대시보드</title>
 <style>
-  :root{ --bg:#0f1420; --card:#182031; --line:#28324a; --tx:#e8edf6; --sub:#93a1bd;
-         --accent:#4f8cff; --ok:#2fd18a; --warn:#f0b73f; --gray:#59657f; --muted:#3a465f; }
-  @media (prefers-color-scheme: light){
-    :root{ --bg:#f4f6fb; --card:#fff; --line:#e3e8f2; --tx:#1b2436; --sub:#5d6b86;
-           --accent:#2e5cff; --ok:#0f9d63; --warn:#b7791f; --gray:#8a95ad; --muted:#cbd3e2; }
+  :root{
+    --paper:#f5f7f9; --card:#ffffff; --card2:#fbfcfd;
+    --ink:#161b22; --muted:#5d6775; --faint:#8a94a2;
+    --line:#e4e8ee; --line2:#eef1f5;
+    --fb:#3352d8; --fb-soft:#eaeeff;
+    --tr:#0c8f8a; --tr-soft:#e2f4f2;
+    --good:#1f9d57; --good-soft:#e6f5ec;
+    --warn:#bb7d0c; --warn-soft:#fbf1dd;
+    --crit:#d1495b; --crit-soft:#fbe8ea;
+    --shadow:0 1px 2px rgba(20,30,50,.05),0 4px 16px rgba(20,30,50,.05);
   }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  body{ background:var(--bg); color:var(--tx); font-family:-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif; padding:26px 16px; line-height:1.5; }
-  .wrap{ max-width:840px; margin:0 auto; }
-  h1{ font-size:20px; font-weight:800; letter-spacing:-.02em; }
-  h2{ font-size:14px; font-weight:700; margin:22px 0 10px; }
-  .meta{ color:var(--sub); font-size:12.5px; margin-top:4px; }
-  .card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
-  .tiles{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  @media(max-width:560px){ .tiles{ grid-template-columns:1fr; } }
-  .tile .t{ font-size:12.5px; color:var(--sub); }
-  .tile .n{ font-size:24px; font-weight:800; margin-top:3px; }
-  .tile .n small{ font-size:14px; color:var(--sub); font-weight:600; }
-  .bar{ height:9px; background:var(--muted); border-radius:99px; overflow:hidden; margin-top:9px; }
-  .bar > i{ display:block; height:100%; border-radius:99px; }
-  .hint{ font-size:12px; color:var(--sub); margin-top:9px; }
-  .scroll{ overflow-x:auto; border-radius:12px; }
-  table{ width:100%; border-collapse:collapse; font-size:12.5px; min-width:640px; }
-  th,td{ padding:7px 8px; border-bottom:1px solid var(--line); text-align:center; white-space:nowrap; }
-  th{ color:var(--sub); font-weight:600; } td.l,th.l{ text-align:left; }
-  td.q{ font-weight:700; font-variant-numeric:tabular-nums; }
-  .full{ color:var(--ok); font-weight:700; } .zero{ color:var(--gray); } .part{ color:var(--accent); font-weight:700; }
-  .badge{ font-size:10.5px; padding:1px 7px; border-radius:99px; font-weight:700; }
-  .bY{ background:rgba(47,209,138,.16); color:var(--ok); } .bN{ background:rgba(89,101,127,.2); color:var(--sub); }
-  footer{ color:var(--sub); font-size:12px; margin-top:22px; text-align:center; }
-  #err{ color:#e0555f; margin-top:6px; }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#0d1016; --card:#161b22; --card2:#1b212a;
+      --ink:#e9edf2; --muted:#98a2b0; --faint:#6c7684;
+      --line:#252c37; --line2:#20262f;
+      --fb:#7d95ff; --fb-soft:#1c2340; --tr:#33c2bc; --tr-soft:#0f2e2c;
+      --good:#3ec27d; --good-soft:#123324; --warn:#dfa63c; --warn-soft:#332812;
+      --crit:#f2647a; --crit-soft:#361d22;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.28);
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,
+      'Segoe UI','Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+    line-height:1.5; -webkit-font-smoothing:antialiased; font-feature-settings:"tnum";
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding:30px 22px 64px}
+  .num{font-variant-numeric:tabular-nums lining-nums}
+
+  header.top{display:flex; flex-wrap:wrap; gap:16px 28px; align-items:flex-end;
+    justify-content:space-between; padding-bottom:20px; border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--fb); font-weight:700; margin-bottom:7px}
+  h1{font-size:25px; line-height:1.15; font-weight:800; letter-spacing:-.01em}
+  .meta{font-size:12.5px; color:var(--muted); margin-top:6px}
+  .chips{display:flex; gap:7px; flex-wrap:wrap; justify-content:flex-end}
+  .chip{font-size:11.5px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap}
+  .chip.eng{background:var(--fb-soft); color:var(--fb)}
+  .chip.date{background:var(--card2); color:var(--muted); border:1px solid var(--line)}
+
+  .kpis{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:22px 0 8px}
+  .kpi{background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:16px 16px 14px; box-shadow:var(--shadow); position:relative; overflow:hidden}
+  .kpi::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px}
+  .kpi.fb::before{background:var(--fb)} .kpi.tr::before{background:var(--tr)} .kpi.all::before{background:var(--muted)}
+  .kpi .label{font-size:12px; color:var(--muted); font-weight:600; display:flex; gap:7px; align-items:center; flex-wrap:wrap}
+  .track{font-size:10px; font-weight:700; letter-spacing:.05em; padding:1px 6px; border-radius:5px; text-transform:uppercase}
+  .t-fb{background:var(--fb-soft); color:var(--fb)} .t-tr{background:var(--tr-soft); color:var(--tr)}
+  .t-all{background:var(--card2); color:var(--faint); border:1px solid var(--line)}
+  .kpi .big{font-size:30px; font-weight:800; letter-spacing:-.02em; margin:8px 0 2px; line-height:1}
+  .kpi .big small{font-size:15px; color:var(--muted); font-weight:600}
+  .kpi .sub{font-size:12px; color:var(--muted)}
+  .bar{height:7px; border-radius:99px; background:var(--line2); overflow:hidden; margin-top:11px}
+  .bar > i{display:block; height:100%; border-radius:99px; width:0; transition:width .6s ease}
+  .bar.fb > i{background:var(--fb)} .bar.tr > i{background:var(--tr)} .bar.all > i{background:var(--muted)}
+  .denomnote{font-size:11.5px; color:var(--faint); margin:10px 2px 0}
+
+  section{margin-top:30px}
+  .sechead{display:flex; align-items:baseline; gap:12px; margin-bottom:13px}
+  .sechead h2{font-size:17px; font-weight:800; letter-spacing:-.01em}
+  .sechead .k{font-size:12px; color:var(--faint); font-weight:600}
+  .sechead .rule{flex:1; height:1px; background:var(--line)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:17px; box-shadow:var(--shadow)}
+  .card h3{font-size:14px; font-weight:800; margin-bottom:3px; display:flex; align-items:center; gap:8px}
+  .card .cnote{font-size:12px; color:var(--muted); margin-bottom:12px}
+  .dot{width:9px; height:9px; border-radius:3px; display:inline-block}
+  .dot.fb{background:var(--fb)} .dot.tr{background:var(--tr)}
+
+  .stat{display:flex; justify-content:space-between; align-items:baseline; padding:9px 0; border-top:1px solid var(--line2); font-size:13px}
+  .stat:first-of-type{border-top:0}
+  .stat .kk{color:var(--muted)}
+  .stat .v{font-weight:800; font-size:15px}
+  .stat .v small{font-weight:600; color:var(--muted); font-size:12px}
+
+  .pill{display:inline-flex; align-items:center; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px}
+  .p-good{background:var(--good-soft); color:var(--good)}
+  .p-warn{background:var(--warn-soft); color:var(--warn)}
+  .p-crit{background:var(--crit-soft); color:var(--crit)}
+  .p-idle{background:var(--card2); color:var(--faint); border:1px solid var(--line)}
+
+  .langs{display:flex; flex-wrap:wrap; gap:7px; margin-top:4px}
+  .lang{display:flex; gap:6px; font-size:12px; font-weight:600; background:var(--tr-soft); color:var(--tr); padding:4px 10px; border-radius:8px}
+  .lang b{font-weight:800}
+
+  .twrap{overflow-x:auto}
+  table{border-collapse:collapse; width:100%; font-size:12.5px; min-width:0}
+  th,td{padding:7px 9px; text-align:right; white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  thead th{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--faint); font-weight:700; border-bottom:1px solid var(--line)}
+  tbody td{border-bottom:1px solid var(--line2)}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr.idle td{color:var(--faint)}
+  tbody tr.sum td{font-weight:800}
+  .cov{display:inline-flex; align-items:center; gap:7px; justify-content:flex-end}
+  .minibar{width:50px; height:6px; border-radius:99px; background:var(--line2); overflow:hidden; flex:none}
+  .minibar > i{display:block; height:100%; border-radius:99px}
+  .frac{font-weight:700}
+  .full{color:var(--good); font-weight:700} .part{color:var(--fb); font-weight:700} .zero{color:var(--faint)}
+
+  .flow{display:flex; flex-wrap:wrap; gap:8px; align-items:stretch}
+  .step{flex:1; min-width:120px; background:var(--card2); border:1px solid var(--line); border-radius:11px; padding:11px 12px}
+  .step .n{font-size:10.5px; font-weight:700; color:var(--faint); letter-spacing:.05em}
+  .step .t{font-size:13px; font-weight:700; margin-top:3px}
+  .step .d{font-size:11.5px; color:var(--muted); margin-top:2px}
+  .arrow{align-self:center; color:var(--faint); font-size:15px; flex:none}
+
+  footer{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); font-size:11.5px; color:var(--faint); text-align:center; line-height:1.7}
+  footer code{font-size:11px}
+  #err{color:var(--crit); margin-top:6px}
+
+  @media (max-width:800px){
+    .kpis{grid-template-columns:1fr} .grid2{grid-template-columns:1fr}
+    header.top{align-items:flex-start} .chips{justify-content:flex-start}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>DearTOPIK 다국어 피드백 진척</h1>
-  <div class="meta" id="meta">불러오는 중…</div>
 
-  <h2>기출 (실기출)</h2>
-  <div class="tiles">
-    <div class="card tile"><div class="t">확정분 번역 (confirm=Y)</div>
-      <div class="n"><span id="ec">–</span></div><div class="bar"><i id="ecb" style="background:var(--ok);width:0"></i></div>
-      <div class="hint" id="ech"></div></div>
-    <div class="card tile"><div class="t">전체 번역 (12회차)</div>
-      <div class="n"><span id="et">–</span></div><div class="bar"><i id="etb" style="background:var(--accent);width:0"></i></div>
-      <div class="hint" id="eth"></div></div>
-  </div>
-  <div class="card scroll" style="margin-top:14px"><table id="rtbl"><thead></thead><tbody></tbody></table></div>
-
-  <h2>연습/모의</h2>
-  <div class="card">
-    <div class="tiles">
-      <div class="tile"><div class="t">확정 ko 커버 (confirm=Y)</div><div class="n" id="pk">–</div>
-        <div class="bar"><i id="pkb" style="background:var(--ok);width:0"></i></div><div class="hint" id="pkh"></div></div>
-      <div class="tile"><div class="t">DB 전체 / mock ko</div><div class="n" id="pt">–</div><div class="hint" id="pth"></div></div>
+  <header class="top">
+    <div>
+      <div class="eyebrow">DearTOPIK · Localization</div>
+      <h1>TOPIK 피드백 다국어화 진척</h1>
+      <div class="meta" id="meta">불러오는 중…</div>
     </div>
-    <div class="hint" style="margin-top:12px;color:var(--warn)" id="pnote"></div>
+    <div class="chips" id="chips"></div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi fb">
+      <div class="label">확정 <b style="color:var(--fb)">ko 피드백</b> 커버 <span class="track t-fb">생성</span></div>
+      <div class="big num" id="k1">–</div><div class="sub" id="k1s"></div>
+      <div class="bar fb"><i id="k1b"></i></div>
+    </div>
+    <div class="kpi tr">
+      <div class="label">확정 <b style="color:var(--tr)">번역</b> 완료 <span class="track t-tr">6언어</span></div>
+      <div class="big num" id="k2">–</div><div class="sub" id="k2s"></div>
+      <div class="bar tr"><i id="k2b"></i></div>
+    </div>
+    <div class="kpi all">
+      <div class="label">전체 로드맵 번역 <span class="track t-all" id="k3t">DB</span></div>
+      <div class="big num" id="k3">–</div><div class="sub" id="k3s"></div>
+      <div class="bar all"><i id="k3b"></i></div>
+    </div>
   </div>
-  <div class="card scroll" style="margin-top:14px"><table id="ptbl"><thead></thead><tbody></tbody></table></div>
+  <p class="denomnote" id="denomnote"></p>
+
+  <section>
+    <div class="sechead"><h2>기출 (Exam)</h2><span class="k" id="examk"></span><span class="rule"></span></div>
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="dot fb"></span> 진척 요약</h3>
+        <p class="cnote">확정 회차는 ko 생성 + 6언어 번역까지 완결. 미확정 회차는 콘텐츠 확정 대기.</p>
+        <div class="stat"><span class="kk">확정분 번역 완료</span><span class="v num" id="e_conf"></span></div>
+        <div class="stat"><span class="kk">전체 대비</span><span class="v num" id="e_total"></span></div>
+        <div class="stat"><span class="kk">미확정 회차 대기</span><span class="v num" id="e_wait"></span></div>
+        <div style="margin-top:13px">
+          <div style="font-size:11.5px;color:var(--muted);font-weight:600;margin-bottom:6px" id="e_langlabel"></div>
+          <div class="langs" id="e_langs"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>회차별 확정·커버</h3>
+        <p class="cnote">confirm = DB 확정 여부 · ko = 재생성 피드백 커버.</p>
+        <div class="twrap"><table id="etbl"><thead></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>연습 (Practice)</h2><span class="k" id="prack"></span><span class="rule"></span></div>
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="dot fb"></span> 대조·커버 팩트</h3>
+        <p class="cnote">복합키(text+선택지, 99% 유일)로 mock ko ↔ DB 정밀 매핑.</p>
+        <div class="stat"><span class="kk">mock ko 총량</span><span class="v num" id="p_mock"></span></div>
+        <div class="stat"><span class="kk">DB 매칭</span><span class="v num" id="p_match"></span></div>
+        <div class="stat"><span class="kk">확정 커버</span><span class="v num" id="p_cov"></span></div>
+        <div class="stat"><span class="kk">확정 미커버 (ko 생성 필요)</span><span class="v num" id="p_unc"></span></div>
+        <div class="stat"><span class="kk">mock ko 고아</span><span class="v num" id="p_orph"></span></div>
+        <div class="stat"><span class="kk">번역 진척</span><span class="v num" id="p_tr"></span></div>
+      </div>
+      <div class="card">
+        <h3>회차별 ko 커버 <span style="font-size:11px;font-weight:600;color:var(--faint)" id="p_roundq"></span></h3>
+        <p class="cnote">실전모의·진단고사 × 레벨. 나머지는 회차 미연결 드래프트.</p>
+        <div class="twrap"><table id="ptbl"><thead></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sechead"><h2>파이프라인</h2><span class="k">DB → 생성 → 번역 → TMS → 발행</span><span class="rule"></span></div>
+    <div class="card">
+      <div class="flow">
+        <div class="step"><div class="n">01 입력</div><div class="t">DB 덤프 baseline</div><div class="d">confirm 반영 분모</div></div>
+        <span class="arrow">→</span>
+        <div class="step"><div class="n">02 생성</div><div class="t">ko 피드백</div><div class="d">기출·모의 배치 생성</div></div>
+        <span class="arrow">→</span>
+        <div class="step"><div class="n">03 번역</div><div class="t">6언어 초벌</div><div class="d">세그먼트 마스킹 MT</div></div>
+        <span class="arrow">→</span>
+        <div class="step"><div class="n">04 TMS</div><div class="t">Weblate 검수</div><div class="d">글로서리 7언어</div></div>
+        <span class="arrow">→</span>
+        <div class="step"><div class="n">05 발행</div><div class="t">조립·DB 업로드</div><div class="d">라벨·②desc 주입</div></div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    자동 산출: <code>progress.py</code> · 분모=DB 덤프(확정/전체) · 집계 수치만 공개(내용·프롬프트 비공개)<br>
+    자동 산출 <code>progress.py</code> · 분모 = DB 덤프(확정/전체) · <b>집계 수치만 공개</b>(내용·프롬프트·내부경로 비공개)<br>
     DB feedback_json은 전수 재생성 대상 → 진척은 로컬 재생성 기준
     <div id="err"></div>
   </footer>
 </div>
+
 <script src="data.js"></script>
 <script>
 function pct(a,b){ return b? Math.round(1000*a/b)/10 : 0; }
+function fmt(n){ return (n||0).toLocaleString(); }
+function cell(v,q){ var c=v===0?'zero':(v>=q?'full':'part'); return '<td class="'+c+'">'+(v===0?'–':fmt(v))+'</td>'; }
+function covcell(v,q,color){ var w=q?Math.round(100*v/q):0;
+  return '<td><div class="cov"><span class="frac num">'+fmt(v)+'</span><span class="minibar"><i style="width:'+w+'%;background:'+color+'"></i></span></div></td>'; }
+
 function render(d){
   if(!d){ document.getElementById('err').textContent='데이터 로드 실패'; return; }
-  document.getElementById('meta').textContent='최종 갱신 '+(d.updated||'—')+' · engine '+(d.engine||'—')
-    +' · 분모: 확정 '+d.denom.confirmed.toLocaleString()+' / 전체 '+d.denom.total.toLocaleString()+' · '+(d.baseline||'');
-  var e=d.exam, p=d.practice;
-  var ecDone=e.done_confirmed.en, etDone=e.done_total.en;  // 기출 ko=langs 동일
-  document.getElementById('ec').innerHTML=ecDone.toLocaleString()+' <small>/ '+e.confirmed_q.toLocaleString()+' · '+pct(ecDone,e.confirmed_q)+'%</small>';
-  document.getElementById('ecb').style.width=pct(ecDone,e.confirmed_q)+'%';
-  document.getElementById('ech').textContent='확정 회차(83·91·96·102) 6언어 번역';
-  document.getElementById('et').innerHTML=etDone.toLocaleString()+' <small>/ '+e.total_q.toLocaleString()+' · '+pct(etDone,e.total_q)+'%</small>';
-  document.getElementById('etb').style.width=pct(etDone,e.total_q)+'%';
-  document.getElementById('eth').textContent='미확정 8회차(1,360)는 콘텐츠 확정 대기';
+  var e=d.exam, p=d.practice, conf=d.denom.confirmed, tot=d.denom.total;
 
-  // 회차 표
-  var codes=d.lang_codes;
-  document.querySelector('#rtbl thead').innerHTML='<tr><th class="l">회차</th><th>확정</th><th>문항</th>'
-    +'<th>ko</th>'+codes.slice(1).map(function(c){return '<th>'+c+'</th>';}).join('')+'</tr>';
-  function cell(v,q){ var cls=v===0?'zero':(v>=q?'full':'part'); return '<td class="'+cls+'">'+(v===0?'–':v.toLocaleString())+'</td>'; }
-  document.querySelector('#rtbl tbody').innerHTML=e.rounds.map(function(r){
-    var badge=r.confirm==='Y'?'<span class="badge bY">확정</span>':'<span class="badge bN">미확정</span>';
-    return '<tr><td class="l">'+r.round+'회차</td><td>'+badge+'</td><td class="q">'+r.q+'</td>'
-      +cell(r.ko,r.q)+codes.slice(1).map(function(c){return cell(r.langs[c]||0,r.q);}).join('')+'</tr>';
+  document.getElementById('meta').textContent='최종 갱신 '+(d.updated||'—')
+    +' · 분모: 확정 '+fmt(conf)+' / 전체 '+fmt(tot)+' · '+(d.baseline||'');
+  document.getElementById('chips').innerHTML=
+    '<span class="chip eng">엔진 '+(d.engine||'—')+'</span>'
+    +'<span class="chip date">'+(d.baseline||'').split(' ')[0]+'</span>';
+
+  // ---- KPI (파생: 확정 커버/번역, 전체 번역) ----
+  var exKo=e.done_confirmed.ko, exTr=e.done_confirmed.en;      // 기출: ko=번역 동일
+  var pTr=p.conf_translated||0;                                // 연습 번역(현재 0)
+  var koCov=exKo+p.conf_covered, trDone=exTr+pTr;
+  document.getElementById('k1').innerHTML=fmt(koCov)+' <small>/ '+fmt(conf)+'</small>';
+  document.getElementById('k1s').innerHTML='확정 분모 · <b>'+pct(koCov,conf)+'%</b> (기출 '+fmt(exKo)+' + 연습 '+fmt(p.conf_covered)+')';
+  document.getElementById('k1b').style.width=pct(koCov,conf)+'%';
+  document.getElementById('k2').innerHTML=fmt(trDone)+' <small>/ '+fmt(conf)+'</small>';
+  document.getElementById('k2s').innerHTML='확정 분모 · <b>'+pct(trDone,conf)+'%</b> (기출 완료 · 연습 대기)';
+  document.getElementById('k2b').style.width=pct(trDone,conf)+'%';
+  document.getElementById('k3').innerHTML=fmt(e.done_total.en)+' <small>/ '+fmt(tot)+'</small>';
+  document.getElementById('k3s').innerHTML='confirm 무관 전량 · <b>'+pct(e.done_total.en,tot)+'%</b>';
+  document.getElementById('k3b').style.width=pct(e.done_total.en,tot)+'%';
+  document.getElementById('k3t').textContent='DB '+fmt(tot);
+  document.getElementById('denomnote').innerHTML='분모 = DB 덤프 <b>confirm-aware</b>: 확정 '+fmt(conf)
+    +'(기출 '+fmt(e.confirmed_q)+' + 연습 '+fmt(p.confirmed_q)+') / 전체 '+fmt(tot)
+    +'. 분자 = 로컬 재생성분(DB feedback_json은 전수 재생성 대상이라 미집계).';
+
+  // ---- 기출 ----
+  document.getElementById('examk').textContent='확정 '+fmt(e.confirmed_q)+' / 전체 '+fmt(e.total_q)+' · '+e.rounds.length+'회차';
+  document.getElementById('e_conf').innerHTML=fmt(exTr)+' <small>/ '+fmt(e.confirmed_q)+' · '+pct(exTr,e.confirmed_q)+'%</small> <span class="pill p-good">완료</span>';
+  document.getElementById('e_total').innerHTML=fmt(e.done_total.en)+' <small>/ '+fmt(e.total_q)+' · '+pct(e.done_total.en,e.total_q)+'%</small>';
+  var waitQ=e.total_q-e.confirmed_q;
+  document.getElementById('e_wait').innerHTML=fmt(waitQ)+' <small>문항</small> <span class="pill p-warn">확정 대기</span>';
+  document.getElementById('e_langlabel').textContent='확정 '+fmt(exTr)+'문항 × 언어별 완료';
+  document.getElementById('e_langs').innerHTML=d.lang_codes.map(function(c){
+    return '<span class="lang"><b>'+c+'</b> '+fmt(e.done_confirmed[c]!==undefined?e.done_confirmed[c]:exTr)+'</span>'; }).join('');
+  // 기출 회차표 (미확정은 묶어서)
+  var head='<tr><th>회차</th><th>확정</th><th>문항</th><th>ko 커버</th></tr>';
+  document.querySelector('#etbl thead').innerHTML=head;
+  var body='', unc=[];
+  e.rounds.forEach(function(r){
+    if(r.confirm==='Y'){
+      body+='<tr><td>'+r.round+'</td><td><span class="pill p-good">Y</span></td><td class="num">'+r.q+'</td>'
+        +covcell(r.ko,r.q,'var(--fb)')+'</tr>';
+    } else { unc.push(r); }
+  });
+  if(unc.length){
+    var uq=unc.reduce(function(s,r){return s+r.q;},0);
+    var names=unc.map(function(r){return r.round;}).join('·');
+    body+='<tr class="idle"><td>'+names+'</td><td><span class="pill p-idle">N</span></td><td class="num">'+fmt(uq)+'</td><td><span class="pill p-idle">미착수</span></td></tr>';
+  }
+  document.querySelector('#etbl tbody').innerHTML=body;
+
+  // ---- 연습 ----
+  document.getElementById('prack').textContent='확정 '+fmt(p.confirmed_q)+' / 전체 '+fmt(p.total_q)+' · 복합키 정밀대조';
+  document.getElementById('p_mock').innerHTML=fmt(p.mock_ko)+' <span class="pill p-good">번역 준비완료</span>';
+  document.getElementById('p_match').innerHTML=fmt(p.ko_matched)+' <small>/ '+fmt(p.mock_ko)+'</small>';
+  document.getElementById('p_cov').innerHTML=fmt(p.conf_covered)+' <small>/ '+fmt(p.confirmed_q)+' · '+pct(p.conf_covered,p.confirmed_q)+'%</small> <span class="pill p-warn">부분</span>';
+  document.getElementById('p_unc').innerHTML=fmt(p.conf_uncovered)+' <span class="pill p-warn">TODO</span>';
+  document.getElementById('p_orph').innerHTML=fmt(p.ko_orphan)+' <span class="pill p-idle">정리 대상</span>';
+  document.getElementById('p_tr').innerHTML=fmt(pTr)+' <small>/ '+fmt(p.confirmed_q)+'</small> <span class="pill p-crit">미착수</span>';
+  document.getElementById('p_roundq').textContent='(연결 '+fmt(p.round_q)+'문항)';
+  document.querySelector('#ptbl thead').innerHTML='<tr><th>세트</th><th>레벨</th><th>문항</th><th>ko 커버</th></tr>';
+  var pbody=(p.rounds||[]).map(function(r){
+    var lv=r.level.replace('TOPIK ','');
+    var short=r.title.replace(/\s*\(2026\)\s*/,'').replace('실전 모의고사','실전모의').replace(/제(\d)회/,'$1회');
+    var low=r.q&&(r.ko/r.q)<0.6;
+    return '<tr><td>'+short+'</td><td>'+lv+'</td><td class="num">'+r.q+'</td>'
+      +covcell(r.ko,r.q, low?'var(--crit)':'var(--good)')+'</tr>';
   }).join('');
-
-  // 연습 (복합키 정밀대조 반영)
-  var cov=p.conf_covered, ct=p.confirmed_q;
-  document.getElementById('pk').innerHTML=cov.toLocaleString()+' <small>/ '+ct.toLocaleString()+' · '+pct(cov,ct)+'%</small>';
-  document.getElementById('pkb').style.width=pct(cov,ct)+'%';
-  document.getElementById('pkh').textContent='확정 미커버 '+p.conf_uncovered+' (ko 생성 필요) · 번역 0';
-  document.getElementById('pt').innerHTML=p.total_q.toLocaleString()+' <small>/ mock ko '+p.mock_ko.toLocaleString()+'</small>';
-  document.getElementById('pth').textContent='mock ko 매칭 '+p.ko_matched.toLocaleString()+' · 고아 '+p.ko_orphan+'(DB에서 사라짐)';
-  document.getElementById('pnote').textContent='복합키(text+선택지) 99% 유일 정밀대조 · '+p.note;
-
-  // 연습 회차별 표
-  document.querySelector('#ptbl thead').innerHTML='<tr><th class="l">연습 회차</th><th>레벨</th><th>확정</th><th>문항</th><th>ko</th><th>번역</th></tr>';
-  var prows=(p.rounds||[]).map(function(r){
-    var b=r.confirm==='Y'?'<span class="badge bY">확정</span>':'<span class="badge bN">'+(r.confirm==='부분'?'부분':'미확정')+'</span>';
-    return '<tr><td class="l">'+r.title+'</td><td>'+r.level+'</td><td>'+b+'</td><td class="q">'+r.q+'</td>'+cell(r.ko,r.q)+cell(0,r.q)+'</tr>';
-  }).join('');
-  prows+='<tr style="border-top:2px solid var(--line)"><td class="l" colspan="3"><b>회차 합계</b></td><td class="q">'+p.round_q+'</td>'+cell(p.round_ko,p.round_q)+cell(0,p.round_q)+'</tr>';
-  prows+='<tr><td class="l" colspan="3" style="color:var(--sub)">회차 미연결(드래프트·미확정)</td><td class="q">'+p.unlinked_q.toLocaleString()+'</td><td class="zero">–</td><td class="zero">–</td></tr>';
-  document.querySelector('#ptbl tbody').innerHTML=prows;
+  pbody+='<tr class="sum"><td>합계</td><td></td><td class="num">'+fmt(p.round_q)+'</td>'+covcell(p.round_ko,p.round_q,'var(--fb)')+'</tr>';
+  document.querySelector('#ptbl tbody').innerHTML=pbody;
 }
-fetch('progress.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(render).catch(function(){ render(window.PROGRESS); });
+fetch('progress.json?t='+Date.now(),{cache:'no-store'})
+  .then(function(r){return r.json();}).then(render)
+  .catch(function(){ render(window.PROGRESS); });
 </script>
 </body>
 </html>
