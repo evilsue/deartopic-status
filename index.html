@@ -57,9 +57,9 @@
   <h2>연습/모의</h2>
   <div class="card">
     <div class="tiles">
-      <div class="tile"><div class="t">DB 전체 문항</div><div class="n" id="pt">–</div><div class="hint" id="pth"></div></div>
-      <div class="tile"><div class="t">한국어 피드백(mock ko)</div><div class="n" id="pk">–</div>
-        <div class="hint" id="pkh"></div></div>
+      <div class="tile"><div class="t">확정 ko 커버 (confirm=Y)</div><div class="n" id="pk">–</div>
+        <div class="bar"><i id="pkb" style="background:var(--ok);width:0"></i></div><div class="hint" id="pkh"></div></div>
+      <div class="tile"><div class="t">DB 전체 / mock ko</div><div class="n" id="pt">–</div><div class="hint" id="pth"></div></div>
     </div>
     <div class="hint" style="margin-top:12px;color:var(--warn)" id="pnote"></div>
   </div>
@@ -97,12 +97,14 @@ function render(d){
       +cell(r.ko,r.q)+codes.slice(1).map(function(c){return cell(r.langs[c]||0,r.q);}).join('')+'</tr>';
   }).join('');
 
-  // 연습
-  document.getElementById('pt').innerHTML=p.total_q.toLocaleString();
-  document.getElementById('pth').textContent='확정 '+p.confirmed_q.toLocaleString()+' · 미확정 '+p.unconfirmed_q.toLocaleString();
-  document.getElementById('pk').innerHTML=p.mock_ko.toLocaleString()+' <small>생성 · 번역 0</small>';
-  document.getElementById('pkh').textContent='번역 미착수';
-  document.getElementById('pnote').textContent='⚠ '+p.note;
+  // 연습 (복합키 정밀대조 반영)
+  var cov=p.conf_covered, ct=p.confirmed_q;
+  document.getElementById('pk').innerHTML=cov.toLocaleString()+' <small>/ '+ct.toLocaleString()+' · '+pct(cov,ct)+'%</small>';
+  document.getElementById('pkb').style.width=pct(cov,ct)+'%';
+  document.getElementById('pkh').textContent='확정 미커버 '+p.conf_uncovered+' (ko 생성 필요) · 번역 0';
+  document.getElementById('pt').innerHTML=p.total_q.toLocaleString()+' <small>/ mock ko '+p.mock_ko.toLocaleString()+'</small>';
+  document.getElementById('pth').textContent='mock ko 매칭 '+p.ko_matched.toLocaleString()+' · 고아 '+p.ko_orphan+'(DB에서 사라짐)';
+  document.getElementById('pnote').textContent='복합키(text+선택지) 99% 유일 정밀대조 · '+p.note;
 }
 fetch('progress.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(render).catch(function(){ render(window.PROGRESS); });
 </script>

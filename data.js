@@ -212,6 +212,10 @@ window.PROGRESS = {
     "confirmed_q": 940,
     "unconfirmed_q": 1580,
     "mock_ko": 2429,
-    "note": "mock ko ↔ DB practice 세트매핑 재확인 필요 → 확정별 진척 보류"
+    "ko_matched": 2178,
+    "ko_orphan": 251,
+    "conf_covered": 833,
+    "conf_uncovered": 107,
+    "note": "복합키(text+선택지) 대조 · ko 고아 251(DB에서 사라진 문항) · 확정 미커버 107"
   }
 };
