@@ -1,6 +1,6 @@
 {
   "updated": "",
-  "engine": "v7.3",
+  "engine": "v7.4",
   "baseline": "DB_0710 (2026-07-10 덤프)",
   "lang_codes": [
     "ko",
@@ -28,12 +28,12 @@
       "es": 674
     },
     "done_total": {
-      "ko": 674,
-      "en": 674,
-      "ja": 674,
+      "ko": 2016,
+      "en": 2013,
+      "ja": 2013,
       "zh-CN": 674,
       "zh-TW": 674,
-      "vi": 674,
+      "vi": 2013,
       "es": 674
     },
     "rounds": [
@@ -41,121 +41,121 @@
         "round": "35",
         "confirm": "N",
         "q": 170,
-        "ko": 0,
+        "ko": 168,
         "langs": {
-          "en": 0,
-          "ja": 0,
+          "en": 168,
+          "ja": 168,
           "zh-CN": 0,
           "zh-TW": 0,
-          "vi": 0,
+          "vi": 168,
           "es": 0
         },
-        "stage": "wait"
+        "stage": "trans"
       },
       {
         "round": "36",
         "confirm": "N",
         "q": 170,
-        "ko": 0,
+        "ko": 168,
         "langs": {
-          "en": 0,
-          "ja": 0,
+          "en": 168,
+          "ja": 168,
           "zh-CN": 0,
           "zh-TW": 0,
-          "vi": 0,
+          "vi": 168,
           "es": 0
         },
-        "stage": "wait"
+        "stage": "trans"
       },
       {
         "round": "37",
         "confirm": "N",
         "q": 170,
-        "ko": 0,
+        "ko": 168,
         "langs": {
-          "en": 0,
-          "ja": 0,
+          "en": 167,
+          "ja": 167,
           "zh-CN": 0,
           "zh-TW": 0,
-          "vi": 0,
+          "vi": 167,
           "es": 0
         },
-        "stage": "wait"
+        "stage": "ko"
       },
       {
         "round": "41",
         "confirm": "N",
         "q": 170,
-        "ko": 0,
+        "ko": 168,
         "langs": {
-          "en": 0,
-          "ja": 0,
+          "en": 167,
+          "ja": 167,
           "zh-CN": 0,
           "zh-TW": 0,
-          "vi": 0,
+          "vi": 167,
           "es": 0
         },
-        "stage": "wait"
+        "stage": "ko"
       },
       {
         "round": "47",
         "confirm": "N",
         "q": 170,
-        "ko": 0,
+        "ko": 168,
         "langs": {
-          "en": 0,
-          "ja": 0,
+          "en": 167,
+          "ja": 167,
           "zh-CN": 0,
           "zh-TW": 0,
-          "vi": 0,
+          "vi": 167,
           "es": 0
         },
-        "stage": "wait"
+        "stage": "ko"
       },
       {
         "round": "52",
         "confirm": "N",
         "q": 170,
-        "ko": 0,
+        "ko": 168,
         "langs": {
-          "en": 0,
-          "ja": 0,
+          "en": 168,
+          "ja": 168,
           "zh-CN": 0,
           "zh-TW": 0,
-          "vi": 0,
+          "vi": 168,
           "es": 0
         },
-        "stage": "wait"
+        "stage": "trans"
       },
       {
         "round": "60",
         "confirm": "N",
         "q": 170,
-        "ko": 0,
+        "ko": 166,
         "langs": {
-          "en": 0,
-          "ja": 0,
+          "en": 166,
+          "ja": 166,
           "zh-CN": 0,
           "zh-TW": 0,
-          "vi": 0,
+          "vi": 166,
           "es": 0
         },
-        "stage": "wait"
+        "stage": "trans"
       },
       {
         "round": "64",
         "confirm": "N",
         "q": 170,
-        "ko": 0,
+        "ko": 168,
         "langs": {
-          "en": 0,
-          "ja": 0,
+          "en": 168,
+          "ja": 168,
           "zh-CN": 0,
           "zh-TW": 0,
-          "vi": 0,
+          "vi": 168,
           "es": 0
         },
-        "stage": "wait"
+        "stage": "trans"
       },
       {
         "round": "83",
@@ -329,11 +329,11 @@
   "units": {
     "exam": {
       "total": 12,
-      "wait": 8,
-      "ko": 0,
-      "trans": 4,
-      "done": 4,
-      "remaining": 8
+      "wait": 0,
+      "ko": 3,
+      "trans": 9,
+      "done": 9,
+      "remaining": 3
     },
     "practice": {
       "total": 10,
