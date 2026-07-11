@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>할일 — DearTOPIK 다국어화</title>
+<style>
+  :root{
+    --paper:#f5f7f9; --card:#ffffff; --card2:#fbfcfd;
+    --ink:#161b22; --muted:#5d6775; --faint:#8a94a2;
+    --line:#e4e8ee; --line2:#eef1f5;
+    --fb:#3352d8; --fb-soft:#eaeeff;
+    --tr:#0c8f8a; --tr-soft:#e2f4f2;
+    --good:#1f9d57; --good-soft:#e6f5ec;
+    --warn:#bb7d0c; --warn-soft:#fbf1dd;
+    --crit:#d1495b; --crit-soft:#fbe8ea;
+    --shadow:0 1px 2px rgba(20,30,50,.05),0 4px 16px rgba(20,30,50,.05);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#0d1016; --card:#161b22; --card2:#1b212a;
+      --ink:#e9edf2; --muted:#98a2b0; --faint:#6c7684;
+      --line:#252c37; --line2:#20262f;
+      --fb:#7d95ff; --fb-soft:#1c2340; --tr:#33c2bc; --tr-soft:#0f2e2c;
+      --good:#3ec27d; --good-soft:#123324; --warn:#dfa63c; --warn-soft:#332812;
+      --crit:#f2647a; --crit-soft:#361d22;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.28);
+    }
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,
+      'Segoe UI','Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+    line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:26px 22px 64px}
+  header.top{display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+    justify-content:space-between; padding-bottom:16px; border-bottom:1px solid var(--line); margin-bottom:22px}
+  .eyebrow{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--fb); font-weight:700; margin-bottom:5px}
+  h1{font-size:22px; font-weight:800; letter-spacing:-.01em}
+  .back{font-size:12.5px; font-weight:700; color:var(--muted); text-decoration:none;
+    padding:7px 12px; border:1px solid var(--line); border-radius:999px; background:var(--card)}
+  .back:hover{color:var(--fb); border-color:var(--fb)}
+
+  .layout{display:grid; grid-template-columns:200px 1fr; gap:20px; align-items:start}
+  .sidebar{position:sticky; top:20px; background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:12px; box-shadow:var(--shadow)}
+  .sidebar h3{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--faint);
+    font-weight:700; padding:4px 8px 8px}
+  .datelist{display:flex; flex-direction:column; gap:2px}
+  .datelist button{all:unset; cursor:pointer; font-size:13px; font-weight:600; padding:9px 10px;
+    border-radius:9px; color:var(--ink)}
+  .datelist button:hover{background:var(--card2)}
+  .datelist button.active{background:var(--fb-soft); color:var(--fb)}
+  .datelist button .tt{display:block; font-size:11px; font-weight:600; color:var(--muted); margin-top:1px}
+  .datelist button.active .tt{color:var(--fb); opacity:.75}
+
+  .content{background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:26px 30px; box-shadow:var(--shadow); min-height:300px; overflow-x:auto}
+  #md h1{font-size:22px; font-weight:800; margin:0 0 14px; letter-spacing:-.01em}
+  #md h2{font-size:17px; font-weight:800; margin:28px 0 10px; padding-top:14px; border-top:1px solid var(--line)}
+  #md h1 ~ h2:first-of-type{border-top:0; padding-top:0; margin-top:18px}
+  #md h3{font-size:14.5px; font-weight:800; margin:18px 0 8px; color:var(--tr)}
+  #md p{font-size:13.5px; margin:0 0 12px; color:var(--ink)}
+  #md blockquote{margin:0 0 14px; padding:10px 14px; background:var(--card2); border-left:3px solid var(--fb);
+    border-radius:0 8px 8px 0; font-size:12.5px; color:var(--muted)}
+  #md blockquote p{margin:0; color:var(--muted)}
+  #md ul,#md ol{margin:0 0 14px 22px; font-size:13.5px}
+  #md li{margin-bottom:5px}
+  #md li>p{margin:0}
+  #md code{font-family:ui-monospace,'SF Mono',Consolas,monospace; font-size:12px;
+    background:var(--card2); border:1px solid var(--line); border-radius:5px; padding:1px 5px}
+  #md pre{background:var(--card2); border:1px solid var(--line); border-radius:9px;
+    padding:12px 14px; overflow-x:auto; margin-bottom:14px}
+  #md pre code{border:0; padding:0; background:none}
+  #md a{color:var(--fb); text-decoration:none; font-weight:600}
+  #md a:hover{text-decoration:underline}
+  #md hr{border:0; border-top:1px solid var(--line); margin:22px 0}
+  #md strong{font-weight:800}
+  .twrap{overflow-x:auto; margin-bottom:16px}
+  #md table{border-collapse:collapse; width:100%; font-size:12.5px}
+  #md th,#md td{padding:7px 10px; text-align:left; border-bottom:1px solid var(--line2); vertical-align:top}
+  #md thead th{font-size:11px; text-transform:uppercase; letter-spacing:.03em; color:var(--faint);
+    font-weight:700; border-bottom:1px solid var(--line); white-space:nowrap}
+  #md tbody tr:hover{background:var(--card2)}
+
+  .loading,.err{padding:40px; text-align:center; color:var(--faint); font-size:13px}
+  .err{color:var(--crit)}
+
+  /* 라이브 매트릭스 */
+  .mxhead{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:12px}
+  .mxhead h3{font-size:14.5px; font-weight:800}
+  .mxupd{font-size:11px; color:var(--faint)}
+  #mxtbl{border-collapse:collapse; width:100%; font-size:12.5px}
+  #mxtbl th,#mxtbl td{padding:7px 9px; text-align:center; white-space:nowrap}
+  #mxtbl td:first-child,#mxtbl th:first-child{text-align:left}
+  #mxtbl thead th{font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; color:var(--faint);
+    font-weight:700; border-bottom:1px solid var(--line)}
+  #mxtbl tbody td{border-bottom:1px solid var(--line2)}
+  #mxtbl tbody tr:hover{background:var(--card2)}
+  .rnd{font-weight:800}
+  .cf{font-size:9.5px; font-weight:700; padding:1px 5px; border-radius:5px; margin-left:5px}
+  .cf.y{background:var(--good-soft); color:var(--good)}
+  .cf.n{background:var(--card2); color:var(--faint); border:1px solid var(--line)}
+  .full{color:var(--good); font-weight:800}
+  .partial{color:var(--warn); font-weight:700}
+  .zero{color:var(--faint)}
+  .gbadge{display:inline-block; min-width:16px; font-size:10.5px; font-weight:800; padding:1px 5px; border-radius:6px}
+  .gbad{background:var(--crit-soft); color:var(--crit)}
+  .gwarn{background:var(--warn-soft); color:var(--warn)}
+  .gok{background:var(--good-soft); color:var(--good)}
+  .mxnote{font-size:11px; color:var(--faint); margin-top:10px; line-height:1.6}
+  /* 언어별 진척 요약 */
+  .langsum{display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin-bottom:14px}
+  .lscell{background:var(--card2); border:1px solid var(--line); border-radius:9px; padding:9px 10px}
+  .lscell .ln{font-size:11px; font-weight:800; color:var(--muted); letter-spacing:.02em}
+  .lscell .lv{font-size:16px; font-weight:800; letter-spacing:-.01em; margin:3px 0 1px}
+  .lscell .lv small{font-size:11px; color:var(--muted); font-weight:600}
+  .lscell .lpct{font-size:10.5px; font-weight:700}
+  .lbar{height:5px; border-radius:99px; background:var(--line2); overflow:hidden; margin-top:6px}
+  .lbar > i{display:block; height:100%; border-radius:99px; background:var(--tr)}
+  @media (max-width:760px){ .langsum{grid-template-columns:repeat(3,1fr)} }
+
+  @media (max-width:760px){
+    .layout{grid-template-columns:1fr}
+    .sidebar{position:static}
+    .datelist{flex-direction:row; overflow-x:auto; gap:6px}
+    .datelist button{white-space:nowrap}
+    .content{padding:20px 18px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">DearTOPIK · Localization</div>
+      <h1>할일 목록</h1>
+    </div>
+    <a class="back" href="./">← 대시보드</a>
+  </header>
+
+  <!-- 라이브 매트릭스: 회차별 ko·언어·게이트(BLOCK/WARN) — 실제 산출물에서 자동 집계 -->
+  <section class="card" id="matrixCard" style="margin-bottom:20px">
+    <div class="mxhead">
+      <h3>회차별 번역·검수 현황</h3>
+      <span class="mxupd" id="mxUpdated"></span>
+    </div>
+    <div class="langsum" id="langsum"></div>
+    <div class="twrap"><table id="mxtbl"><thead></thead><tbody>
+      <tr><td colspan="9" class="loading">불러오는 중…</td></tr>
+    </tbody></table></div>
+    <p class="mxnote">✓=전량 완료 · 숫자=부분 · 게이트 <span class="gbadge gbad">N</span>=구조·라벨 오류(BLOCK, 조치 필요) <span class="gbadge gwarn">N</span>=참고용 경고(WARN)</p>
+  </section>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>날짜</h3>
+      <div class="datelist" id="datelist"><div class="loading">불러오는 중…</div></div>
+    </aside>
+    <main class="content">
+      <div id="md" class="loading">불러오는 중…</div>
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+<script>
+var MANIFEST = [];
+var LANG_LABEL = {'en':'EN','ja':'JA','vi':'VI','zh-CN':'zh-CN','zh-TW':'zh-TW','es-419':'ES'};
+
+function langCell(v, q){
+  if (!v) return '<td class="zero">—</td>';
+  if (v >= q) return '<td class="full">✓</td>';
+  return '<td class="partial">' + v + '</td>';
+}
+function gateBadge(gate){
+  if (!gate) return '<span class="gbadge">?</span>';
+  var b = gate.block, w = gate.warn;
+  var bh = b > 0 ? '<span class="gbadge gbad">' + b + '</span>' : '<span class="gbadge gok">0</span>';
+  var wh = w > 0 ? ' <span class="gbadge gwarn">' + w + '</span>' : '';
+  return bh + wh;
+}
+
+function renderLangSummary(d){
+  var langs = d.lang_codes;
+  var totalKo = d.rounds.reduce(function(s,r){ return s + r.ko; }, 0);
+  var html = langs.map(function(l){
+    var done = d.rounds.reduce(function(s,r){ return s + (r.langs[l] || 0); }, 0);
+    var pct = totalKo ? Math.round(1000*done/totalKo)/10 : 0;
+    var col = pct >= 99 ? 'var(--good)' : (pct > 0 ? 'var(--warn)' : 'var(--faint)');
+    return '<div class="lscell"><div class="ln">' + LANG_LABEL[l] + '</div>' +
+      '<div class="lv">' + done.toLocaleString() + '<small>/' + totalKo.toLocaleString() + '</small></div>' +
+      '<div class="lpct" style="color:' + col + '">' + pct + '%</div>' +
+      '<div class="lbar"><i style="width:' + pct + '%;background:' + col + '"></i></div></div>';
+  }).join('');
+  document.getElementById('langsum').innerHTML = html;
+}
+
+function renderMatrix(d){
+  renderLangSummary(d);
+  var langs = d.lang_codes;
+  var thead = '<tr><th>회차</th><th>ko</th>' +
+    langs.map(function(l){ return '<th>' + LANG_LABEL[l] + '</th>'; }).join('') +
+    '<th>게이트</th></tr>';
+  document.querySelector('#mxtbl thead').innerHTML = thead;
+
+  var rows = d.rounds.map(function(r){
+    var cf = r.confirmed ? '<span class="cf y">확정</span>' : '<span class="cf n">미확정</span>';
+    var placeholderNote = (r.gate && r.gate.checked !== r.ko)
+      ? '<span style="color:var(--faint)"> (' + r.gate.checked + ' 게이트대상)</span>' : '';
+    return '<tr><td class="rnd">' + r.round + cf + '</td><td>' + r.ko + placeholderNote + '</td>' +
+      langs.map(function(l){ return langCell(r.langs[l], r.ko); }).join('') +
+      '<td>' + gateBadge(r.gate) + '</td></tr>';
+  }).join('');
+  document.querySelector('#mxtbl tbody').innerHTML = rows;
+}
+
+fetch('todos/round_status.json?t=' + Date.now(), {cache:'no-store'})
+  .then(function(r){ return r.json(); })
+  .then(function(d){ document.getElementById('mxUpdated').textContent = '게이트 실측 자동 집계 · ' + d.rounds.length + '회차'; return d; })
+  .then(renderMatrix)
+  .catch(function(e){
+    document.querySelector('#mxtbl tbody').innerHTML = '<tr><td colspan="9" class="err">round_status.json 로드 실패: ' + e.message + '</td></tr>';
+  });
+
+function wrapTables(html){
+  // marked가 낸 <table> 을 가로스크롤 컨테이너로 감싸기
+  return html.replace(/<table>/g, '<div class="twrap"><table>').replace(/<\/table>/g, '</table></div>');
+}
+
+function selectDate(entry){
+  document.querySelectorAll('.datelist button').forEach(function(b){
+    b.classList.toggle('active', b.dataset.file === entry.file);
+  });
+  document.getElementById('md').innerHTML = '<div class="loading">불러오는 중…</div>';
+  fetch('todos/' + entry.file + '?t=' + Date.now(), {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+    .then(function(text){
+      document.getElementById('md').innerHTML = wrapTables(marked.parse(text));
+      history.replaceState(null, '', '#' + entry.date);
+    })
+    .catch(function(e){
+      document.getElementById('md').innerHTML = '<div class="err">불러오기 실패: ' + e.message + '</div>';
+    });
+}
+
+function renderList(items){
+  MANIFEST = items.slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+  var wantDate = location.hash ? location.hash.slice(1) : null;
+  var initial = MANIFEST.find(function(x){ return x.date === wantDate; }) || MANIFEST[0];
+
+  document.getElementById('datelist').innerHTML = MANIFEST.map(function(x){
+    return '<button data-file="' + x.file + '"><span>' + x.date + '</span>' +
+      '<span class="tt">' + x.title + '</span></button>';
+  }).join('');
+  document.querySelectorAll('.datelist button').forEach(function(btn, i){
+    btn.addEventListener('click', function(){ selectDate(MANIFEST[i]); });
+  });
+  if(initial) selectDate(initial);
+}
+
+fetch('todos/manifest.json?t=' + Date.now(), {cache:'no-store'})
+  .then(function(r){ return r.json(); })
+  .then(renderList)
+  .catch(function(e){
+    document.getElementById('datelist').innerHTML = '<div class="err">목록 실패</div>';
+    document.getElementById('md').innerHTML = '<div class="err">manifest.json 로드 실패: ' + e.message + '</div>';
+  });
+</script>
+</body>
+</html>

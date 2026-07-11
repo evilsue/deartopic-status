@@ -1,0 +1,216 @@
+{
+ "rounds": [
+  {
+   "round": "83",
+   "confirmed": true,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 0,
+    "warn": 15
+   },
+   "langs": {
+    "en": 168,
+    "ja": 168,
+    "zh-CN": 168,
+    "zh-TW": 168,
+    "vi": 168,
+    "es-419": 168
+   },
+   "excluded_count": 0
+  },
+  {
+   "round": "91",
+   "confirmed": true,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 0,
+    "warn": 16
+   },
+   "langs": {
+    "en": 168,
+    "ja": 168,
+    "zh-CN": 168,
+    "zh-TW": 168,
+    "vi": 168,
+    "es-419": 168
+   },
+   "excluded_count": 0
+  },
+  {
+   "round": "96",
+   "confirmed": true,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 1,
+    "warn": 13
+   },
+   "langs": {
+    "en": 168,
+    "ja": 168,
+    "zh-CN": 168,
+    "zh-TW": 168,
+    "vi": 168,
+    "es-419": 168
+   },
+   "excluded_count": 0
+  },
+  {
+   "round": "102",
+   "confirmed": true,
+   "ko": 170,
+   "gate": {
+    "checked": 166,
+    "block": 0,
+    "warn": 14
+   },
+   "langs": {
+    "en": 170,
+    "ja": 170,
+    "zh-CN": 170,
+    "zh-TW": 170,
+    "vi": 170,
+    "es-419": 170
+   },
+   "excluded_count": 0
+  },
+  {
+   "round": "35",
+   "confirmed": false,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 0,
+    "warn": 8
+   },
+   "langs": {
+    "en": 168,
+    "ja": 168,
+    "vi": 168
+   },
+   "excluded_count": 0
+  },
+  {
+   "round": "36",
+   "confirmed": false,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 0,
+    "warn": 22
+   },
+   "langs": {
+    "en": 168,
+    "ja": 168,
+    "vi": 168
+   },
+   "excluded_count": 0
+  },
+  {
+   "round": "37",
+   "confirmed": false,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 1,
+    "warn": 22
+   },
+   "langs": {
+    "en": 167,
+    "ja": 167,
+    "vi": 167
+   },
+   "excluded_count": 1
+  },
+  {
+   "round": "41",
+   "confirmed": false,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 1,
+    "warn": 28
+   },
+   "langs": {
+    "en": 167,
+    "ja": 167,
+    "vi": 167
+   },
+   "excluded_count": 1
+  },
+  {
+   "round": "47",
+   "confirmed": false,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 1,
+    "warn": 14
+   },
+   "langs": {
+    "en": 167,
+    "ja": 167,
+    "vi": 167
+   },
+   "excluded_count": 1
+  },
+  {
+   "round": "52",
+   "confirmed": false,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 0,
+    "warn": 18
+   },
+   "langs": {
+    "en": 168,
+    "ja": 168,
+    "vi": 168
+   },
+   "excluded_count": 0
+  },
+  {
+   "round": "60",
+   "confirmed": false,
+   "ko": 166,
+   "gate": {
+    "checked": 166,
+    "block": 0,
+    "warn": 21
+   },
+   "langs": {
+    "en": 166,
+    "ja": 166,
+    "vi": 166
+   },
+   "excluded_count": 0
+  },
+  {
+   "round": "64",
+   "confirmed": false,
+   "ko": 168,
+   "gate": {
+    "checked": 168,
+    "block": 0,
+    "warn": 21
+   },
+   "langs": {
+    "en": 168,
+    "ja": 168,
+    "vi": 168
+   },
+   "excluded_count": 0
+  }
+ ],
+ "lang_codes": [
+  "en",
+  "ja",
+  "zh-CN",
+  "zh-TW",
+  "vi",
+  "es-419"
+ ]
+}
