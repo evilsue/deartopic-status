@@ -130,6 +130,36 @@
   .step .d{font-size:11.5px; color:var(--muted); margin-top:2px}
   .arrow{align-self:center; color:var(--faint); font-size:15px; flex:none}
 
+  /* 회차별 검수 매트릭스 */
+  .langsum{display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin-bottom:14px}
+  .lscell{background:var(--card2); border:1px solid var(--line); border-radius:9px; padding:9px 10px}
+  .lscell .ln{font-size:11px; font-weight:800; color:var(--muted); letter-spacing:.02em}
+  .lscell .lv{font-size:16px; font-weight:800; letter-spacing:-.01em; margin:3px 0 1px}
+  .lscell .lv small{font-size:11px; color:var(--muted); font-weight:600}
+  .lscell .lpct{font-size:10.5px; font-weight:700}
+  .lbar{height:5px; border-radius:99px; background:var(--line2); overflow:hidden; margin-top:6px}
+  .lbar > i{display:block; height:100%; border-radius:99px; background:var(--tr)}
+  #mxtbl{border-collapse:collapse; width:100%; font-size:12.5px}
+  #mxtbl th,#mxtbl td{padding:7px 9px; text-align:center; white-space:nowrap}
+  #mxtbl td:first-child,#mxtbl th:first-child{text-align:left}
+  #mxtbl thead th{font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; color:var(--faint); font-weight:700; border-bottom:1px solid var(--line)}
+  #mxtbl tbody td{border-bottom:1px solid var(--line2)}
+  #mxtbl tbody tr:hover{background:var(--card2)}
+  .mxload{padding:24px; text-align:center; color:var(--faint)}
+  .rnd{font-weight:800}
+  .cf{font-size:9.5px; font-weight:700; padding:1px 5px; border-radius:5px; margin-left:5px}
+  .cf.y{background:var(--good-soft); color:var(--good)}
+  .cf.n{background:var(--card2); color:var(--faint); border:1px solid var(--line)}
+  .full{color:var(--good); font-weight:800}
+  .partial{color:var(--warn); font-weight:700}
+  .zero{color:var(--faint)}
+  .gbadge{display:inline-block; min-width:16px; font-size:10.5px; font-weight:800; padding:1px 5px; border-radius:6px}
+  .gbad{background:var(--crit-soft); color:var(--crit)}
+  .gwarn{background:var(--warn-soft); color:var(--warn)}
+  .gok{background:var(--good-soft); color:var(--good)}
+  .mxnote{font-size:11px; color:var(--faint); margin-top:10px; line-height:1.6}
+  @media (max-width:760px){ .langsum{grid-template-columns:repeat(3,1fr)} }
+
   .reslist{display:flex; flex-direction:column; gap:2px}
   .reslist a{display:flex; align-items:baseline; gap:8px; padding:6px 4px; border-radius:7px;
     font-size:12.5px; color:var(--ink); text-decoration:none}
@@ -202,6 +232,18 @@
     </div>
   </section>
 
+  <!-- 회차별 검수현황 (게이트 실측 자동집계) -->
+  <section>
+    <div class="sechead"><h2>회차별 번역·검수 현황</h2><span class="k">회차×언어×게이트 · 게이트 실측 자동집계</span><span class="rule"></span></div>
+    <div class="card">
+      <div class="langsum" id="langsum"></div>
+      <div class="twrap"><table id="mxtbl"><thead></thead><tbody>
+        <tr><td colspan="9" class="mxload">불러오는 중…</td></tr>
+      </tbody></table></div>
+      <p class="mxnote">✓=전량 완료 · 숫자=부분 · 게이트 <span class="gbadge gbad">N</span>=구조·라벨 오류(BLOCK, 조치 필요) <span class="gbadge gwarn">N</span>=참고용 경고(WARN)</p>
+    </div>
+  </section>
+
   <!-- 작업분량 예측 -->
   <section>
     <div class="sechead"><h2>작업분량 · 소요 예측</h2><span class="k">회차당 실측 → 잔여 환산 → 처리량 시나리오</span><span class="rule"></span></div>
@@ -253,64 +295,6 @@
         <div class="step"><div class="n">05 발행</div><div class="t">조립·DB 업로드</div><div class="d">라벨·②desc 주입</div></div>
       </div>
     </div>
-  </section>
-
-  <!-- 리소스 링크 -->
-  <section>
-    <div class="sechead"><h2>리소스</h2><span class="k">할일·프롬프트·산출물·도구 — 리포 바로가기</span><span class="rule"></span></div>
-    <div class="grid2">
-      <div class="card">
-        <h3><span class="hl"><span class="dot fb"></span> 문서</span></h3>
-        <div class="reslist">
-          <a href="todo.html">
-            <span class="rn">할일 목록</span><span class="rd">날짜별 · 로그인 불필요</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/STATUS.md" target="_blank" rel="noopener">
-            <span class="rn">STATUS.md</span><span class="rd">현황 요약판</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/00_거버넌스/DECISIONS.md" target="_blank" rel="noopener">
-            <span class="rn">DECISIONS.md</span><span class="rd">확정 결정사항(D-069 등)</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/00_설정/프롬프트수정제안_v7.4_20260710.md" target="_blank" rel="noopener">
-            <span class="rn">v7.4 수정 제안서</span><span class="rd">실측 근거·결정 기록</span></a>
-        </div>
-      </div>
-      <div class="card">
-        <h3><span class="hl"><span class="dot tr"></span> 프롬프트</span></h3>
-        <div class="reslist">
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/00_설정/feedback_system_v7.4_통합_selfcontained_20260711.txt" target="_blank" rel="noopener">
-            <span class="rn">v7.4 (현행)</span><span class="rd">통합 자립본</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/00_설정/_프롬프트_변경이력.md" target="_blank" rel="noopener">
-            <span class="rn">변경이력</span><span class="rd">버전별 변경 기록(authoritative)</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/tree/main/03_생성엔진/00_설정" target="_blank" rel="noopener">
-            <span class="rn">00_설정/</span><span class="rd">전체 프롬프트·표 디렉토리</span></a>
-        </div>
-      </div>
-      <div class="card">
-        <h3><span class="hl"><span class="dot fb"></span> 산출물</span></h3>
-        <div class="reslist">
-          <a href="https://github.com/evilsue/deartopic-l10n/tree/main/03_생성엔진/02_번역/10_산출_정본/다국어조립본" target="_blank" rel="noopener">
-            <span class="rn">다국어조립본/</span><span class="rd">기출 12회차 정본(ko+번역)</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/02_번역/_tm/deartopic_tm_20260711.tmx" target="_blank" rel="noopener">
-            <span class="rn">번역메모리(TMX)</span><span class="rd">14,821세그먼트 · Weblate 임포트용</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/tree/main/01_입력_정본/01_문항입력/모의문항_검수전/_연습세트_교정_20260710" target="_blank" rel="noopener">
-            <span class="rn">연습 교정본/</span><span class="rd">신세대 세트 교정 결과</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/tree/main/03_생성엔진/01_ko_피드백" target="_blank" rel="noopener">
-            <span class="rn">01_ko_피드백/</span><span class="rd">회차별 ko 정본</span></a>
-        </div>
-      </div>
-      <div class="card">
-        <h3><span class="hl"><span class="dot tr"></span> 도구·게이트</span></h3>
-        <div class="reslist">
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/05_스크립트/의미정합_게이트.py" target="_blank" rel="noopener">
-            <span class="rn">의미정합_게이트.py</span><span class="rd">기출 라벨·구조 검증</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/05_스크립트/연습세트_검수게이트.py" target="_blank" rel="noopener">
-            <span class="rn">연습세트_검수게이트.py</span><span class="rd">관리자 API 산출물 반영 전 필수</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/02_번역/20_도구/deartopic_xliff.py" target="_blank" rel="noopener">
-            <span class="rn">deartopic_xliff.py</span><span class="rd">JSON ↔ XLIFF 2.0 어댑터</span></a>
-          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/02_번역/20_도구/deartopic_tmx.py" target="_blank" rel="noopener">
-            <span class="rn">deartopic_tmx.py</span><span class="rd">TMX(번역메모리) 내보내기</span></a>
-        </div>
-      </div>
-    </div>
-    <p class="resnote">↗ 링크는 <b>private 리포</b>(github.com/evilsue/deartopic-l10n)로 연결 — 소유자/협업자 GitHub 로그인 필요(그 외에는 404). 대시보드 자체는 집계 수치만 공개 유지.</p>
   </section>
 
   <footer>
@@ -428,6 +412,35 @@ document.getElementById('rateKo').addEventListener('input',recalc);
 fetch('progress.json?t='+Date.now(),{cache:'no-store'})
   .then(function(r){return r.json();}).then(render)
   .catch(function(){ render(window.PROGRESS); });
+
+// ── 회차별 검수 매트릭스(round_status.json 자동집계) ──
+var MX_LABEL={'en':'EN','ja':'JA','vi':'VI','zh-CN':'zh-CN','zh-TW':'zh-TW','es-419':'ES'};
+function mxLangCell(v,q){ if(!v) return '<td class="zero">—</td>'; if(v>=q) return '<td class="full">✓</td>'; return '<td class="partial">'+v+'</td>'; }
+function mxGate(g){ if(!g) return '<span class="gbadge">?</span>';
+  var bh=g.block>0?'<span class="gbadge gbad">'+g.block+'</span>':'<span class="gbadge gok">0</span>';
+  return bh+(g.warn>0?' <span class="gbadge gwarn">'+g.warn+'</span>':''); }
+function renderMatrix(d){
+  var langs=d.lang_codes, totalKo=d.rounds.reduce(function(s,r){return s+r.ko;},0);
+  document.getElementById('langsum').innerHTML=langs.map(function(l){
+    var done=d.rounds.reduce(function(s,r){return s+(r.langs[l]||0);},0);
+    var p=totalKo?Math.round(1000*done/totalKo)/10:0;
+    var c=p>=99?'var(--good)':(p>0?'var(--warn)':'var(--faint)');
+    return '<div class="lscell"><div class="ln">'+MX_LABEL[l]+'</div><div class="lv">'+done.toLocaleString()
+      +'<small>/'+totalKo.toLocaleString()+'</small></div><div class="lpct" style="color:'+c+'">'+p
+      +'%</div><div class="lbar"><i style="width:'+p+'%;background:'+c+'"></i></div></div>';
+  }).join('');
+  document.querySelector('#mxtbl thead').innerHTML='<tr><th>회차</th><th>ko</th>'
+    +langs.map(function(l){return '<th>'+MX_LABEL[l]+'</th>';}).join('')+'<th>게이트</th></tr>';
+  document.querySelector('#mxtbl tbody').innerHTML=d.rounds.map(function(r){
+    var cf=r.confirmed?'<span class="cf y">확정</span>':'<span class="cf n">미확정</span>';
+    var note=(r.gate&&r.gate.checked!==r.ko)?'<span style="color:var(--faint)"> ('+r.gate.checked+')</span>':'';
+    return '<tr><td class="rnd">'+r.round+cf+'</td><td>'+r.ko+note+'</td>'
+      +langs.map(function(l){return mxLangCell(r.langs[l],r.ko);}).join('')+'<td>'+mxGate(r.gate)+'</td></tr>';
+  }).join('');
+}
+fetch('todos/round_status.json?t='+Date.now(),{cache:'no-store'})
+  .then(function(r){return r.json();}).then(renderMatrix)
+  .catch(function(e){ document.querySelector('#mxtbl tbody').innerHTML='<tr><td colspan="9" class="mxload">매트릭스 로드 실패</td></tr>'; });
 </script>
 </body>
 </html>
