@@ -126,6 +126,15 @@
   .step .d{font-size:11.5px; color:var(--muted); margin-top:2px}
   .arrow{align-self:center; color:var(--faint); font-size:15px; flex:none}
 
+  .reslist{display:flex; flex-direction:column; gap:2px}
+  .reslist a{display:flex; align-items:baseline; gap:8px; padding:6px 4px; border-radius:7px;
+    font-size:12.5px; color:var(--ink); text-decoration:none}
+  .reslist a:hover{background:var(--card2)}
+  .reslist a .rn{font-weight:700; flex:none}
+  .reslist a .rd{color:var(--muted); font-size:11.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .reslist a::after{content:"↗"; margin-left:auto; color:var(--faint); font-size:11px; flex:none}
+  .resnote{font-size:11px; color:var(--faint); margin-top:10px; line-height:1.5}
+
   footer{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); font-size:11.5px; color:var(--faint); text-align:center; line-height:1.7}
   footer code{font-size:11px}
   #err{color:var(--crit); margin-top:6px}
@@ -237,6 +246,64 @@
         <div class="step"><div class="n">05 발행</div><div class="t">조립·DB 업로드</div><div class="d">라벨·②desc 주입</div></div>
       </div>
     </div>
+  </section>
+
+  <!-- 리소스 링크 -->
+  <section>
+    <div class="sechead"><h2>리소스</h2><span class="k">할일·프롬프트·산출물·도구 — 리포 바로가기</span><span class="rule"></span></div>
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="hl"><span class="dot fb"></span> 문서</span></h3>
+        <div class="reslist">
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/00_거버넌스/할일_20260711.md" target="_blank" rel="noopener">
+            <span class="rn">할일 목록</span><span class="rd">회차·세트·언어별 상세(2026-07-11)</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/STATUS.md" target="_blank" rel="noopener">
+            <span class="rn">STATUS.md</span><span class="rd">현황 요약판</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/00_거버넌스/DECISIONS.md" target="_blank" rel="noopener">
+            <span class="rn">DECISIONS.md</span><span class="rd">확정 결정사항(D-069 등)</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/00_설정/프롬프트수정제안_v7.4_20260710.md" target="_blank" rel="noopener">
+            <span class="rn">v7.4 수정 제안서</span><span class="rd">실측 근거·결정 기록</span></a>
+        </div>
+      </div>
+      <div class="card">
+        <h3><span class="hl"><span class="dot tr"></span> 프롬프트</span></h3>
+        <div class="reslist">
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/00_설정/feedback_system_v7.4_통합_selfcontained_20260711.txt" target="_blank" rel="noopener">
+            <span class="rn">v7.4 (현행)</span><span class="rd">통합 자립본</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/00_설정/_프롬프트_변경이력.md" target="_blank" rel="noopener">
+            <span class="rn">변경이력</span><span class="rd">버전별 변경 기록(authoritative)</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/tree/main/03_생성엔진/00_설정" target="_blank" rel="noopener">
+            <span class="rn">00_설정/</span><span class="rd">전체 프롬프트·표 디렉토리</span></a>
+        </div>
+      </div>
+      <div class="card">
+        <h3><span class="hl"><span class="dot fb"></span> 산출물</span></h3>
+        <div class="reslist">
+          <a href="https://github.com/evilsue/deartopic-l10n/tree/main/03_생성엔진/02_번역/10_산출_정본/다국어조립본" target="_blank" rel="noopener">
+            <span class="rn">다국어조립본/</span><span class="rd">기출 12회차 정본(ko+번역)</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/02_번역/_tm/deartopic_tm_20260711.tmx" target="_blank" rel="noopener">
+            <span class="rn">번역메모리(TMX)</span><span class="rd">14,821세그먼트 · Weblate 임포트용</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/tree/main/01_입력_정본/01_문항입력/모의문항_검수전/_연습세트_교정_20260710" target="_blank" rel="noopener">
+            <span class="rn">연습 교정본/</span><span class="rd">pk96~104 교정 결과</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/tree/main/03_생성엔진/01_ko_피드백" target="_blank" rel="noopener">
+            <span class="rn">01_ko_피드백/</span><span class="rd">회차별 ko 정본</span></a>
+        </div>
+      </div>
+      <div class="card">
+        <h3><span class="hl"><span class="dot tr"></span> 도구·게이트</span></h3>
+        <div class="reslist">
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/05_스크립트/의미정합_게이트.py" target="_blank" rel="noopener">
+            <span class="rn">의미정합_게이트.py</span><span class="rd">기출 라벨·구조 검증</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/05_스크립트/연습세트_검수게이트.py" target="_blank" rel="noopener">
+            <span class="rn">연습세트_검수게이트.py</span><span class="rd">관리자 API 산출물 반영 전 필수</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/02_번역/20_도구/deartopic_xliff.py" target="_blank" rel="noopener">
+            <span class="rn">deartopic_xliff.py</span><span class="rd">JSON ↔ XLIFF 2.0 어댑터</span></a>
+          <a href="https://github.com/evilsue/deartopic-l10n/blob/main/03_생성엔진/02_번역/20_도구/deartopic_tmx.py" target="_blank" rel="noopener">
+            <span class="rn">deartopic_tmx.py</span><span class="rd">TMX(번역메모리) 내보내기</span></a>
+        </div>
+      </div>
+    </div>
+    <p class="resnote">↗ 링크는 <b>private 리포</b>(github.com/evilsue/deartopic-l10n)로 연결 — 소유자/협업자 GitHub 로그인 필요(그 외에는 404). 대시보드 자체는 집계 수치만 공개 유지.</p>
   </section>
 
   <footer>
