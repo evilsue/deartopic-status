@@ -1,5 +1,5 @@
 window.PROGRESS = {
-  "updated": "",
+  "updated": "2026-07-12",
   "engine": "v7.4",
   "baseline": "DB_0710 (2026-07-10 덤프)",
   "lang_codes": [
@@ -31,10 +31,10 @@ window.PROGRESS = {
       "ko": 2016,
       "en": 2013,
       "ja": 2013,
-      "zh-CN": 674,
-      "zh-TW": 674,
+      "zh-CN": 2013,
+      "zh-TW": 2013,
       "vi": 2013,
-      "es": 674
+      "es": 2013
     },
     "rounds": [
       {
@@ -45,10 +45,10 @@ window.PROGRESS = {
         "langs": {
           "en": 168,
           "ja": 168,
-          "zh-CN": 0,
-          "zh-TW": 0,
+          "zh-CN": 168,
+          "zh-TW": 168,
           "vi": 168,
-          "es": 0
+          "es": 168
         },
         "stage": "trans"
       },
@@ -60,10 +60,10 @@ window.PROGRESS = {
         "langs": {
           "en": 168,
           "ja": 168,
-          "zh-CN": 0,
-          "zh-TW": 0,
+          "zh-CN": 168,
+          "zh-TW": 168,
           "vi": 168,
-          "es": 0
+          "es": 168
         },
         "stage": "trans"
       },
@@ -75,10 +75,10 @@ window.PROGRESS = {
         "langs": {
           "en": 167,
           "ja": 167,
-          "zh-CN": 0,
-          "zh-TW": 0,
+          "zh-CN": 167,
+          "zh-TW": 167,
           "vi": 167,
-          "es": 0
+          "es": 167
         },
         "stage": "ko"
       },
@@ -90,10 +90,10 @@ window.PROGRESS = {
         "langs": {
           "en": 167,
           "ja": 167,
-          "zh-CN": 0,
-          "zh-TW": 0,
+          "zh-CN": 167,
+          "zh-TW": 167,
           "vi": 167,
-          "es": 0
+          "es": 167
         },
         "stage": "ko"
       },
@@ -105,10 +105,10 @@ window.PROGRESS = {
         "langs": {
           "en": 167,
           "ja": 167,
-          "zh-CN": 0,
-          "zh-TW": 0,
+          "zh-CN": 167,
+          "zh-TW": 167,
           "vi": 167,
-          "es": 0
+          "es": 167
         },
         "stage": "ko"
       },
@@ -120,10 +120,10 @@ window.PROGRESS = {
         "langs": {
           "en": 168,
           "ja": 168,
-          "zh-CN": 0,
-          "zh-TW": 0,
+          "zh-CN": 168,
+          "zh-TW": 168,
           "vi": 168,
-          "es": 0
+          "es": 168
         },
         "stage": "trans"
       },
@@ -135,10 +135,10 @@ window.PROGRESS = {
         "langs": {
           "en": 166,
           "ja": 166,
-          "zh-CN": 0,
-          "zh-TW": 0,
+          "zh-CN": 166,
+          "zh-TW": 166,
           "vi": 166,
-          "es": 0
+          "es": 166
         },
         "stage": "trans"
       },
@@ -150,10 +150,10 @@ window.PROGRESS = {
         "langs": {
           "en": 168,
           "ja": 168,
-          "zh-CN": 0,
-          "zh-TW": 0,
+          "zh-CN": 168,
+          "zh-TW": 168,
           "vi": 168,
-          "es": 0
+          "es": 168
         },
         "stage": "trans"
       },
@@ -223,7 +223,7 @@ window.PROGRESS = {
     "total_q": 2520,
     "confirmed_q": 940,
     "unconfirmed_q": 1580,
-    "mock_ko": 2429,
+    "mock_ko": 2437,
     "ko_matched": 2178,
     "ko_orphan": 251,
     "conf_covered": 833,
