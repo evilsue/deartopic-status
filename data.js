@@ -1,7 +1,7 @@
 window.PROGRESS = {
-  "updated": "2026-07-12",
-  "engine": "v7.4",
-  "baseline": "DB_0710 (2026-07-10 덤프)",
+  "updated": "2026-08-21",
+  "engine": "v7.9",
+  "baseline": "2026-08-21 정본 실측 (release/ + work/20260804_기출NN회 전수 스캔)",
   "lang_codes": [
     "ko",
     "en",
@@ -9,166 +9,46 @@ window.PROGRESS = {
     "zh-CN",
     "zh-TW",
     "vi",
-    "es"
+    "es-419"
   ],
   "denom": {
-    "confirmed": 1620,
-    "total": 4560
+    "confirmed": 3056,
+    "total": 3736
   },
   "exam": {
-    "confirmed_q": 680,
-    "total_q": 2040,
+    "confirmed_q": 2036,
+    "total_q": 2036,
     "done_confirmed": {
-      "ko": 674,
-      "en": 674,
-      "ja": 674,
-      "zh-CN": 674,
-      "zh-TW": 674,
-      "vi": 674,
-      "es": 674
+      "ko": 2036,
+      "en": 2036,
+      "ja": 2036,
+      "zh-CN": 2036,
+      "zh-TW": 2036,
+      "vi": 2036,
+      "es-419": 1341
     },
     "done_total": {
-      "ko": 2016,
-      "en": 2013,
-      "ja": 2013,
-      "zh-CN": 2013,
-      "zh-TW": 2013,
-      "vi": 2013,
-      "es": 2013
+      "ko": 2036,
+      "en": 2036,
+      "ja": 2036,
+      "zh-CN": 2036,
+      "zh-TW": 2036,
+      "vi": 2036,
+      "es-419": 1341
     },
     "rounds": [
-      {
-        "round": "35",
-        "confirm": "N",
-        "q": 170,
-        "ko": 168,
-        "langs": {
-          "en": 168,
-          "ja": 168,
-          "zh-CN": 168,
-          "zh-TW": 168,
-          "vi": 168,
-          "es": 168
-        },
-        "stage": "trans"
-      },
-      {
-        "round": "36",
-        "confirm": "N",
-        "q": 170,
-        "ko": 168,
-        "langs": {
-          "en": 168,
-          "ja": 168,
-          "zh-CN": 168,
-          "zh-TW": 168,
-          "vi": 168,
-          "es": 168
-        },
-        "stage": "trans"
-      },
-      {
-        "round": "37",
-        "confirm": "N",
-        "q": 170,
-        "ko": 168,
-        "langs": {
-          "en": 167,
-          "ja": 167,
-          "zh-CN": 167,
-          "zh-TW": 167,
-          "vi": 167,
-          "es": 167
-        },
-        "stage": "ko"
-      },
-      {
-        "round": "41",
-        "confirm": "N",
-        "q": 170,
-        "ko": 168,
-        "langs": {
-          "en": 167,
-          "ja": 167,
-          "zh-CN": 167,
-          "zh-TW": 167,
-          "vi": 167,
-          "es": 167
-        },
-        "stage": "ko"
-      },
-      {
-        "round": "47",
-        "confirm": "N",
-        "q": 170,
-        "ko": 168,
-        "langs": {
-          "en": 167,
-          "ja": 167,
-          "zh-CN": 167,
-          "zh-TW": 167,
-          "vi": 167,
-          "es": 167
-        },
-        "stage": "ko"
-      },
-      {
-        "round": "52",
-        "confirm": "N",
-        "q": 170,
-        "ko": 168,
-        "langs": {
-          "en": 168,
-          "ja": 168,
-          "zh-CN": 168,
-          "zh-TW": 168,
-          "vi": 168,
-          "es": 168
-        },
-        "stage": "trans"
-      },
-      {
-        "round": "60",
-        "confirm": "N",
-        "q": 170,
-        "ko": 166,
-        "langs": {
-          "en": 166,
-          "ja": 166,
-          "zh-CN": 166,
-          "zh-TW": 166,
-          "vi": 166,
-          "es": 166
-        },
-        "stage": "trans"
-      },
-      {
-        "round": "64",
-        "confirm": "N",
-        "q": 170,
-        "ko": 168,
-        "langs": {
-          "en": 168,
-          "ja": 168,
-          "zh-CN": 168,
-          "zh-TW": 168,
-          "vi": 168,
-          "es": 168
-        },
-        "stage": "trans"
-      },
       {
         "round": "83",
         "confirm": "Y",
         "q": 170,
-        "ko": 168,
+        "ko": 169,
         "langs": {
-          "en": 168,
-          "ja": 168,
-          "zh-CN": 168,
-          "zh-TW": 168,
-          "vi": 168,
-          "es": 168
+          "en": 169,
+          "ja": 169,
+          "zh-CN": 169,
+          "zh-TW": 169,
+          "vi": 169,
+          "es-419": 0
         },
         "stage": "trans"
       },
@@ -176,14 +56,14 @@ window.PROGRESS = {
         "round": "91",
         "confirm": "Y",
         "q": 170,
-        "ko": 168,
+        "ko": 169,
         "langs": {
-          "en": 168,
-          "ja": 168,
-          "zh-CN": 168,
-          "zh-TW": 168,
-          "vi": 168,
-          "es": 168
+          "en": 169,
+          "ja": 169,
+          "zh-CN": 169,
+          "zh-TW": 169,
+          "vi": 169,
+          "es-419": 0
         },
         "stage": "trans"
       },
@@ -191,20 +71,35 @@ window.PROGRESS = {
         "round": "96",
         "confirm": "Y",
         "q": 170,
-        "ko": 168,
+        "ko": 169,
         "langs": {
-          "en": 168,
-          "ja": 168,
-          "zh-CN": 168,
-          "zh-TW": 168,
-          "vi": 168,
-          "es": 168
+          "en": 169,
+          "ja": 169,
+          "zh-CN": 169,
+          "zh-TW": 169,
+          "vi": 169,
+          "es-419": 0
         },
         "stage": "trans"
       },
       {
         "round": "102",
         "confirm": "Y",
+        "q": 170,
+        "ko": 169,
+        "langs": {
+          "en": 169,
+          "ja": 169,
+          "zh-CN": 169,
+          "zh-TW": 169,
+          "vi": 169,
+          "es-419": 0
+        },
+        "stage": "trans"
+      },
+      {
+        "round": "35",
+        "confirm": "N",
         "q": 170,
         "ko": 170,
         "langs": {
@@ -213,116 +108,301 @@ window.PROGRESS = {
           "zh-CN": 170,
           "zh-TW": 170,
           "vi": 170,
-          "es": 170
+          "es-419": 168
+        },
+        "stage": "trans"
+      },
+      {
+        "round": "36",
+        "confirm": "N",
+        "q": 170,
+        "ko": 170,
+        "langs": {
+          "en": 170,
+          "ja": 170,
+          "zh-CN": 170,
+          "zh-TW": 170,
+          "vi": 170,
+          "es-419": 170
+        },
+        "stage": "trans"
+      },
+      {
+        "round": "37",
+        "confirm": "N",
+        "q": 170,
+        "ko": 170,
+        "langs": {
+          "en": 170,
+          "ja": 170,
+          "zh-CN": 170,
+          "zh-TW": 170,
+          "vi": 170,
+          "es-419": 167
+        },
+        "stage": "trans"
+      },
+      {
+        "round": "41",
+        "confirm": "N",
+        "q": 170,
+        "ko": 170,
+        "langs": {
+          "en": 170,
+          "ja": 170,
+          "zh-CN": 170,
+          "zh-TW": 170,
+          "vi": 170,
+          "es-419": 167
+        },
+        "stage": "trans"
+      },
+      {
+        "round": "47",
+        "confirm": "N",
+        "q": 170,
+        "ko": 170,
+        "langs": {
+          "en": 170,
+          "ja": 170,
+          "zh-CN": 170,
+          "zh-TW": 170,
+          "vi": 170,
+          "es-419": 167
+        },
+        "stage": "trans"
+      },
+      {
+        "round": "52",
+        "confirm": "N",
+        "q": 170,
+        "ko": 170,
+        "langs": {
+          "en": 170,
+          "ja": 170,
+          "zh-CN": 170,
+          "zh-TW": 170,
+          "vi": 170,
+          "es-419": 168
+        },
+        "stage": "trans"
+      },
+      {
+        "round": "60",
+        "confirm": "N",
+        "q": 170,
+        "ko": 170,
+        "langs": {
+          "en": 170,
+          "ja": 170,
+          "zh-CN": 170,
+          "zh-TW": 170,
+          "vi": 170,
+          "es-419": 166
+        },
+        "stage": "trans"
+      },
+      {
+        "round": "64",
+        "confirm": "N",
+        "q": 170,
+        "ko": 170,
+        "langs": {
+          "en": 170,
+          "ja": 170,
+          "zh-CN": 170,
+          "zh-TW": 170,
+          "vi": 170,
+          "es-419": 168
         },
         "stage": "trans"
       }
     ]
   },
   "practice": {
-    "total_q": 2520,
-    "confirmed_q": 940,
-    "unconfirmed_q": 1580,
-    "mock_ko": 2437,
-    "ko_matched": 2178,
-    "ko_orphan": 251,
-    "conf_covered": 833,
-    "conf_uncovered": 107,
+    "total_q": 1700,
+    "confirmed_q": 1020,
+    "unconfirmed_q": 0,
+    "mock_ko": 676,
+    "ko_matched": 676,
+    "ko_orphan": 0,
+    "conf_covered": 0,
+    "conf_uncovered": 1020,
     "rounds": [
       {
         "title": "실전 모의고사 제1회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "Y",
-        "ko": 65,
-        "stage": "ko"
+        "ko": 70,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제1회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 50,
-        "stage": "ko"
+        "ko": 98,
+        "stage": "trans"
+      },
+      {
+        "title": "실전 모의고사 제2회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "Y",
+        "ko": 70,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제2회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 94,
-        "stage": "ko"
-      },
-      {
-        "title": "실전 모의고사 제2회(2026)",
-        "level": "TOPIK I",
-        "q": 70,
-        "confirm": "Y",
-        "ko": 65,
-        "stage": "ko"
+        "ko": 100,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제3회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "Y",
-        "ko": 65,
-        "stage": "ko"
+        "ko": 68,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제3회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 94,
-        "stage": "ko"
+        "ko": 100,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제4회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "Y",
-        "ko": 66,
-        "stage": "ko"
+        "ko": 70,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제4회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "Y",
-        "ko": 94,
-        "stage": "ko"
+        "ko": 100,
+        "stage": "trans"
       },
       {
-        "title": "진단고사 제1회 (2026)",
+        "title": "실전 모의고사 제5회 (2026)",
         "level": "TOPIK I",
         "q": 70,
-        "confirm": "Y",
-        "ko": 65,
+        "confirm": "N",
+        "ko": 0,
         "stage": "ko"
       },
       {
-        "title": "진단고사 제1회(2026)",
+        "title": "실전 모의고사 제5회 (2026)",
         "level": "TOPIK II",
         "q": 100,
-        "confirm": "Y",
-        "ko": 94,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제6회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제6회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제7회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제7회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제8회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제8회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제9회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제9회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제10회 (2026)",
+        "level": "TOPIK I",
+        "q": 70,
+        "confirm": "N",
+        "ko": 0,
+        "stage": "ko"
+      },
+      {
+        "title": "실전 모의고사 제10회 (2026)",
+        "level": "TOPIK II",
+        "q": 100,
+        "confirm": "N",
+        "ko": 0,
         "stage": "ko"
       }
     ],
-    "round_q": 850,
-    "round_ko": 752,
-    "unlinked_q": 1670,
-    "note": "ko 고아 251(DB에서 사라진 문항) · 회차 미연결 유효문항 1670(드래프트)"
+    "round_q": 1700,
+    "round_ko": 676,
+    "unlinked_q": 0,
+    "note": "모의 1~4회(8세트·680문항) 6언어 완료·DB 반영(REL-20260802-01), 단 저작권 4문항(pk25 Q33·34=제3회 TOPIK I · pk60 Q42·43=제1회 TOPIK II)은 전 언어 해설 공란 / 모의 5~10회(12세트·1,020문항) 문항만 업로드·ko 해설 미생성"
   },
   "workload": {
     "per_round_q": 170,
     "ko_segments": 1416,
     "words_per_lang": 12700,
-    "langs": 6,
+    "langs": 5,
     "ko_cost_usd": 1.0,
-    "trans_segments": 8496,
-    "words_total": 76200,
+    "trans_segments": 7080,
+    "words_total": 63500,
     "seg_per_q": 8.33,
     "words_per_q_lang": 74.7
   },
@@ -330,18 +410,18 @@ window.PROGRESS = {
     "exam": {
       "total": 12,
       "wait": 0,
-      "ko": 3,
-      "trans": 9,
-      "done": 9,
-      "remaining": 3
+      "ko": 0,
+      "trans": 12,
+      "done": 12,
+      "remaining": 0
     },
     "practice": {
-      "total": 10,
+      "total": 20,
       "wait": 0,
-      "ko": 10,
-      "trans": 0,
-      "done": 0,
-      "remaining": 10
+      "ko": 12,
+      "trans": 8,
+      "done": 8,
+      "remaining": 12
     }
   }
 };
