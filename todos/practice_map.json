@@ -1,6 +1,6 @@
 {
- "updated": "2026-08-21",
- "source": "release/모의_DB업로드_pk_20260722 · release/모의_DB업로드_pk_20260802 (정본 실측)",
+ "updated": "2026-09-08",
+ "source": "관리자 화면 /practice-rounds 실측 (2026-09-08) — round_key·pk 매핑 정정",
  "groups": [
   {
    "key": "1-4",
@@ -29,7 +29,7 @@
    "group": "1-4",
    "round": 1,
    "level": "TOPIK I",
-   "round_key": null,
+   "round_key": 5,
    "listening": {
     "pk": 82,
     "req": 44,
@@ -51,7 +51,7 @@
    "group": "1-4",
    "round": 1,
    "level": "TOPIK II",
-   "round_key": null,
+   "round_key": 9,
    "listening": {
     "pk": 95,
     "req": 55,
@@ -73,7 +73,7 @@
    "group": "1-4",
    "round": 2,
    "level": "TOPIK I",
-   "round_key": null,
+   "round_key": 6,
    "listening": {
     "pk": 84,
     "req": 46,
@@ -95,7 +95,7 @@
    "group": "1-4",
    "round": 2,
    "level": "TOPIK II",
-   "round_key": null,
+   "round_key": 11,
    "listening": {
     "pk": 105,
     "req": 59,
@@ -117,7 +117,7 @@
    "group": "1-4",
    "round": 3,
    "level": "TOPIK I",
-   "round_key": null,
+   "round_key": 7,
    "listening": {
     "pk": 86,
     "req": 48,
@@ -139,7 +139,7 @@
    "group": "1-4",
    "round": 3,
    "level": "TOPIK II",
-   "round_key": null,
+   "round_key": 12,
    "listening": {
     "pk": 22,
     "req": 14,
@@ -161,7 +161,7 @@
    "group": "1-4",
    "round": 4,
    "level": "TOPIK I",
-   "round_key": null,
+   "round_key": 8,
    "listening": {
     "pk": 87,
     "req": 49,
@@ -183,7 +183,7 @@
    "group": "1-4",
    "round": 4,
    "level": "TOPIK II",
-   "round_key": null,
+   "round_key": 13,
    "listening": {
     "pk": 23,
     "req": 14,
@@ -205,7 +205,7 @@
    "group": "5-10",
    "round": 5,
    "level": "TOPIK I",
-   "round_key": 3,
+   "round_key": 22,
    "listening": {
     "pk": 28,
     "req": 18,
@@ -227,7 +227,7 @@
    "group": "5-10",
    "round": 6,
    "level": "TOPIK I",
-   "round_key": 4,
+   "round_key": 14,
    "listening": {
     "pk": 80,
     "req": 44,
@@ -249,7 +249,7 @@
    "group": "5-10",
    "round": 7,
    "level": "TOPIK I",
-   "round_key": 10,
+   "round_key": 15,
    "listening": {
     "pk": 32,
     "req": 20,
@@ -271,7 +271,7 @@
    "group": "5-10",
    "round": 8,
    "level": "TOPIK I",
-   "round_key": 14,
+   "round_key": 16,
    "listening": {
     "pk": 75,
     "req": 42,
@@ -293,7 +293,7 @@
    "group": "5-10",
    "round": 9,
    "level": "TOPIK I",
-   "round_key": 15,
+   "round_key": 17,
    "listening": {
     "pk": 85,
     "req": 48,
@@ -315,7 +315,7 @@
    "group": "5-10",
    "round": 10,
    "level": "TOPIK I",
-   "round_key": 16,
+   "round_key": 25,
    "listening": {
     "pk": 30,
     "req": 19,
@@ -337,7 +337,7 @@
    "group": "5-10",
    "round": 5,
    "level": "TOPIK II",
-   "round_key": 17,
+   "round_key": 23,
    "listening": {
     "pk": 93,
     "req": 53,
@@ -361,7 +361,7 @@
    "level": "TOPIK II",
    "round_key": 18,
    "listening": {
-    "pk": 101,
+    "pk": 100,
     "req": 57,
     "q": 50
    },
@@ -447,14 +447,14 @@
    "group": "5-10",
    "round": 10,
    "level": "TOPIK II",
-   "round_key": 22,
+   "round_key": 24,
    "listening": {
     "pk": 96,
     "req": 55,
     "q": 50
    },
    "reading": {
-    "pk": 15,
+    "pk": 41,
     "req": 12,
     "q": 50
    },
