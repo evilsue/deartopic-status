@@ -221,7 +221,7 @@
    "ko": 0,
    "ml": 0,
    "stage": "ko",
-   "note": "8/3 교체 듣·읽 · pk16 tpk_level 2→1 정정 필요"
+   "note": "8/3 교체 듣·읽 · pk16 tpk_level 2→1 정정 필요 · 2026-09-08 문항 수정 완료(게이트 BLOCK 0), DB 반영 대기"
   },
   {
    "group": "5-10",
@@ -353,7 +353,7 @@
    "ko": 0,
    "ml": 0,
    "stage": "ko",
-   "note": "pk64 tpk_level 1→2 정정 필요"
+   "note": "pk64 tpk_level 1→2 정정 필요 · 2026-09-08 문항 수정 완료(게이트 BLOCK 0), DB 반영 대기"
   },
   {
    "group": "5-10",
