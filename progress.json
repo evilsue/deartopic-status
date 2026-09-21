@@ -1,7 +1,7 @@
 {
-  "updated": "2026-08-21",
+  "updated": "2026-09-21",
   "engine": "v7.9",
-  "baseline": "2026-08-21 정본 실측 (release/ + work/20260804_기출NN회 전수 스캔)",
+  "baseline": "2026-09-21 로컬 피드백 파일 + 베트남어 검수자 ZIP 실측",
   "lang_codes": [
     "ko",
     "en",
@@ -223,7 +223,7 @@
     "total_q": 1700,
     "confirmed_q": 1020,
     "unconfirmed_q": 0,
-    "mock_ko": 676,
+    "mock_ko": 1684,
     "ko_matched": 676,
     "ko_orphan": 0,
     "conf_covered": 0,
@@ -298,102 +298,102 @@
         "level": "TOPIK I",
         "q": 70,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 70,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제5회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 100,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제6회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 70,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제6회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 100,
+        "stage": "trans"
       },
       {
         "title": "실전 모의고사 제7회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 68,
+        "stage": "partial"
       },
       {
         "title": "실전 모의고사 제7회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 96,
+        "stage": "partial"
       },
       {
         "title": "실전 모의고사 제8회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 70,
+        "stage": "langwork"
       },
       {
         "title": "실전 모의고사 제8회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 100,
+        "stage": "langwork"
       },
       {
         "title": "실전 모의고사 제9회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 68,
+        "stage": "langwork"
       },
       {
         "title": "실전 모의고사 제9회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 98,
+        "stage": "langwork"
       },
       {
         "title": "실전 모의고사 제10회 (2026)",
         "level": "TOPIK I",
         "q": 70,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 68,
+        "stage": "langwork"
       },
       {
         "title": "실전 모의고사 제10회 (2026)",
         "level": "TOPIK II",
         "q": 100,
         "confirm": "N",
-        "ko": 0,
-        "stage": "ko"
+        "ko": 100,
+        "stage": "langwork"
       }
     ],
     "round_q": 1700,
-    "round_ko": 676,
+    "round_ko": 1684,
     "unlinked_q": 0,
-    "note": "모의 1~4회(8세트·680문항) 6언어 완료·DB 반영(REL-20260802-01), 단 저작권 4문항(pk25 Q33·34=제3회 TOPIK I · pk60 Q42·43=제1회 TOPIK II)은 전 언어 해설 공란 / 모의 5~10회(12세트·1,020문항) 문항만 업로드·ko 해설 미생성"
+    "note": "모의 1~6회 6언어 피드백 파일 완료 / 7회 164문항 6언어 완료·6문항 보류 / 8회 ko·vi 170문항 완료 / 9회 ko·vi 166문항 완료·4문항 보류 / 10회 ko·vi 168문항 완료·2문항 보류 / 8~10회 en·ja·zh-CN·zh-TW 재생성 대기 / DB 미반영"
   },
   "workload": {
     "per_round_q": 170,

@@ -342,7 +342,13 @@ function pct(a,b){ return b? Math.round(1000*a/b)/10 : 0; }
 function fmt(n){ return (n||0).toLocaleString(); }
 function k(n){ return n>=1000? (Math.round(n/100)/10)+'k' : ''+n; }
 function ceil(a,b){ return b>0? Math.ceil(a/b) : 0; }
-var STAGE={ wait:{t:'콘텐츠 대기',c:'p-idle'}, ko:{t:'번역 대기',c:'p-warn'}, trans:{t:'번역 완료',c:'p-good'} };
+var STAGE={
+  wait:{t:'콘텐츠 대기',c:'p-idle'},
+  ko:{t:'번역 대기',c:'p-warn'},
+  trans:{t:'번역 완료',c:'p-good'},
+  partial:{t:'일부 문항 보류',c:'p-warn'},
+  langwork:{t:'잔여 언어 생성',c:'p-warn'}
+};
 function chip(s){ var x=STAGE[s]||STAGE.wait; return '<span class="pill '+x.c+'">'+x.t+'</span>'; }
 function covcell(v,q,color){ var w=q?Math.round(100*v/q):0;
   return '<td><div class="cov"><span class="frac num">'+fmt(v)+'</span><span class="minibar"><i style="width:'+w+'%;background:'+color+'"></i></span></div></td>'; }
@@ -474,13 +480,25 @@ fetch('todos/round_status.json?t='+Date.now(),{cache:'no-store'})
 
 
 // ── 모의고사 세트 매핑 · 문항 진행 (practice_map.json) ──
-var PM_STAGE={ ko:{t:'해설 대기',c:'p-warn'}, trans:{t:'6언어 완료',c:'p-good'} };
+var PM_STAGE={
+  ko:{t:'해설 대기',c:'p-warn'},
+  trans:{t:'6언어 완료',c:'p-good'},
+  partial:{t:'일부 문항 보류',c:'p-warn'},
+  langwork:{t:'잔여 언어 생성',c:'p-warn'}
+};
 function pmPill(s){ var x=PM_STAGE[s]||PM_STAGE.ko; return '<span class="pill '+x.c+'">'+x.t+'</span>'; }
 function pmPk(o){ return '<span class="pkchip">pk'+o.pk+'</span><span class="pkq">요청'+o.req+' · '+o.q+'</span>'; }
 function pmCov(v,q){ if(!q) return '<td class="zero">—</td>';
   if(!v) return '<td class="zero">0<span class="pkq">/'+q+'</span></td>';
   if(v>=q) return '<td class="full">✓<span class="pkq">'+q+'</span></td>';
   return '<td class="partial">'+v+'<span class="pkq">/'+q+'</span></td>'; }
+function pmLangs(o){
+  if(!o) return '<span class="zero">—</span>';
+  return ['ko','vi','en','ja','zh-CN','zh-TW'].map(function(k){
+    var v=o[k]||0;
+    return '<span class="pkchip">'+k+' '+v+'</span>';
+  }).join(' ');
+}
 function renderPracticeMap(d){
   var T=d.totals;
   var cells=[
@@ -498,13 +516,13 @@ function renderPracticeMap(d){
   }).join('');
   document.querySelector('#pmtbl thead').innerHTML=
     '<tr><th>회차</th><th>레벨</th><th>듣기</th><th>읽기</th><th class="aux">문항</th>'
-    +'<th>DB</th><th>ko</th><th>다국어</th><th>단계</th><th>비고</th></tr>';
+    +'<th>DB</th><th>ko</th><th>6언어 완비</th><th>언어별 현황</th><th>단계</th><th>비고</th></tr>';
   var rows='';
   (d.groups||[]).forEach(function(g){
     var sets=d.sets.filter(function(x){return x.group===g.key;});
     var gq=sets.reduce(function(a,b){return a+b.q;},0);
     var tag=g.tag? '<span class="tagchip">'+g.tag+'</span>' : '<span class="tagchip none">태그 전</span>';
-    rows+='<tr class="pmgrp"><td colspan="10">'+g.title+' · '+sets.length+'세트 · '+g.pk+'pk · '
+    rows+='<tr class="pmgrp"><td colspan="11">'+g.title+' · '+sets.length+'세트 · '+g.pk+'pk · '
       +gq.toLocaleString()+'문항'+tag+' <span class="pmnote">'+(g.note||'')+'</span></td></tr>';
     sets.forEach(function(r){
       rows+='<tr><td>제'+r.round+'회'+(r.round_key?'<span class="pkq">rk'+r.round_key+'</span>':'')+'</td>'
@@ -512,20 +530,20 @@ function renderPracticeMap(d){
         +'<td>'+pmPk(r.listening)+'</td><td>'+pmPk(r.reading)+'</td>'
         +'<td class="aux num">'+r.q+'</td>'
         +(r.item_status==='db'?'<td class="full">✓</td>':'<td class="zero">—</td>')
-        +pmCov(r.ko,r.q)+pmCov(r.ml,r.q)
+        +pmCov(r.ko,r.q)+pmCov(r.ml,r.q)+'<td class="pmnote">'+pmLangs(r.langs)+'</td>'
         +'<td>'+pmPill(r.stage)+'</td>'
         +'<td class="pmnote">'+(r.note||'')+'</td></tr>';
     });
   });
   document.querySelector('#pmtbl tbody').innerHTML=rows;
   document.getElementById('pmnote').innerHTML=
-    '문항 열 ✓=DB 업로드 완료 · ko/다국어 열 ✓=전량 · 숫자=부분(분모는 세트 문항수)<br>'
+    '문항 열 ✓=DB 업로드 완료 · ko/6언어 완비 열 ✓=전량 · 숫자=부분(분모는 세트 문항수) · 언어별 현황은 실제 생성·검수 파일 수<br>'
     +'출처: '+(d.source||'')+' · 갱신 '+(d.updated||'—')
     +'<br>⚠ 요청번호는 pk 간 중복된다(요청34=pk63·64·65 · 요청11=pk21·99 · 요청53=pk93·94). 같은 요청의 다른 round pk를 덮지 않도록 업로드 후 대조할 것.';
 }
 fetch('todos/practice_map.json?t='+Date.now(),{cache:'no-store'})
   .then(function(r){return r.json();}).then(renderPracticeMap)
-  .catch(function(e){ document.querySelector('#pmtbl tbody').innerHTML='<tr><td colspan="10" class="mxload">매핑 로드 실패</td></tr>'; });
+  .catch(function(e){ document.querySelector('#pmtbl tbody').innerHTML='<tr><td colspan="11" class="mxload">매핑 로드 실패</td></tr>'; });
 
 </script>
 </body>

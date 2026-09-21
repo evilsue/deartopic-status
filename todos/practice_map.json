@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-08",
- "source": "관리자 화면 /practice-rounds 실측 (2026-09-08) — round_key·pk 매핑 정정",
+ "updated": "2026-09-21",
+ "source": "관리자 화면 매핑(2026-09-08) + 로컬 피드백 파일·베트남어 검수자 ZIP 실측(2026-09-21)",
  "groups": [
   {
    "key": "1-4",
@@ -14,15 +14,15 @@
    "title": "모의 5~10회",
    "tag": null,
    "pk": 24,
-   "note": "문항만 DB 반영(2026-08-04) · 해설 미생성"
+   "note": "7~10회 vi 검수자 최신본 확인 · 8~10회 en/ja/zh-CN/zh-TW 잔여 생성 · DB 미반영"
   }
  ],
  "totals": {
   "sets": 20,
   "q": 1700,
   "item_db": 1700,
-  "ko": 676,
-  "ml": 676
+  "ko": 1684,
+  "ml": 1180
  },
  "sets": [
   {
@@ -218,10 +218,11 @@
    },
    "q": 70,
    "item_status": "db",
-   "ko": 0,
-   "ml": 0,
-   "stage": "ko",
-   "note": "8/3 교체 듣·읽 · pk16 tpk_level 2→1 정정 필요 · 2026-09-08 문항 수정 완료(게이트 BLOCK 0), DB 반영 대기"
+   "ko": 70,
+   "ml": 70,
+   "langs": {"ko":70,"vi":70,"en":70,"ja":70,"zh-CN":70,"zh-TW":70},
+   "stage": "trans",
+   "note": "8/3 교체 듣·읽 · pk16 tpk_level 2→1 정정 필요 · 2026-09-08 문항 수정 완료(게이트 BLOCK 0) · 6언어 피드백 파일 완료 · DB 미반영"
   },
   {
    "group": "5-10",
@@ -240,10 +241,11 @@
    },
    "q": 70,
    "item_status": "db",
-   "ko": 0,
-   "ml": 0,
-   "stage": "ko",
-   "note": "8/3 교체 듣·읽"
+   "ko": 70,
+   "ml": 70,
+   "langs": {"ko":70,"vi":70,"en":70,"ja":70,"zh-CN":70,"zh-TW":70},
+   "stage": "trans",
+   "note": "8/3 교체 듣·읽 · 6언어 피드백 파일 완료 · DB 미반영"
   },
   {
    "group": "5-10",
@@ -262,10 +264,11 @@
    },
    "q": 70,
    "item_status": "db",
-   "ko": 0,
-   "ml": 0,
-   "stage": "ko",
-   "note": "8/3 교체 듣·읽 · pk32 Q13 정본 미반영"
+   "ko": 68,
+   "ml": 68,
+   "langs": {"ko":68,"vi":68,"en":68,"ja":68,"zh-CN":68,"zh-TW":68},
+   "stage": "partial",
+   "note": "8/3 교체 듣·읽 · pk32 Q13 정본 미반영 · 6언어 68/70 · 보류 2문항은 별도 목록 관리 · vi 최신 검수본 확인"
   },
   {
    "group": "5-10",
@@ -284,10 +287,11 @@
    },
    "q": 70,
    "item_status": "db",
-   "ko": 0,
+   "ko": 70,
    "ml": 0,
-   "stage": "ko",
-   "note": "8/3 교체 듣·읽"
+   "langs": {"ko":70,"vi":70,"en":0,"ja":0,"zh-CN":0,"zh-TW":0},
+   "stage": "langwork",
+   "note": "8/3 교체 듣·읽 · ko·vi 완료 · en/ja/zh-CN/zh-TW 재생성 대상"
   },
   {
    "group": "5-10",
@@ -306,10 +310,11 @@
    },
    "q": 70,
    "item_status": "db",
-   "ko": 0,
+   "ko": 68,
    "ml": 0,
-   "stage": "ko",
-   "note": "8/3 교체 듣·읽"
+   "langs": {"ko":68,"vi":68,"en":0,"ja":0,"zh-CN":0,"zh-TW":0},
+   "stage": "langwork",
+   "note": "8/3 교체 듣·읽 · ko·vi 68/70 · 잔여 4언어 생성 · 보류 2문항 별도 관리"
   },
   {
    "group": "5-10",
@@ -328,10 +333,11 @@
    },
    "q": 70,
    "item_status": "db",
-   "ko": 0,
+   "ko": 68,
    "ml": 0,
-   "stage": "ko",
-   "note": "8/3 교체 듣·읽"
+   "langs": {"ko":68,"vi":68,"en":0,"ja":0,"zh-CN":0,"zh-TW":0},
+   "stage": "langwork",
+   "note": "8/3 교체 듣·읽 · ko·vi 68/70 · 잔여 4언어 생성 · 보류 2문항 별도 관리"
   },
   {
    "group": "5-10",
@@ -350,10 +356,11 @@
    },
    "q": 100,
    "item_status": "db",
-   "ko": 0,
-   "ml": 0,
-   "stage": "ko",
-   "note": "pk64 tpk_level 1→2 정정 필요 · 2026-09-08 문항 수정 완료(게이트 BLOCK 0), DB 반영 대기"
+   "ko": 100,
+   "ml": 100,
+   "langs": {"ko":100,"vi":100,"en":100,"ja":100,"zh-CN":100,"zh-TW":100},
+   "stage": "trans",
+   "note": "pk64 tpk_level 1→2 정정 필요 · 2026-09-08 문항 수정 완료(게이트 BLOCK 0) · 6언어 피드백 파일 완료 · DB 미반영"
   },
   {
    "group": "5-10",
@@ -372,10 +379,11 @@
    },
    "q": 100,
    "item_status": "db",
-   "ko": 0,
-   "ml": 0,
-   "stage": "ko",
-   "note": ""
+   "ko": 100,
+   "ml": 100,
+   "langs": {"ko":100,"vi":100,"en":100,"ja":100,"zh-CN":100,"zh-TW":100},
+   "stage": "trans",
+   "note": "6언어 피드백 파일 완료 · DB 미반영"
   },
   {
    "group": "5-10",
@@ -394,10 +402,11 @@
    },
    "q": 100,
    "item_status": "db",
-   "ko": 0,
-   "ml": 0,
-   "stage": "ko",
-   "note": ""
+   "ko": 96,
+   "ml": 96,
+   "langs": {"ko":96,"vi":96,"en":96,"ja":96,"zh-CN":96,"zh-TW":96},
+   "stage": "partial",
+   "note": "6언어 96/100 · 보류 4문항은 별도 목록 관리 · vi 최신 검수본 확인"
   },
   {
    "group": "5-10",
@@ -416,10 +425,11 @@
    },
    "q": 100,
    "item_status": "db",
-   "ko": 0,
+   "ko": 100,
    "ml": 0,
-   "stage": "ko",
-   "note": "8/3 교체 읽"
+   "langs": {"ko":100,"vi":100,"en":0,"ja":0,"zh-CN":0,"zh-TW":0},
+   "stage": "langwork",
+   "note": "8/3 교체 읽 · ko·vi 완료 · en/ja/zh-CN/zh-TW 재생성 대상"
   },
   {
    "group": "5-10",
@@ -438,10 +448,11 @@
    },
    "q": 100,
    "item_status": "db",
-   "ko": 0,
+   "ko": 98,
    "ml": 0,
-   "stage": "ko",
-   "note": ""
+   "langs": {"ko":98,"vi":98,"en":0,"ja":0,"zh-CN":0,"zh-TW":0},
+   "stage": "langwork",
+   "note": "ko·vi 98/100 · 잔여 4언어 생성 · 보류 2문항 별도 관리"
   },
   {
    "group": "5-10",
@@ -460,10 +471,11 @@
    },
    "q": 100,
    "item_status": "db",
-   "ko": 0,
+   "ko": 100,
    "ml": 0,
-   "stage": "ko",
-   "note": ""
+   "langs": {"ko":100,"vi":100,"en":0,"ja":0,"zh-CN":0,"zh-TW":0},
+   "stage": "langwork",
+   "note": "ko·vi 완료 · en/ja/zh-CN/zh-TW 재생성 대상"
   }
  ]
 }
