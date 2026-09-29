@@ -347,7 +347,8 @@ var STAGE={
   ko:{t:'번역 대기',c:'p-warn'},
   trans:{t:'번역 완료',c:'p-good'},
   partial:{t:'일부 문항 보류',c:'p-warn'},
-  langwork:{t:'잔여 언어 생성',c:'p-warn'}
+  langwork:{t:'잔여 언어 생성',c:'p-warn'},
+  qa:{t:'출시 검수',c:'p-warn'}
 };
 function chip(s){ var x=STAGE[s]||STAGE.wait; return '<span class="pill '+x.c+'">'+x.t+'</span>'; }
 function covcell(v,q,color){ var w=q?Math.round(100*v/q):0;
@@ -484,7 +485,8 @@ var PM_STAGE={
   ko:{t:'해설 대기',c:'p-warn'},
   trans:{t:'6언어 완료',c:'p-good'},
   partial:{t:'일부 문항 보류',c:'p-warn'},
-  langwork:{t:'잔여 언어 생성',c:'p-warn'}
+  langwork:{t:'잔여 언어 생성',c:'p-warn'},
+  qa:{t:'출시 검수',c:'p-warn'}
 };
 function pmPill(s){ var x=PM_STAGE[s]||PM_STAGE.ko; return '<span class="pill '+x.c+'">'+x.t+'</span>'; }
 function pmPk(o){ return '<span class="pkchip">pk'+o.pk+'</span><span class="pkq">요청'+o.req+' · '+o.q+'</span>'; }
