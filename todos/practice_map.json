@@ -49,28 +49,6 @@
   },
   {
    "group": "1-4",
-   "round": 1,
-   "level": "TOPIK II",
-   "round_key": 9,
-   "listening": {
-    "pk": 95,
-    "req": 55,
-    "q": 50
-   },
-   "reading": {
-    "pk": 60,
-    "req": 32,
-    "q": 50
-   },
-   "q": 100,
-   "item_status": "db",
-   "ko": 100,
-   "ml": 100,
-   "stage": "trans",
-   "note": "pk60 Q42·43 자체 지문·6언어 피드백 보강 완료, DB 반영 대기"
-  },
-  {
-   "group": "1-4",
    "round": 2,
    "level": "TOPIK I",
    "round_key": 6,
@@ -90,6 +68,72 @@
    "ml": 70,
    "stage": "trans",
    "note": "pk24 Q21 정답키 보류 이력"
+  },
+  {
+   "group": "1-4",
+   "round": 3,
+   "level": "TOPIK I",
+   "round_key": 7,
+   "listening": {
+    "pk": 86,
+    "req": 48,
+    "q": 30
+   },
+   "reading": {
+    "pk": 25,
+    "req": 17,
+    "q": 40
+   },
+   "q": 70,
+   "item_status": "db",
+   "ko": 70,
+   "ml": 70,
+   "stage": "trans",
+   "note": "pk25 Q33·34 6언어 피드백 보강 완료, DB 반영 대기"
+  },
+  {
+   "group": "1-4",
+   "round": 4,
+   "level": "TOPIK I",
+   "round_key": 8,
+   "listening": {
+    "pk": 87,
+    "req": 49,
+    "q": 30
+   },
+   "reading": {
+    "pk": 68,
+    "req": 36,
+    "q": 40
+   },
+   "q": 70,
+   "item_status": "db",
+   "ko": 70,
+   "ml": 70,
+   "stage": "trans",
+   "note": ""
+  },
+  {
+   "group": "1-4",
+   "round": 1,
+   "level": "TOPIK II",
+   "round_key": 9,
+   "listening": {
+    "pk": 95,
+    "req": 55,
+    "q": 50
+   },
+   "reading": {
+    "pk": 60,
+    "req": 32,
+    "q": 50
+   },
+   "q": 100,
+   "item_status": "db",
+   "ko": 100,
+   "ml": 100,
+   "stage": "trans",
+   "note": "pk60 Q42·43 자체 지문·6언어 피드백 보강 완료, DB 반영 대기"
   },
   {
    "group": "1-4",
@@ -116,28 +160,6 @@
   {
    "group": "1-4",
    "round": 3,
-   "level": "TOPIK I",
-   "round_key": 7,
-   "listening": {
-    "pk": 86,
-    "req": 48,
-    "q": 30
-   },
-   "reading": {
-    "pk": 25,
-    "req": 17,
-    "q": 40
-   },
-   "q": 70,
-   "item_status": "db",
-   "ko": 70,
-   "ml": 70,
-   "stage": "trans",
-   "note": "pk25 Q33·34 6언어 피드백 보강 완료, DB 반영 대기"
-  },
-  {
-   "group": "1-4",
-   "round": 3,
    "level": "TOPIK II",
    "round_key": 12,
    "listening": {
@@ -156,28 +178,6 @@
    "ml": 100,
    "stage": "trans",
    "note": "pk22 세트PK 미확정 이력"
-  },
-  {
-   "group": "1-4",
-   "round": 4,
-   "level": "TOPIK I",
-   "round_key": 8,
-   "listening": {
-    "pk": 87,
-    "req": 49,
-    "q": 30
-   },
-   "reading": {
-    "pk": 68,
-    "req": 36,
-    "q": 40
-   },
-   "q": 70,
-   "item_status": "db",
-   "ko": 70,
-   "ml": 70,
-   "stage": "trans",
-   "note": ""
   },
   {
    "group": "1-4",
@@ -205,36 +205,6 @@
    "group": "5-10",
    "round": 5,
    "level": "TOPIK I",
-   "round_key": 22,
-   "listening": {
-    "pk": 28,
-    "req": 18,
-    "q": 30
-   },
-   "reading": {
-    "pk": 16,
-    "req": 13,
-    "q": 40
-   },
-   "q": 70,
-   "item_status": "db",
-   "ko": 70,
-   "ml": 70,
-   "langs": {
-    "ko": 70,
-    "vi": 70,
-    "en": 70,
-    "ja": 70,
-    "zh-CN": 70,
-    "zh-TW": 70
-   },
-   "stage": "trans",
-   "note": "6언어 피드백 파일 완료 · 출시 검수 및 DB 반영 대기"
-  },
-  {
-   "group": "5-10",
-   "round": 6,
-   "level": "TOPIK I",
    "round_key": 14,
    "listening": {
     "pk": 80,
@@ -260,6 +230,36 @@
    },
    "stage": "trans",
    "note": "6언어 피드백 파일 완료 · 라벨 485건 ko 재판정 및 DB 반영 대기"
+  },
+  {
+   "group": "5-10",
+   "round": 6,
+   "level": "TOPIK I",
+   "round_key": 22,
+   "listening": {
+    "pk": 28,
+    "req": 18,
+    "q": 30
+   },
+   "reading": {
+    "pk": 16,
+    "req": 13,
+    "q": 40
+   },
+   "q": 70,
+   "item_status": "db",
+   "ko": 70,
+   "ml": 70,
+   "langs": {
+    "ko": 70,
+    "vi": 70,
+    "en": 70,
+    "ja": 70,
+    "zh-CN": 70,
+    "zh-TW": 70
+   },
+   "stage": "trans",
+   "note": "6언어 피드백 파일 완료 · 출시 검수 및 DB 반영 대기"
   },
   {
    "group": "5-10",
@@ -385,36 +385,6 @@
    "group": "5-10",
    "round": 5,
    "level": "TOPIK II",
-   "round_key": 23,
-   "listening": {
-    "pk": 93,
-    "req": 53,
-    "q": 50
-   },
-   "reading": {
-    "pk": 64,
-    "req": 33,
-    "q": 50
-   },
-   "q": 100,
-   "item_status": "db",
-   "ko": 100,
-   "ml": 100,
-   "langs": {
-    "ko": 100,
-    "vi": 100,
-    "en": 100,
-    "ja": 100,
-    "zh-CN": 100,
-    "zh-TW": 100
-   },
-   "stage": "trans",
-   "note": "6언어 피드백 파일 완료 · 출시 검수 및 DB 반영 대기"
-  },
-  {
-   "group": "5-10",
-   "round": 6,
-   "level": "TOPIK II",
    "round_key": 18,
    "listening": {
     "pk": 100,
@@ -440,6 +410,36 @@
    },
    "stage": "trans",
    "note": "6언어 피드백 파일 완료 · 라벨 485건 ko 재판정 및 DB 반영 대기"
+  },
+  {
+   "group": "5-10",
+   "round": 6,
+   "level": "TOPIK II",
+   "round_key": 23,
+   "listening": {
+    "pk": 93,
+    "req": 53,
+    "q": 50
+   },
+   "reading": {
+    "pk": 64,
+    "req": 33,
+    "q": 50
+   },
+   "q": 100,
+   "item_status": "db",
+   "ko": 100,
+   "ml": 100,
+   "langs": {
+    "ko": 100,
+    "vi": 100,
+    "en": 100,
+    "ja": 100,
+    "zh-CN": 100,
+    "zh-TW": 100
+   },
+   "stage": "trans",
+   "note": "6언어 피드백 파일 완료 · 출시 검수 및 DB 반영 대기"
   },
   {
    "group": "5-10",
