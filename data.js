@@ -1,4 +1,1643 @@
 window.PROGRESS = {
+  "practice_feedback": {
+    "updated": "2026-10-08",
+    "source_updated": "2026-09-29",
+    "scope": "모의 1~10회 · TOPIK I·II 듣기·읽기 · 20개 연습세트",
+    "basis": "기존 파일 집계와 작업 기록을 회차·레벨·언어별로 연결했습니다. 이번에 콘텐츠를 재검수하거나 DB를 재조회한 결과는 아닙니다.",
+    "lang_codes": [
+      "ko",
+      "en",
+      "ja",
+      "vi",
+      "zh-CN",
+      "zh-TW"
+    ],
+    "sources": [
+      {
+        "id": "todos/practice_map.json",
+        "sha256": "4a7d67fb465038603ae2b3a662934a0265445685f7c4b5dc4398d7186a256105"
+      },
+      {
+        "id": "todos/할일_20260929.md",
+        "sha256": "610952134c5ede7bb884bb20540182847993736ba9b85347f60fa78db146cf31"
+      }
+    ],
+    "groups": [
+      {
+        "key": "1-4",
+        "title": "모의 1~4회",
+        "tag": "REL-20260802-01",
+        "pk": 16,
+        "note": "기존 서비스 기록 · 9월 보강분 DB 반영 대기"
+      },
+      {
+        "key": "5-10",
+        "title": "모의 5~10회",
+        "tag": null,
+        "pk": 24,
+        "note": "피드백 파일 1,018/1,020문항 · 검수·사람 결정·DB 반영 대기"
+      }
+    ],
+    "sets": [
+      {
+        "group": "1-4",
+        "round": 1,
+        "level": "TOPIK I",
+        "round_key": 5,
+        "listening": {
+          "pk": 82,
+          "req": 44,
+          "q": 30
+        },
+        "reading": {
+          "pk": 29,
+          "req": 9,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "stage": "trans",
+        "note": "pk29 원본없음·파생",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "latest_review_not_linked"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "historical_uploaded_record",
+        "release": "historical_service_record"
+      },
+      {
+        "group": "1-4",
+        "round": 1,
+        "level": "TOPIK II",
+        "round_key": 9,
+        "listening": {
+          "pk": 95,
+          "req": 55,
+          "q": 50
+        },
+        "reading": {
+          "pk": 60,
+          "req": 32,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "stage": "trans",
+        "note": "pk60 Q42·43 자체 지문·6언어 피드백 보강 완료, DB 반영 대기",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "latest_review_not_linked"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "supplement_pending",
+        "release": "historical_service_record"
+      },
+      {
+        "group": "1-4",
+        "round": 2,
+        "level": "TOPIK I",
+        "round_key": 6,
+        "listening": {
+          "pk": 84,
+          "req": 46,
+          "q": 30
+        },
+        "reading": {
+          "pk": 24,
+          "req": 17,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "stage": "trans",
+        "note": "pk24 Q21 정답키 보류 이력",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "latest_review_not_linked"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "historical_uploaded_record",
+        "release": "historical_service_record"
+      },
+      {
+        "group": "1-4",
+        "round": 2,
+        "level": "TOPIK II",
+        "round_key": 11,
+        "listening": {
+          "pk": 105,
+          "req": 59,
+          "q": 50
+        },
+        "reading": {
+          "pk": 89,
+          "req": 51,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "stage": "trans",
+        "note": "",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "latest_review_not_linked"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "historical_uploaded_record",
+        "release": "historical_service_record"
+      },
+      {
+        "group": "1-4",
+        "round": 3,
+        "level": "TOPIK I",
+        "round_key": 7,
+        "listening": {
+          "pk": 86,
+          "req": 48,
+          "q": 30
+        },
+        "reading": {
+          "pk": 25,
+          "req": 17,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "stage": "trans",
+        "note": "pk25 Q33·34 6언어 피드백 보강 완료, DB 반영 대기",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "latest_review_not_linked"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "supplement_pending",
+        "release": "historical_service_record"
+      },
+      {
+        "group": "1-4",
+        "round": 3,
+        "level": "TOPIK II",
+        "round_key": 12,
+        "listening": {
+          "pk": 22,
+          "req": 14,
+          "q": 50
+        },
+        "reading": {
+          "pk": 90,
+          "req": 51,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "stage": "trans",
+        "note": "pk22 세트PK 미확정 이력",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "latest_review_not_linked"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "historical_uploaded_record",
+        "release": "historical_service_record"
+      },
+      {
+        "group": "1-4",
+        "round": 4,
+        "level": "TOPIK I",
+        "round_key": 8,
+        "listening": {
+          "pk": 87,
+          "req": 49,
+          "q": 30
+        },
+        "reading": {
+          "pk": 68,
+          "req": 36,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "stage": "trans",
+        "note": "",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "latest_review_not_linked"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "historical_uploaded_record",
+        "release": "historical_service_record"
+      },
+      {
+        "group": "1-4",
+        "round": 4,
+        "level": "TOPIK II",
+        "round_key": 13,
+        "listening": {
+          "pk": 23,
+          "req": 14,
+          "q": 50
+        },
+        "reading": {
+          "pk": 91,
+          "req": 52,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "stage": "trans",
+        "note": "pk23 세트PK 미확정 · pk91 round 충돌 복구",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "six_language_complete_record"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "latest_review_not_linked"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "historical_uploaded_record",
+        "release": "historical_service_record"
+      },
+      {
+        "group": "5-10",
+        "round": 5,
+        "level": "TOPIK I",
+        "round_key": 22,
+        "listening": {
+          "pk": 28,
+          "req": 18,
+          "q": 30
+        },
+        "reading": {
+          "pk": 16,
+          "req": 13,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "langs": {
+          "ko": 70,
+          "vi": 70,
+          "en": 70,
+          "ja": 70,
+          "zh-CN": 70,
+          "zh-TW": 70
+        },
+        "stage": "trans",
+        "note": "6언어 피드백 파일 완료 · 출시 검수 및 DB 반영 대기",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "release_review_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 5,
+        "level": "TOPIK II",
+        "round_key": 23,
+        "listening": {
+          "pk": 93,
+          "req": 53,
+          "q": 50
+        },
+        "reading": {
+          "pk": 64,
+          "req": 34,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "langs": {
+          "ko": 100,
+          "vi": 100,
+          "en": 100,
+          "ja": 100,
+          "zh-CN": 100,
+          "zh-TW": 100
+        },
+        "stage": "trans",
+        "note": "6언어 피드백 파일 완료 · 출시 검수 및 DB 반영 대기",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "release_review_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 6,
+        "level": "TOPIK I",
+        "round_key": 14,
+        "listening": {
+          "pk": 80,
+          "req": 44,
+          "q": 30
+        },
+        "reading": {
+          "pk": 45,
+          "req": 30,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "langs": {
+          "ko": 70,
+          "vi": 70,
+          "en": 70,
+          "ja": 70,
+          "zh-CN": 70,
+          "zh-TW": 70
+        },
+        "stage": "trans",
+        "note": "6언어 피드백 파일 완료 · 라벨 485건 ko 재판정 및 DB 반영 대기",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "label_reassessment_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 6,
+        "level": "TOPIK II",
+        "round_key": 18,
+        "listening": {
+          "pk": 100,
+          "req": 57,
+          "q": 50
+        },
+        "reading": {
+          "pk": 99,
+          "req": 11,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "langs": {
+          "ko": 100,
+          "vi": 100,
+          "en": 100,
+          "ja": 100,
+          "zh-CN": 100,
+          "zh-TW": 100
+        },
+        "stage": "trans",
+        "note": "6언어 피드백 파일 완료 · 라벨 485건 ko 재판정 및 DB 반영 대기",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "label_reassessment_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 7,
+        "level": "TOPIK I",
+        "round_key": 15,
+        "listening": {
+          "pk": 32,
+          "req": 20,
+          "q": 30
+        },
+        "reading": {
+          "pk": 63,
+          "req": 34,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "langs": {
+          "ko": 70,
+          "vi": 70,
+          "en": 70,
+          "ja": 70,
+          "zh-CN": 70,
+          "zh-TW": 70
+        },
+        "stage": "qa",
+        "note": "6언어 70/70 · 출시 검수 및 DB 반영 대기",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "release_review_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 7,
+        "level": "TOPIK II",
+        "round_key": 19,
+        "listening": {
+          "pk": 88,
+          "req": 50,
+          "q": 50
+        },
+        "reading": {
+          "pk": 58,
+          "req": 31,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 98,
+        "ml": 98,
+        "langs": {
+          "ko": 98,
+          "vi": 98,
+          "en": 98,
+          "ja": 98,
+          "zh-CN": 98,
+          "zh-TW": 98
+        },
+        "stage": "partial",
+        "note": "6언어 98/100 · pk58 Q42~43 제시문 제공 또는 출시 제외 결정 대기",
+        "languages": {
+          "ko": {
+            "written": 98,
+            "total": 100,
+            "missing": 2,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 98,
+            "total": 100,
+            "missing": 2,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 98,
+            "total": 100,
+            "missing": 2,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 98,
+            "total": 100,
+            "missing": 2,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 98,
+            "total": 100,
+            "missing": 2,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 98,
+            "total": 100,
+            "missing": 2,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "source_decision_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 8,
+        "level": "TOPIK I",
+        "round_key": 16,
+        "listening": {
+          "pk": 75,
+          "req": 42,
+          "q": 30
+        },
+        "reading": {
+          "pk": 65,
+          "req": 34,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "langs": {
+          "ko": 70,
+          "vi": 70,
+          "en": 70,
+          "ja": 70,
+          "zh-CN": 70,
+          "zh-TW": 70
+        },
+        "stage": "qa",
+        "note": "6언어 70/70 · 8회 매핑 확인·D-201 표적 정합 수정 후 출시",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "targeted_revision_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 8,
+        "level": "TOPIK II",
+        "round_key": 20,
+        "listening": {
+          "pk": 94,
+          "req": 53,
+          "q": 50
+        },
+        "reading": {
+          "pk": 21,
+          "req": 11,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "langs": {
+          "ko": 100,
+          "vi": 100,
+          "en": 100,
+          "ja": 100,
+          "zh-CN": 100,
+          "zh-TW": 100
+        },
+        "stage": "qa",
+        "note": "6언어 100/100 · 8회 매핑 확인·D-201 표적 정합 수정 후 출시",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "targeted_revision_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 9,
+        "level": "TOPIK I",
+        "round_key": 17,
+        "listening": {
+          "pk": 85,
+          "req": 48,
+          "q": 30
+        },
+        "reading": {
+          "pk": 74,
+          "req": 41,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "langs": {
+          "ko": 70,
+          "vi": 70,
+          "en": 70,
+          "ja": 70,
+          "zh-CN": 70,
+          "zh-TW": 70
+        },
+        "stage": "qa",
+        "note": "6언어 70/70 · D-201 표적 정합 수정 후 출시",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "targeted_revision_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 9,
+        "level": "TOPIK II",
+        "round_key": 21,
+        "listening": {
+          "pk": 97,
+          "req": 56,
+          "q": 50
+        },
+        "reading": {
+          "pk": 92,
+          "req": 52,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "langs": {
+          "ko": 100,
+          "vi": 100,
+          "en": 100,
+          "ja": 100,
+          "zh-CN": 100,
+          "zh-TW": 100
+        },
+        "stage": "qa",
+        "note": "6언어 100/100 · D-201 표적 정합 수정 후 출시",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "targeted_revision_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 10,
+        "level": "TOPIK I",
+        "round_key": 25,
+        "listening": {
+          "pk": 30,
+          "req": 19,
+          "q": 30
+        },
+        "reading": {
+          "pk": 34,
+          "req": 22,
+          "q": 40
+        },
+        "q": 70,
+        "item_status": "db",
+        "ko": 70,
+        "ml": 70,
+        "langs": {
+          "ko": 70,
+          "vi": 70,
+          "en": 70,
+          "ja": 70,
+          "zh-CN": 70,
+          "zh-TW": 70
+        },
+        "stage": "qa",
+        "note": "6언어 70/70 · D-201 표적 정합 수정 후 출시",
+        "languages": {
+          "ko": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 70,
+            "total": 70,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "targeted_revision_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      },
+      {
+        "group": "5-10",
+        "round": 10,
+        "level": "TOPIK II",
+        "round_key": 24,
+        "listening": {
+          "pk": 96,
+          "req": 55,
+          "q": 50
+        },
+        "reading": {
+          "pk": 41,
+          "req": 12,
+          "q": 50
+        },
+        "q": 100,
+        "item_status": "db",
+        "ko": 100,
+        "ml": 100,
+        "langs": {
+          "ko": 100,
+          "vi": 100,
+          "en": 100,
+          "ja": 100,
+          "zh-CN": 100,
+          "zh-TW": 100
+        },
+        "stage": "qa",
+        "note": "6언어 100/100 · D-201 표적 정합 수정 후 출시",
+        "languages": {
+          "ko": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "en": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "ja": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "vi": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-CN": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          },
+          "zh-TW": {
+            "written": 100,
+            "total": 100,
+            "missing": 0,
+            "reviewed": null,
+            "basis": "per_language_file_count"
+          }
+        },
+        "review": {
+          "count": null,
+          "state": "targeted_revision_pending"
+        },
+        "item_db": "historical_uploaded_record",
+        "feedback_db": "pending",
+        "release": "pending"
+      }
+    ],
+    "totals": {
+      "rounds": 10,
+      "sets": 20,
+      "questions": 1700,
+      "item_db_recorded": 1700,
+      "feedback_all_languages": 1698,
+      "complete_sets": 19,
+      "incomplete_sets": 1,
+      "languages": {
+        "ko": {
+          "written": 1698,
+          "missing": 2,
+          "reviewed": null
+        },
+        "en": {
+          "written": 1698,
+          "missing": 2,
+          "reviewed": null
+        },
+        "ja": {
+          "written": 1698,
+          "missing": 2,
+          "reviewed": null
+        },
+        "vi": {
+          "written": 1698,
+          "missing": 2,
+          "reviewed": null
+        },
+        "zh-CN": {
+          "written": 1698,
+          "missing": 2,
+          "reviewed": null
+        },
+        "zh-TW": {
+          "written": 1698,
+          "missing": 2,
+          "reviewed": null
+        }
+      }
+    }
+  },
   "exam_feedback": {
     "updated": "2026-10-08",
     "scope": "기출 듣기·읽기 피드백",
