@@ -250,10 +250,26 @@
     </div>
   </section>
 
+  <!-- 로컬 작성 수: 기존 번역·DB 집계와 별도 -->
+  <section id="writing-section" hidden>
+    <div class="sechead"><h2>쓰기·모의고사 작성 현황</h2><span class="rule"></span></div>
+    <div class="card">
+      <p class="cnote" id="writing-basis"></p>
+      <div class="pmsum" id="writing-summary"></div>
+      <p class="pmnote" id="writing-note"></p>
+    </div>
+  </section>
+
   <!-- 회차별 검수현황 (게이트 실측 자동집계) -->
   <section>
     <div class="sechead"><h2>회차별 번역·검수 현황</h2><span class="k">회차×언어×게이트 · 게이트 실측 자동집계</span><span class="rule"></span></div>
     <div class="card">
+      <div id="session-review" hidden style="margin-bottom:16px">
+        <h3>이번 검수</h3>
+        <p class="cnote" id="session-review-scope"></p>
+        <div id="session-review-rounds" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px"></div>
+        <p class="pmnote" id="session-review-note"></p>
+      </div>
       <div class="langsum" id="langsum"></div>
       <div class="twrap"><table id="mxtbl"><thead></thead><tbody>
         <tr><td colspan="9" class="mxload">불러오는 중…</td></tr>
@@ -354,9 +370,44 @@ function chip(s){ var x=STAGE[s]||STAGE.wait; return '<span class="pill '+x.c+'"
 function covcell(v,q,color){ var w=q?Math.round(100*v/q):0;
   return '<td><div class="cov"><span class="frac num">'+fmt(v)+'</span><span class="minibar"><i style="width:'+w+'%;background:'+color+'"></i></span></div></td>'; }
 
+function renderWritingAndReview(d){
+  var w=d.writing, review=d.session_review;
+  document.getElementById('writing-section').hidden=!w;
+  if(w){
+    document.getElementById('writing-basis').textContent=w.basis+' · 갱신 '+w.updated;
+    var summary=document.getElementById('writing-summary');
+    summary.textContent='';
+    [
+      [w.past, '기출 쓰기', w.past.rounds.join('·')+'회'],
+      [w.mock, '모의 쓰기', w.mock.round_start+'~'+w.mock.round_end+'회'],
+      [w.mock_lr.topik_i, '모의 듣기·읽기 TOPIK I', w.mock_lr.round_start+'~'+w.mock_lr.round_end+'회'],
+      [w.mock_lr.topik_ii, '모의 듣기·읽기 TOPIK II', w.mock_lr.round_start+'~'+w.mock_lr.round_end+'회']
+    ].forEach(function(row){
+      var cell=document.createElement('div'); cell.className='pmcell';
+      [['pv num',row[0].round_count+'회 · '+fmt(row[0].question_count)+'문항'],['pl',row[1]],['pmnote',row[2]]].forEach(function(part){
+        var line=document.createElement('div'); line.className=part[0]; line.textContent=part[1]; cell.appendChild(line);
+      });
+      summary.appendChild(cell);
+    });
+    document.getElementById('writing-note').textContent='모의 듣기·읽기 합계 '+fmt(w.mock_lr.question_count)+'문항 · TOPIK I·II 각 '+w.mock_lr.round_count+'회';
+  }
+  document.getElementById('session-review').hidden=!review;
+  if(review){
+    var states={automated_pass:{t:'자동 PASS',c:'p-good'},corrected_pending_release:{t:'교정 완료 · 출시 판정 보류',c:'p-warn'},in_progress:{t:'검수 진행 중',c:'p-warn'},pending:{t:'패널 대기',c:'p-idle'}};
+    document.getElementById('session-review-scope').textContent=review.updated+' · '+review.scope+' · '+review.lang_codes.length+'개 언어('+review.lang_codes.join('·')+'; 스페인어 제외)';
+    var rounds=document.getElementById('session-review-rounds'); rounds.textContent='';
+    review.rounds.forEach(function(r){
+      var s=states[r.state]||{t:'상태 확인 필요',c:'p-warn'};
+      var badge=document.createElement('span'); badge.className='pill '+s.c; badge.textContent=r.round+'회 '+s.t; rounds.appendChild(badge);
+    });
+    document.getElementById('session-review-note').textContent=review.rounds.filter(function(r){return r.note;}).map(function(r){return r.round+'회 '+r.note;}).concat(review.note||[]).join(' · ');
+  }
+}
+
 function render(d){
   if(!d){ document.getElementById('err').textContent='데이터 로드 실패'; return; }
   D=d;
+  renderWritingAndReview(d);
   var e=d.exam, p=d.practice, U=d.units, W=d.workload, conf=d.denom.confirmed, tot=d.denom.total;
 
   document.getElementById('meta').textContent='최종 갱신 '+(d.updated||'—')

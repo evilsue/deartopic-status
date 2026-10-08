@@ -1,5 +1,42 @@
 {
   "updated": "2026-09-29",
+  "writing": {
+    "updated": "2026-10-08",
+    "basis": "국문 문항 자료의 로컬 작성 수 · 다국어 피드백 완성·출시·DB 탑재 완료 수 아님",
+    "past": {
+      "rounds": [35, 36, 37, 41, 47, 52, 60, 64, 83, 91, 96, 102],
+      "round_count": 12,
+      "question_count": 48
+    },
+    "mock": {
+      "round_start": 1,
+      "round_end": 40,
+      "round_count": 40,
+      "question_count": 160
+    },
+    "mock_lr": {
+      "round_start": 1,
+      "round_end": 10,
+      "round_count": 10,
+      "question_count": 1700,
+      "topik_i": {"round_count": 10, "question_count": 700},
+      "topik_ii": {"round_count": 10, "question_count": 1000}
+    }
+  },
+  "session_review": {
+    "updated": "2026-10-08",
+    "scope": "기출 듣기·읽기 · 회차 전체 95% 목표",
+    "lang_codes": ["ko", "en", "ja", "vi", "zh-CN", "zh-TW"],
+    "note": "자동 검수 결과 · 출시 승인 별도",
+    "rounds": [
+      {"round": 35, "state": "automated_pass", "note": "최종 38필드 독립 PASS · 사람 통독 미실행"},
+      {"round": 36, "state": "corrected_pending_release", "note": "150개 문항·언어쌍 검수 · 5문항 교정 및 변경 27필드 독립 PASS · 전체 95% 정상 기준은 미확정"},
+      {"round": 37, "state": "pending"},
+      {"round": 41, "state": "pending"},
+      {"round": 47, "state": "pending"},
+      {"round": 52, "state": "pending"}
+    ]
+  },
   "engine": "v7.9",
   "baseline": "2026-09-29 정본 거버넌스 D-198~D-201 + 2026-09-23 통합 핸드오프 실측",
   "lang_codes": [
