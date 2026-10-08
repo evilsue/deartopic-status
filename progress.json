@@ -1,4 +1,877 @@
 {
+  "exam_feedback": {
+    "updated": "2026-10-08",
+    "scope": "기출 듣기·읽기 피드백",
+    "verified_rounds": [
+      35,
+      36,
+      37,
+      41,
+      47,
+      52
+    ],
+    "reviewed_lang_codes": [
+      "ko",
+      "en",
+      "ja",
+      "vi",
+      "zh-CN",
+      "zh-TW"
+    ],
+    "fields": [
+      "header",
+      "clues",
+      "trap",
+      "patterns"
+    ],
+    "basis": "작성 수는 헤더·단서·오답 해설·전략의 내용 존재와 구조 확인 수입니다. 의미 검수 수·출시 판정·DB 탑재 여부와 구분합니다.",
+    "review_basis": "검수 수는 이번 회차 패널에서 확인한 문항·언어쌍입니다. 작성 완료나 검수 범위만으로 언어별 품질 통과를 뜻하지 않습니다.",
+    "db_status": "NOT_RECHECKED",
+    "sources": [
+      {
+        "id": "stage_inventory.json",
+        "sha256": "16f37a03ebcdf0f1be4e25839cd8d3a1462ff0fa3e59d4aad57f388ff6efd62f"
+      },
+      {
+        "id": "round95/35/final_panel_result.json",
+        "sha256": "978176c020f761a0ca2321a53f82caa5b208c243783788ac9518a5a8c778cff6"
+      },
+      {
+        "id": "round95/36/final_panel_result.json",
+        "sha256": "d45fb07c89821e1fb65c2cc821bfe42cc7795ded78406f71195ca6cde3b3e297"
+      }
+    ],
+    "rounds": [
+      {
+        "round": 35,
+        "questions": 170,
+        "current_structure_verified": true,
+        "review_state": "automated_pass",
+        "languages": {
+          "ko": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 168,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "en": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 168,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "ja": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 70,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "zh-CN": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 168,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "zh-TW": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 70,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "vi": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 168,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 168,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 36,
+        "questions": 170,
+        "current_structure_verified": true,
+        "review_state": "corrected_pending_release",
+        "languages": {
+          "ko": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 28,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "en": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 21,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "ja": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 24,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "zh-CN": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 31,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "zh-TW": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 25,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "vi": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": 21,
+            "review_state": "reviewed_scope",
+            "updated": "2026-10-08"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 37,
+        "questions": 170,
+        "current_structure_verified": true,
+        "review_state": "pending",
+        "languages": {
+          "ko": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "en": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "ja": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "zh-CN": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "zh-TW": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "vi": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 167,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 41,
+        "questions": 170,
+        "current_structure_verified": true,
+        "review_state": "pending",
+        "languages": {
+          "ko": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "en": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "ja": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "zh-CN": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "zh-TW": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "vi": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 167,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 47,
+        "questions": 170,
+        "current_structure_verified": true,
+        "review_state": "pending",
+        "languages": {
+          "ko": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "en": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "ja": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "zh-CN": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "zh-TW": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "vi": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 167,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 52,
+        "questions": 170,
+        "current_structure_verified": true,
+        "review_state": "pending",
+        "languages": {
+          "ko": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "en": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "ja": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "zh-CN": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "zh-TW": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "vi": {
+            "basis": "local_structure",
+            "written": 168,
+            "eligible": 168,
+            "copyright_notice": 2,
+            "missing": 0,
+            "incomplete_structure": 0,
+            "reviewed": null,
+            "review_state": "round_panel_pending",
+            "updated": "2026-10-08"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 168,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 60,
+        "questions": 170,
+        "current_structure_verified": false,
+        "review_state": "not_linked",
+        "languages": {
+          "ko": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "en": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "ja": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-CN": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-TW": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "vi": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 166,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 64,
+        "questions": 170,
+        "current_structure_verified": false,
+        "review_state": "not_linked",
+        "languages": {
+          "ko": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "en": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "ja": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-CN": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-TW": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "vi": {
+            "basis": "historical_inventory",
+            "recorded": 170,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 168,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 83,
+        "questions": 170,
+        "current_structure_verified": false,
+        "review_state": "not_linked",
+        "languages": {
+          "ko": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "en": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "ja": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-CN": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-TW": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "vi": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 0,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 91,
+        "questions": 170,
+        "current_structure_verified": false,
+        "review_state": "not_linked",
+        "languages": {
+          "ko": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "en": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "ja": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-CN": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-TW": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "vi": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 0,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 96,
+        "questions": 170,
+        "current_structure_verified": false,
+        "review_state": "not_linked",
+        "languages": {
+          "ko": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "en": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "ja": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-CN": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-TW": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "vi": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 0,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      },
+      {
+        "round": 102,
+        "questions": 170,
+        "current_structure_verified": false,
+        "review_state": "not_linked",
+        "languages": {
+          "ko": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "en": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "ja": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-CN": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "zh-TW": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "vi": {
+            "basis": "historical_inventory",
+            "recorded": 169,
+            "reviewed": null,
+            "review_state": "not_linked",
+            "updated": "2026-09-29"
+          },
+          "es-419": {
+            "basis": "historical_inventory",
+            "recorded": 0,
+            "reviewed": null,
+            "review_state": "excluded",
+            "updated": "2026-09-29"
+          }
+        }
+      }
+    ]
+  },
   "updated": "2026-09-29",
   "writing": {
     "updated": "2026-10-08",

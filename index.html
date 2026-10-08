@@ -153,6 +153,7 @@
   .full{color:var(--good); font-weight:800}
   .partial{color:var(--warn); font-weight:700}
   .zero{color:var(--faint)}
+  .mxsub{display:block;font-size:10px;font-weight:400;color:var(--muted);margin-top:3px}
   .gbadge{display:inline-block; min-width:16px; font-size:10.5px; font-weight:800; padding:1px 5px; border-radius:6px}
   .gbad{background:var(--crit-soft); color:var(--crit)}
   .gwarn{background:var(--warn-soft); color:var(--warn)}
@@ -204,7 +205,7 @@
   <header class="top">
     <div>
       <div class="eyebrow">DearTOPIK · Localization</div>
-      <h1>TOPIK 피드백 다국어화 진척</h1>
+      <h1>TOPIK 문항·피드백 현황</h1>
       <div class="meta" id="meta">불러오는 중…</div>
     </div>
     <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap">
@@ -216,7 +217,7 @@
   <!-- 주지표 = 작업단위(회차/세트). 문항은 보조. -->
   <div class="kpis">
     <div class="kpi fb">
-      <div class="label">기출 <b style="color:var(--fb)">회차</b> 진척 <span class="track t-fb">작업단위</span></div>
+      <div class="label">기출 <b style="color:var(--fb)">피드백 보유</b> <span class="track t-fb">회차</span></div>
       <div class="big num" id="k1">–</div><div class="sub" id="k1s"></div>
       <div class="bar fb"><i id="k1b"></i></div>
     </div>
@@ -239,7 +240,7 @@
     <div class="grid2">
       <div class="card">
         <h3><span class="hl"><span class="dot fb"></span> 기출 회차</span><span class="rt" id="ex_rt"></span></h3>
-        <p class="cnote">단계: 콘텐츠 대기 → ko 생성 → 번역 완료. 미확정 회차는 콘텐츠 확정 대기.</p>
+        <p class="cnote">피드백 작성과 출시 검수는 별도입니다. 언어별 작성 수·검수 수는 아래 회차별 현황에서 확인합니다.</p>
         <div class="twrap"><table id="etbl"><thead></thead><tbody></tbody></table></div>
       </div>
       <div class="card">
@@ -260,9 +261,9 @@
     </div>
   </section>
 
-  <!-- 회차별 검수현황 (게이트 실측 자동집계) -->
-  <section>
-    <div class="sechead"><h2>회차별 번역·검수 현황</h2><span class="k">회차×언어×게이트 · 게이트 실측 자동집계</span><span class="rule"></span></div>
+  <!-- 기존 집계와 최신 피드백 구조·패널 검수 영수증을 구분 -->
+  <section id="exam-feedback">
+    <div class="sechead"><h2>기출 회차·언어별 피드백 현황</h2><span class="k">작성 · 검수 · 출시 판정</span><span class="rule"></span></div>
     <div class="card">
       <div id="session-review" hidden style="margin-bottom:16px">
         <h3>이번 검수</h3>
@@ -270,11 +271,12 @@
         <div id="session-review-rounds" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px"></div>
         <p class="pmnote" id="session-review-note"></p>
       </div>
+      <p class="cnote" id="feedback-basis"></p>
       <div class="langsum" id="langsum"></div>
       <div class="twrap"><table id="mxtbl"><thead></thead><tbody>
         <tr><td colspan="9" class="mxload">불러오는 중…</td></tr>
       </tbody></table></div>
-      <p class="mxnote">✓=전량 완료 · 숫자=부분 · 게이트 <span class="gbadge gbad">N</span>=구조·라벨 오류(BLOCK, 조치 필요) <span class="gbadge gwarn">N</span>=참고용 경고(WARN)</p>
+      <p class="mxnote" id="feedback-note"></p>
     </div>
   </section>
 
@@ -408,16 +410,17 @@ function render(d){
   if(!d){ document.getElementById('err').textContent='데이터 로드 실패'; return; }
   D=d;
   renderWritingAndReview(d);
+  renderMatrix(d);
   var e=d.exam, p=d.practice, U=d.units, W=d.workload, conf=d.denom.confirmed, tot=d.denom.total;
 
-  document.getElementById('meta').textContent='최종 갱신 '+(d.updated||'—')
+  document.getElementById('meta').textContent='피드백 현황 갱신 '+(d.exam_feedback?d.exam_feedback.updated:d.updated||'—')+' · 기존 집계 '+d.updated
     +' · 작업단위: 기출 '+U.exam.total+'회차 · 연습 '+U.practice.total+'세트 · 분모(문항) 확정 '+fmt(conf)+'/'+fmt(tot);
   document.getElementById('chips').innerHTML=
     '<span class="chip eng">엔진 '+(d.engine||'—')+'</span><span class="chip date">'+(d.baseline||'').split(' ')[0]+'</span>';
 
   // ── KPI (작업단위 주지표) ──
   document.getElementById('k1').innerHTML=U.exam.done+' <small>/ '+U.exam.total+' 회차</small>';
-  document.getElementById('k1s').innerHTML='번역완료 '+U.exam.done+'회차 · 콘텐츠 대기 '+U.exam.wait+'회차 <span class="aux">('+fmt(e.done_confirmed.en)+'문항)</span>';
+  document.getElementById('k1s').textContent='기존 피드백 보유 '+U.exam.done+'회차'+(d.exam_feedback?' · 최신 구조 확인 '+d.exam_feedback.verified_rounds.length+'회차 × '+d.exam_feedback.reviewed_lang_codes.length+'언어':'')+' · 출시 완료 수 아님';
   document.getElementById('k1b').style.width=pct(U.exam.done,U.exam.total)+'%';
 
   document.getElementById('k2').innerHTML=U.practice.trans+' <small>/ '+U.practice.total+' 세트</small>';
@@ -433,12 +436,14 @@ function render(d){
     +'(기출 '+fmt(e.confirmed_q)+' + 연습 '+fmt(p.confirmed_q)+') / 전체 '+fmt(tot)+'.';
 
   // ── 기출 회차표 ──
-  document.getElementById('ex_rt').textContent='완료 '+U.exam.done+' · 대기 '+U.exam.wait+' / '+U.exam.total+'회차';
-  document.querySelector('#etbl thead').innerHTML='<tr><th>회차</th><th>단계</th><th>ko 커버</th><th class="aux">문항</th></tr>';
+  document.getElementById('ex_rt').textContent='피드백 보유 '+U.exam.done+' / '+U.exam.total+'회차';
+  document.querySelector('#etbl thead').innerHTML='<tr><th>회차</th><th>피드백 작성</th><th>한국어 피드백</th><th class="aux">문항</th></tr>';
   var eb='', wait=[];
   e.rounds.forEach(function(r){
     if(r.stage==='wait'){ wait.push(r); return; }
-    eb+='<tr><td>'+r.round+'</td><td>'+chip(r.stage)+'</td>'+covcell(r.ko,r.q,'var(--fb)')+'<td class="aux num">'+r.q+'</td></tr>';
+    var latest=d.exam_feedback&&d.exam_feedback.rounds.find(function(x){return x.round===+r.round;});
+    var local=latest&&latest.current_structure_verified, ko=local?latest.languages.ko:null;
+    eb+='<tr><td>'+r.round+'</td><td><span class="pill '+(local?'p-good':'p-idle')+'">'+(local?'6언어 작성 완료':'보유 · 기존 집계')+'</span></td><td class="num">'+(ko?ko.written+' + 안내 '+ko.copyright_notice:r.ko+' (기존)')+'</td><td class="aux num">'+r.q+'</td></tr>';
   });
   if(wait.length){
     var wq=wait.reduce(function(s,r){return s+r.q;},0);
@@ -501,34 +506,45 @@ fetch('progress.json?t='+Date.now(),{cache:'no-store'})
   .then(function(r){return r.json();}).then(render)
   .catch(function(){ render(window.PROGRESS); });
 
-// ── 회차별 검수 매트릭스(round_status.json 자동집계) ──
-var MX_LABEL={'en':'EN','ja':'JA','vi':'VI','zh-CN':'zh-CN','zh-TW':'zh-TW','es-419':'ES'};
-function mxLangCell(v,q){ if(!v) return '<td class="zero">—</td>'; if(v>=q) return '<td class="full">✓</td>'; return '<td class="partial">'+v+'</td>'; }
-function mxGate(g){ if(!g) return '<span class="gbadge">?</span>';
-  var bh=g.block>0?'<span class="gbadge gbad">'+g.block+'</span>':'<span class="gbadge gok">0</span>';
-  return bh+(g.warn>0?' <span class="gbadge gwarn">'+g.warn+'</span>':''); }
-function renderMatrix(d){
-  var langs=d.lang_codes, totalKo=d.rounds.reduce(function(s,r){return s+r.ko;},0);
-  document.getElementById('langsum').innerHTML=langs.map(function(l){
-    var done=d.rounds.reduce(function(s,r){return s+(r.langs[l]||0);},0);
-    var p=totalKo?Math.round(1000*done/totalKo)/10:0;
-    var c=p>=99?'var(--good)':(p>0?'var(--warn)':'var(--faint)');
-    return '<div class="lscell"><div class="ln">'+MX_LABEL[l]+'</div><div class="lv">'+done.toLocaleString()
-      +'<small>/'+totalKo.toLocaleString()+'</small></div><div class="lpct" style="color:'+c+'">'+p
-      +'%</div><div class="lbar"><i style="width:'+p+'%;background:'+c+'"></i></div></div>';
-  }).join('');
-  document.querySelector('#mxtbl thead').innerHTML='<tr><th>회차</th><th>ko</th>'
-    +langs.map(function(l){return '<th>'+MX_LABEL[l]+'</th>';}).join('')+'<th>게이트</th></tr>';
-  document.querySelector('#mxtbl tbody').innerHTML=d.rounds.map(function(r){
-    var cf=r.confirmed?'<span class="cf y">확정</span>':'<span class="cf n">미확정</span>';
-    var note=(r.gate&&r.gate.checked!==r.ko)?'<span style="color:var(--faint)"> ('+r.gate.checked+')</span>':'';
-    return '<tr><td class="rnd">'+r.round+cf+'</td><td>'+r.ko+note+'</td>'
-      +langs.map(function(l){return mxLangCell(r.langs[l],r.ko);}).join('')+'<td>'+mxGate(r.gate)+'</td></tr>';
-  }).join('');
+// ── progress.json 하나에서 회차·언어별 작성/검수 상태 렌더링 ──
+var MX_LABEL={'ko':'한국어','en':'영어','ja':'일본어','vi':'베트남어','zh-CN':'중국어 간체','zh-TW':'중국어 번체','es-419':'스페인어'};
+function feedbackCell(v){
+  if(v.basis==='local_structure'){
+    var complete=v.written===v.eligible&&v.missing===0&&v.incomplete_structure===0;
+    var review=v.reviewed===null?'회차 패널 대기':'검수 '+v.reviewed+'/'+v.eligible;
+    return '<td class="'+(complete?'full':'partial')+'">작성 '+v.written+'/'+v.eligible
+      +'<span class="mxsub">저작권 안내 '+v.copyright_notice+' · 누락 '+v.missing+'</span><span class="mxsub">'+review+'</span></td>';
+  }
+  return '<td class="zero">기존 '+fmt(v.recorded)+'<span class="mxsub">'+v.updated+'</span><span class="mxsub">'+(v.review_state==='excluded'?'이번 검수 제외':'최신 검수 미연결')+'</span></td>';
 }
-fetch('todos/round_status.json?t='+Date.now(),{cache:'no-store'})
-  .then(function(r){return r.json();}).then(renderMatrix)
-  .catch(function(e){ document.querySelector('#mxtbl tbody').innerHTML='<tr><td colspan="9" class="mxload">매트릭스 로드 실패</td></tr>'; });
+function feedbackReview(state){
+  var labels={automated_pass:['p-good','회차 자동 PASS'],corrected_pending_release:['p-warn','교정 완료 · 판정 보류'],pending:['p-idle','회차 패널 대기'],not_linked:['p-idle','최신 결과 미연결']};
+  var s=labels[state]||['p-warn','검수 진행 중'];
+  return '<span class="pill '+s[0]+'">'+s[1]+'</span>';
+}
+function renderMatrix(d){
+  var f=d.exam_feedback;
+  if(!f){
+    document.getElementById('feedback-basis').textContent='언어별 피드백 집계가 연결되지 않았습니다.';
+    document.querySelector('#mxtbl tbody').innerHTML='<tr><td colspan="10" class="mxload">최신 피드백 집계 미연결</td></tr>';
+    return;
+  }
+  var langs=d.lang_codes, current=f.rounds.filter(function(r){return r.current_structure_verified;});
+  document.getElementById('feedback-basis').textContent=f.updated+' 확인: '+f.verified_rounds.join('·')+'회, '+f.reviewed_lang_codes.length+'개 언어. '+f.basis;
+  document.getElementById('langsum').innerHTML=f.reviewed_lang_codes.map(function(l){
+    var written=current.reduce(function(s,r){return s+r.languages[l].written;},0);
+    var eligible=current.reduce(function(s,r){return s+r.languages[l].eligible;},0);
+    var notices=current.reduce(function(s,r){return s+r.languages[l].copyright_notice;},0);
+    return '<div class="lscell"><div class="ln">'+MX_LABEL[l]+'</div><div class="lv">'+fmt(written)+'<small>/'+fmt(eligible)+'</small></div><div class="lpct">피드백 작성 · '+current.length+'회차</div><div class="mxsub">저작권 안내 '+notices+'개 별도</div></div>';
+  }).join('');
+  document.querySelector('#mxtbl thead').innerHTML='<tr><th>회차</th><th>문항</th>'
+    +langs.map(function(l){return '<th>'+MX_LABEL[l]+'</th>';}).join('')+'<th>회차 검수 판정</th></tr>';
+  document.querySelector('#mxtbl tbody').innerHTML=f.rounds.map(function(r){
+    return '<tr><td class="rnd">'+r.round+'회</td><td>'+r.questions+'</td>'
+      +langs.map(function(l){return feedbackCell(r.languages[l]);}).join('')+'<td>'+feedbackReview(r.review_state)+'</td></tr>';
+  }).join('');
+  document.getElementById('feedback-note').textContent=f.review_basis+' 저작권 안내는 정상 피드백 수에서 제외합니다. 기존 집계는 예전 보유 기록이며, 이번 작업에서 다시 검수한 수가 아닙니다. 스페인어는 이번 검수에서 제외했습니다. 회차 자동 PASS는 언어별 전수 통과나 출시 승인이 아닙니다. 운영·개발 DB 탑재 여부는 이번에 재조회하지 않았습니다.';
+}
 
 
 // ── 모의고사 세트 매핑 · 문항 진행 (practice_map.json) ──
