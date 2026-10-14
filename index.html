@@ -398,7 +398,7 @@ function renderWritingAndReview(d){
   }
   document.getElementById('session-review').hidden=!review;
   if(review){
-    var states={automated_pass:{t:'자동 PASS',c:'p-good'},corrected_pending_release:{t:'교정 완료 · 출시 판정 보류',c:'p-warn'},in_progress:{t:'검수 진행 중',c:'p-warn'},pending:{t:'패널 대기',c:'p-idle'}};
+    var states={released_db:{t:'출시 · 운영 DB 반영',c:'p-good'},automated_pass:{t:'자동 PASS',c:'p-good'},corrected_pending_release:{t:'교정 완료 · 출시 판정 보류',c:'p-warn'},in_progress:{t:'검수 진행 중',c:'p-warn'},pending:{t:'패널 대기',c:'p-idle'}};
     document.getElementById('session-review-scope').textContent=review.updated+' · '+review.scope+' · '+review.lang_codes.length+'개 언어('+review.lang_codes.join('·')+'; 스페인어 제외)';
     var rounds=document.getElementById('session-review-rounds'); rounds.textContent='';
     review.rounds.forEach(function(r){
@@ -500,7 +500,7 @@ function feedbackCell(v){
   return '<td class="zero">기존 '+fmt(v.recorded)+'<span class="mxsub">'+v.updated+'</span><span class="mxsub">'+(v.review_state==='excluded'?'이번 검수 제외':'최신 검수 미연결')+'</span></td>';
 }
 function feedbackReview(state){
-  var labels={automated_pass:['p-good','회차 자동 PASS'],corrected_pending_release:['p-warn','교정 완료 · 판정 보류'],pending:['p-idle','회차 패널 대기'],not_linked:['p-idle','최신 결과 미연결']};
+  var labels={released_db:['p-good','출시 · 운영 DB 반영'],automated_pass:['p-good','회차 자동 PASS'],corrected_pending_release:['p-warn','교정 완료 · 판정 보류'],pending:['p-idle','회차 패널 대기'],not_linked:['p-idle','최신 결과 미연결']};
   var s=labels[state]||['p-warn','검수 진행 중'];
   return '<span class="pill '+s[0]+'">'+s[1]+'</span>';
 }
