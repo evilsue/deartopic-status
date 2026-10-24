@@ -14,10 +14,97 @@
     "language": "en",
     "tvTypes": [
       "Movie",
-      "TvSeries"
+      "TvSeries",
+      "Anime"
     ],
     "iconUrl": "https://kdesa.stream/android-chrome-192x192.png?v=6",
     "apiVersion": 1,
     "fileHash": "sha256-02bdd23a40ab95887ea7e288bd0cb51e316c7a477cfd1436a361c856a60cfb95"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/NropVox/cloudstream-extensions-nropvox/builds/CnoTo.cs3",
+    "status": 1,
+    "version": 1,
+    "name": "CnoTo",
+    "internalName": "CnoTo",
+    "authors": [
+      "NropVox"
+    ],
+    "description": "Movies, TV shows and anime from Cno.to. Plays Cno.to's own HLS servers (up to 4K) with subtitles in many languages.",
+    "fileSize": 47767,
+    "repositoryUrl": "https://github.com/NropVox/cloudstream-extensions-nropvox",
+    "language": "en",
+    "tvTypes": [
+      "Movie",
+      "TvSeries",
+      "Anime",
+      "AnimeMovie"
+    ],
+    "iconUrl": "https://www.google.com/s2/favicons?domain=cno.to&sz=%size%",
+    "apiVersion": 1,
+    "fileHash": "sha256-40ba52929b277eba9ef358aa5c13106a8efd0a2fe5e567bc17c80bacc677faf8"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/NropVox/cloudstream-extensions-nropvox/builds/GoPlay.cs3",
+    "status": 1,
+    "version": 3,
+    "name": "GoPlay",
+    "internalName": "GoPlay",
+    "authors": [
+      "NropVox"
+    ],
+    "description": "Korean, Chinese, Japanese and Thai dramas, movies and variety shows from GoPlay. Solves GoPlay's access check in a hidden WebView.",
+    "fileSize": 47455,
+    "repositoryUrl": "https://github.com/NropVox/cloudstream-extensions-nropvox",
+    "language": "en",
+    "tvTypes": [
+      "AsianDrama",
+      "Movie",
+      "TvSeries"
+    ],
+    "iconUrl": "https://assets.goplay.su/hearticon180.png",
+    "apiVersion": 1,
+    "fileHash": "sha256-953e026e656840d4c00970761a1700d35b7f4a1ca0e6a268825935aea1ff826e"
+  },
+  {
+    "iconUrl": "https://dramanice.boo/wp-content/uploads/2026/08/Hold-on-Harutora-kun-2026-poster.jpg",
+    "fileHash": "sha256-7a6b761ab1d0af89360e14965c1ae26b803ae5de0208ff07686866a65ecb65bd",
+    "apiVersion": 1,
+    "repositoryUrl": "https://github.com/rafnold/drama-extension",
+    "fileSize": 186363,
+    "status": 1,
+    "language": "en",
+    "authors": [
+      "drama-scraper"
+    ],
+    "tvTypes": [
+      "TV",
+      "Movie"
+    ],
+    "version": 39,
+    "internalName": "DramaExtension",
+    "description": "Asian drama streaming sites: DramaNice (dramanice.boo), KDrama.in (k-drama.in), KissAsian (kissasian.com.lv), Dramahood (dramahood.mom) and KissKH (kisskh.or.at) and Primeshows (primeshows.org). Genre and country tabs (wuxia, fantasy, historical, K/C/J/Thai...), TMDB ratings and episode counts on cards, final m3u8 sources with subtitles.",
+    "url": "https://raw.githubusercontent.com/rafnold/drama-extension/builds/DramaExtension.cs3",
+    "name": "DramaExtension"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/Kraptor123/Cs-Karma/builds/OnShort.cs3",
+    "status": 1,
+    "version": 3,
+    "name": "OnShort",
+    "internalName": "OnShort",
+    "authors": [
+      "kraptor"
+    ],
+    "description": "Discover dubbed and subtitled short dramas from multiple platforms and open every available episode on ONShort.",
+    "fileSize": 21396,
+    "repositoryUrl": "https://github.com/Kraptor123/Cs-Karma",
+    "language": "en",
+    "tvTypes": [
+      "AsianDrama"
+    ],
+    "iconUrl": "https://www.google.com/s2/favicons?sz=64&domain=https://onshort.net",
+    "apiVersion": 1,
+    "fileHash": "sha256-6e87e9b6ad2422698829c07e4262f987605fb71339434061d898faf78e589aad"
   }
 ]
