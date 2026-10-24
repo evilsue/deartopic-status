@@ -1,6 +1,6 @@
 {
-  "name": "CloudStream EN/KO — 4K First, No Torrent (8)",
-  "description": "One-time curated 8 movie/TV extensions: direct-streaming focus; no torrent-integrated, anime-primary or Hindi-centered plugins. 4K not guaranteed. Jellyfin requires own server.",
+  "name": "CloudStream EN-KO — Verification Pending (0)",
+  "description": "No plugins published: recent-update and torrent-free code criteria plus live catalog/search/playback verification not all passed. Previous 8 plugins withdrawn.",
   "manifestVersion": 1,
   "pluginLists": [
     "https://raw.githubusercontent.com/evilsue/deartopic-status/cloudstream-en-ko/plugins.json"
