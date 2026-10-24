@@ -1,6 +1,6 @@
 {
-  "name": "CloudStream EN-KO — Verification Pending (0)",
-  "description": "No plugins published: recent-update and torrent-free code criteria plus live catalog/search/playback verification not all passed. Previous 8 plugins withdrawn.",
+  "name": "CloudStream EN/KO — Validation Pending (0)",
+  "description": "All 8 former extensions excluded pending successful source freshness, non-torrent and live endpoint/playback validation. Previously installed plugins require manual uninstall.",
   "manifestVersion": 1,
   "pluginLists": [
     "https://raw.githubusercontent.com/evilsue/deartopic-status/cloudstream-en-ko/plugins.json"
