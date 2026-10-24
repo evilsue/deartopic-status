@@ -1,4 +1,5 @@
 {
+  "iconUrl": null,
   "name": "CloudStream EN/KO — Validation Pending (0)",
   "description": "All 8 former extensions excluded pending successful source freshness, non-torrent and live endpoint/playback validation. Previously installed plugins require manual uninstall.",
   "manifestVersion": 1,
