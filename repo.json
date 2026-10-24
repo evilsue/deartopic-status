@@ -1,0 +1,8 @@
+{
+  "name": "CloudStream EN + KO (66)",
+  "description": "One-time curated English/Korean extensions; deduplicated, Hindi-centric sources excluded. Playback unverified.",
+  "manifestVersion": 1,
+  "pluginLists": [
+    "https://raw.githubusercontent.com/evilsue/deartopic-status/cloudstream-en-ko/plugins.json"
+  ]
+}
