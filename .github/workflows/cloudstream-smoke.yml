@@ -1,0 +1,50 @@
+name: CloudStream one-time connection smoke test
+on:
+  push:
+    branches: [cloudstream-en-ko]
+    paths:
+      - '.github/workflows/cloudstream-smoke.yml'
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: HTTP checks for Kdesa catalog and streaming resolver service
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, ssl, urllib.request, urllib.error
+          urls = [
+              ("catalog homepage", "https://7movies.ac/"),
+              ("movie catalog API", "https://7movies.ac/api/discover?page=1&type=movie"),
+              ("movie search API", "https://7movies.ac/api/search?v=5&q=Matrix"),
+              ("resolver homepage", "https://embed.vidrift.net/"),
+          ]
+          results = []
+          for name, url in urls:
+              request=urllib.request.Request(url, headers={
+                  "User-Agent":"Mozilla/5.0 (compatible; CloudStreamSmoke/1.0)",
+                  "Accept":"application/json, text/html, */*"
+              })
+              try:
+                  with urllib.request.urlopen(request, timeout=14) as response:
+                      data=response.read(65536)
+                      text=data.decode("utf-8", errors="replace")
+                      is_json=False
+                      valid_payload=False
+                      if "API" in name:
+                          try:
+                              payload=json.loads(text)
+                              is_json=True
+                              valid_payload=isinstance(payload,(list,dict))
+                          except Exception: pass
+                      else:
+                          valid_payload=len(data)>100
+                      results.append({"name":name, "status":response.status,"bytes":len(data),
+                                      "json":is_json, "ok": response.status==200 and valid_payload})
+              except Exception as e:
+                  results.append({"name":name,"ok":False,"error":str(e)[:160]})
+          for r in results: print(json.dumps(r,ensure_ascii=False))
+          if not all(r["ok"] for r in results):
+              raise SystemExit("One or more Kdesa service smoke tests failed")
+          PY
