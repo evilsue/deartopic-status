@@ -1,7 +1,7 @@
 {
   "iconUrl": null,
-  "name": "CloudStream EN/KO - Movies & Drama (5)",
-  "description": "Five recent source-updated movie/drama extensions (2026-10-05..22). No torrent/magnet/debrid integrations found in reviewed Kotlin sources. Korean dramas, English catalogs; 4K availability untested. CnoTo and Kdesa include built-in anime categories. Playback/connectivity not tested.",
+  "name": "CloudStream EN/KO - Live Action Catalog (3)",
+  "description": "Live-action-first catalog only. Anime-focused or anime-capable providers removed even if they also contain live-action. No torrent/magnet/debrid providers in this list. Playback/connectivity still requires separate validation.",
   "manifestVersion": 1,
   "pluginLists": [
     "https://raw.githubusercontent.com/evilsue/deartopic-status/cloudstream-en-ko/plugins.json"
