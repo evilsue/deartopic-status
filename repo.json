@@ -1,7 +1,7 @@
 {
   "iconUrl": null,
-  "name": "CloudStream EN/KO — Validation Pending (0)",
-  "description": "All 8 former extensions excluded pending successful source freshness, non-torrent and live endpoint/playback validation. Previously installed plugins require manual uninstall.",
+  "name": "CloudStream EN/KO - No Torrent / 4K First (1)",
+  "description": "One-time filtered catalog: Kdesa, English movies/TV. Source code updated 2026-10-22. No torrent/magnet/debrid integrations identified in its Kotlin sources; 2160p HLS quality detection. Live connection and playback NOT tested. Animation categories may still be present inside the plugin.",
   "manifestVersion": 1,
   "pluginLists": [
     "https://raw.githubusercontent.com/evilsue/deartopic-status/cloudstream-en-ko/plugins.json"
