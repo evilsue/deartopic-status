@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "url": "https://raw.githubusercontent.com/KSHITIJ8473/raghav/builds/Kdesa.cs3",
+    "status": 1,
+    "version": 4,
+    "name": "Kdesa",
+    "internalName": "Kdesa",
+    "authors": [
+      "KSHITIJ8473"
+    ],
+    "description": "KDesa - Movies, TV Shows & Anime Multi-source,Multi-audio",
+    "fileSize": 62450,
+    "repositoryUrl": "https://github.com/KSHITIJ8473/raghav",
+    "language": "en",
+    "tvTypes": [
+      "Movie",
+      "TvSeries"
+    ],
+    "iconUrl": "https://kdesa.stream/android-chrome-192x192.png?v=6",
+    "apiVersion": 1,
+    "fileHash": "sha256-02bdd23a40ab95887ea7e288bd0cb51e316c7a477cfd1436a361c856a60cfb95"
+  }
+]
