@@ -1,0 +1,11 @@
+name: WorkHub isolated CI smoke test
+on:
+  push:
+    branches:
+      - workhub-ci-20261101
+jobs:
+  smoke:
+    runs-on: windows-latest
+    steps:
+      - shell: pwsh
+        run: Write-Output "Runner is available"
